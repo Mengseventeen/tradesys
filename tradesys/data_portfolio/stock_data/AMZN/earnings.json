@@ -1,0 +1,70 @@
+{
+  "quarterlyEarnings": [
+    {
+      "fiscalDateEnding": "2023-03-31",
+      "netIncome": "3172000000"
+    },
+    {
+      "fiscalDateEnding": "2022-12-31",
+      "netIncome": "278000000"
+    },
+    {
+      "fiscalDateEnding": "2022-09-30",
+      "netIncome": "2872000000"
+    },
+    {
+      "fiscalDateEnding": "2022-06-30",
+      "netIncome": "-2028000000"
+    },
+    {
+      "fiscalDateEnding": "2022-03-31",
+      "netIncome": "-3844000000"
+    },
+    {
+      "fiscalDateEnding": "2021-12-31",
+      "netIncome": "14323000000"
+    },
+    {
+      "fiscalDateEnding": "2021-09-30",
+      "netIncome": "3156000000"
+    },
+    {
+      "fiscalDateEnding": "2021-06-30",
+      "netIncome": "7778000000"
+    },
+    {
+      "fiscalDateEnding": "2021-03-31",
+      "netIncome": "8107000000"
+    },
+    {
+      "fiscalDateEnding": "2020-12-31",
+      "netIncome": "7222000000"
+    },
+    {
+      "fiscalDateEnding": "2020-09-30",
+      "netIncome": "6331000000"
+    },
+    {
+      "fiscalDateEnding": "2020-06-30",
+      "netIncome": "5243000000"
+    },
+    {
+      "fiscalDateEnding": "2020-03-31",
+      "netIncome": "2535000000"
+    }
+  ],
+  "annualEarnings": [
+    {
+      "fiscalDateEnding": "2022-12-31",
+      "netIncome": "-2722000000"
+    },
+    {
+      "fiscalDateEnding": "2021-12-31",
+      "netIncome": "33364000000"
+    },
+    {
+      "fiscalDateEnding": "2020-12-31",
+      "netIncome": "21331000000"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "source_dataset": "stock_data_cherrypick_4tickers_2022-10-06_2023-04-10.pkl",
+  "note": "Generated from dataset news strings. ticker_sentiment is empty because the pkl does not contain true ticker sentiment scores.",
+  "feed": []
+}

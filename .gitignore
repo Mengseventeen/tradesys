@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+env/
+
+.env
+*.env
+
+.agents/
+
+# Keep historical experiment output out of Git by default.
+analysis_results/*
+
+# Include only the latest submitted experiment summary and second-day execution metrics.
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/
+analysis_results/dataevolver_signal_only_latest_20260715_200927/*
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/decisions.csv
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/decision_results_compact.csv
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/RUN_LOG.md
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/
+analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/*
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/position_pct_metrics.csv
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/position_pct_summary.json
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/position_pct_trades.csv
+!analysis_results/dataevolver_signal_only_latest_20260715_200927/performance_decision_metrics_next_day_open/position_pct_daily_equity.csv

@@ -1,0 +1,5 @@
+{
+  "source_dataset": "stock_data_cherrypick_4tickers_2022-10-06_2023-04-10.pkl",
+  "note": "The pkl dataset stores news by ticker and does not include a separate global news feed.",
+  "feed": []
+}
