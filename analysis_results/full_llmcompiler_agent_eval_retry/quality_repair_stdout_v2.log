@@ -1,0 +1,10 @@
+=== quality pass 1: bad_dates=79 ===
+[1/79] AMZN 2022-10-11 ok HOLD 0.00% quality_ok=True
+[2/79] AMZN 2022-10-21 ok HOLD 0.00% quality_ok=False
+[3/79] AMZN 2022-10-07 ok HOLD 0.00% quality_ok=False
+[4/79] AMZN 2022-10-10 ok HOLD 0.00% quality_ok=False
+[5/79] AMZN 2022-11-01 ok HOLD 0.00% quality_ok=False
+[6/79] AMZN 2022-11-04 ok HOLD 0.00% quality_ok=False
+[7/79] AMZN 2022-11-07 ok HOLD 0.00% quality_ok=False
+[8/79] AMZN 2022-11-10 ok HOLD 0.00% quality_ok=False
+[9/79] AMZN 2022-11-09 ok HOLD 0.00% quality_ok=False

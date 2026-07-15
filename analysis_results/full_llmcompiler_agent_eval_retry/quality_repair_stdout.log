@@ -1,0 +1,14 @@
+=== quality pass 1: bad_dates=82 ===
+[1/82] AMZN 2022-10-07 ok SELL -25.00% quality_ok=False
+[2/82] AMZN 2022-10-13 ok HOLD 0.00% quality_ok=True
+[3/82] AMZN 2022-10-11 ok HOLD 0.00% quality_ok=False
+[4/82] AMZN 2022-10-10 ok SELL -25.00% quality_ok=False
+[5/82] AMZN 2022-10-28 ok HOLD 0.00% quality_ok=True
+[6/82] AMZN 2022-10-21 ok BUY 25.00% quality_ok=False
+[7/82] AMZN 2022-11-04 ok HOLD 0.00% quality_ok=False
+[8/82] AMZN 2022-11-01 ok HOLD 0.00% quality_ok=False
+[9/82] AMZN 2022-11-08 ok SELL -10.00% quality_ok=True
+[10/82] AMZN 2022-11-07 ok HOLD 0.00% quality_ok=False
+[11/82] AMZN 2022-11-09 ok HOLD 0.00% quality_ok=False
+[12/82] AMZN 2022-11-10 ok HOLD 0.00% quality_ok=False
+[13/82] AMZN 2022-11-11 ok HOLD 0.00% quality_ok=False

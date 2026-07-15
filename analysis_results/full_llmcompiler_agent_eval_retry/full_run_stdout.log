@@ -1,0 +1,125 @@
+=== START AMZN 2026-07-13T22:39:42.9804867+08:00 ===
+Tickers: AMZN
+Dates: 2022-10-06 to 2023-04-10 (AMZN=127 trading days)
+Workers: 2
+Model: gpt-4o-mini
+Base URL: https://api2.aigcbest.top/v1
+Max BUY position pct: 25.00%
+Workflow mode: llmcompiler
+Results dir: D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\analysis_results\full_llmcompiler_agent_eval_retry\AMZN
+[Parallel mode: 2 threads]
+[1/127] AMZN 2022-10-06 ... OK HOLD position=0.00% posture=neutral
+[2/127] AMZN 2022-10-07 ... OK HOLD position=0.00% posture=cautious
+[3/127] AMZN 2022-10-10 ... OK HOLD position=0.00% posture=neutral
+[4/127] AMZN 2022-10-11 ... OK SELL position=-100.00% posture=cautious
+[5/127] AMZN 2022-10-12 ... OK HOLD position=0.00% posture=cautious
+[6/127] AMZN 2022-10-13 ... OK BUY position=25.00% posture=cautious
+[7/127] AMZN 2022-10-14 ... OK HOLD position=0.00% posture=cautious
+[8/127] AMZN 2022-10-17 ... OK BUY position=25.00% posture=bullish
+  [checkpoint: 8/127 tasks saved]
+[9/127] AMZN 2022-10-18 ... OK BUY position=25.00% posture=bullish
+[10/127] AMZN 2022-10-19 ... OK BUY position=25.00% posture=bullish
+[11/127] AMZN 2022-10-20 ... OK BUY position=25.00% posture=cautious
+[12/127] AMZN 2022-10-21 ... OK BUY position=25.00% posture=cautious bullish
+[13/127] AMZN 2022-10-24 ... OK BUY position=25.00% posture=cautious
+[14/127] AMZN 2022-10-25 ... OK BUY position=25.00% posture=cautious
+[15/127] AMZN 2022-10-26 ... OK BUY position=20.00% posture=cautious
+[16/127] AMZN 2022-10-27 ... OK HOLD position=0.00% posture=neutral
+  [checkpoint: 16/127 tasks saved]
+[17/127] AMZN 2022-10-28 ... OK BUY position=25.00% posture=llmcompiler_regex_dag_join_agent_no_position
+[18/127] AMZN 2022-10-31 ... OK HOLD position=0.00% posture=neutral
+[19/127] AMZN 2022-11-01 ... OK HOLD position=0.00% posture=neutral
+[20/127] AMZN 2022-11-02 ... OK HOLD position=0.00% posture=cautious
+[21/127] AMZN 2022-11-03 ... OK HOLD position=0.00% posture=neutral
+[22/127] AMZN 2022-11-04 ... OK HOLD position=0.00% posture=neutral
+[23/127] AMZN 2022-11-07 ... OK BUY position=25.00% posture=cautious
+[24/127] AMZN 2022-11-08 ... OK HOLD position=0.00% posture=neutral
+  [checkpoint: 24/127 tasks saved]
+[25/127] AMZN 2022-11-09 ... OK HOLD position=0.00% posture=neutral
+[26/127] AMZN 2022-11-10 ... OK HOLD position=0.00% posture=neutral
+[27/127] AMZN 2022-11-11 ... OK BUY position=10.00% posture=cautious
+[28/127] AMZN 2022-11-14 ... OK HOLD position=0.00% posture=cautious
+[29/127] AMZN 2022-11-15 ... OK BUY position=25.00% posture=cautious
+[30/127] AMZN 2022-11-16 ... OK HOLD position=0.00% posture=neutral
+[31/127] AMZN 2022-11-17 ... OK HOLD position=0.00% posture=neutral
+[32/127] AMZN 2022-11-18 ... OK HOLD position=0.00% posture=cautious
+  [checkpoint: 32/127 tasks saved]
+[33/127] AMZN 2022-11-22 ... OK HOLD position=0.00% posture=neutral
+[34/127] AMZN 2022-11-21 ... OK SELL position=-100.00% posture=bearish
+[35/127] AMZN 2022-11-23 ... OK SELL position=-100.00% posture=bearish
+[36/127] AMZN 2022-11-25 ... OK BUY position=25.00% posture=cautious bullish
+[37/127] AMZN 2022-11-29 ... ERROR: Traceback (most recent call last):
+  File "D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\tradesys\workflows\llmcompiler.py", line 297, in run_llmcompil
+[38/127] AMZN 2022-11-28 ... OK HOLD position=0.00% posture=neutral
+[39/127] AMZN 2022-11-30 ... OK HOLD position=0.00% posture=cautious
+[40/127] AMZN 2022-12-01 ... OK BUY position=25.00% posture=cautious
+  [checkpoint: 40/127 tasks saved]
+[41/127] AMZN 2022-12-02 ... OK HOLD position=0.00% posture=neutral
+[42/127] AMZN 2022-12-05 ... OK HOLD position=0.00% posture=neutral
+[43/127] AMZN 2022-12-06 ... OK SELL position=-25.00% posture=bearish
+[44/127] AMZN 2022-12-07 ... OK HOLD position=0.00% posture=neutral
+[45/127] AMZN 2022-12-08 ... OK BUY position=25.00% posture=cautious
+[46/127] AMZN 2022-12-09 ... OK HOLD position=0.00% posture=cautious
+[47/127] AMZN 2022-12-13 ... OK HOLD position=0.00% posture=cautious
+[48/127] AMZN 2022-12-12 ... OK HOLD position=0.00% posture=neutral
+  [checkpoint: 48/127 tasks saved]
+[49/127] AMZN 2022-12-15 ... OK BUY position=25.00% posture=cautious
+[50/127] AMZN 2022-12-14 ... OK HOLD position=0.00% posture=neutral
+[51/127] AMZN 2022-12-19 ... OK HOLD position=0.00% posture=neutral
+[52/127] AMZN 2022-12-16 ... OK HOLD position=0.00% posture=cautious
+[53/127] AMZN 2022-12-20 ... OK HOLD position=0.00% posture=neutral
+[54/127] AMZN 2022-12-21 ... OK HOLD position=0.00% posture=cautious
+[55/127] AMZN 2022-12-22 ... OK BUY position=25.00% posture=cautious
+[56/127] AMZN 2022-12-23 ... OK SELL position=-100.00% posture=bearish
+  [checkpoint: 56/127 tasks saved]
+[57/127] AMZN 2022-12-27 ... OK HOLD position=0.00% posture=cautious
+[58/127] AMZN 2022-12-28 ... OK HOLD position=0.00% posture=neutral
+[59/127] AMZN 2022-12-29 ... OK BUY position=25.00% posture=cautious bullish
+[60/127] AMZN 2022-12-30 ... OK HOLD position=0.00% posture=cautious
+[61/127] AMZN 2023-01-03 ... OK BUY position=25.00% posture=cautious
+[62/127] AMZN 2023-01-04 ... OK HOLD position=0.00% posture=neutral
+[63/127] AMZN 2023-01-05 ... OK BUY position=25.00% posture=cautious
+[64/127] AMZN 2023-01-06 ... OK BUY position=25.00% posture=cautious
+  [checkpoint: 64/127 tasks saved]
+[65/127] AMZN 2023-01-09 ... OK BUY position=25.00% posture=bullish
+[66/127] AMZN 2023-01-10 ... OK BUY position=25.00% posture=bullish
+[67/127] AMZN 2023-01-11 ... OK BUY position=25.00% posture=cautious
+[68/127] AMZN 2023-01-12 ... OK BUY position=25.00% posture=bullish
+[69/127] AMZN 2023-01-13 ... OK BUY position=25.00% posture=bullish
+[70/127] AMZN 2023-01-17 ... OK HOLD position=0.00% posture=cautious
+[71/127] AMZN 2023-01-18 ... OK BUY position=25.00% posture=bullish
+[72/127] AMZN 2023-01-19 ... OK BUY position=25.00% posture=cautious
+  [checkpoint: 72/127 tasks saved]
+[73/127] AMZN 2023-01-20 ... OK BUY position=25.00% posture=bullish
+[74/127] AMZN 2023-01-23 ... OK HOLD position=0.00% posture=cautious
+[75/127] AMZN 2023-01-24 ... OK BUY position=25.00% posture=bullish
+[76/127] AMZN 2023-01-25 ... OK BUY position=25.00% posture=cautious
+[77/127] AMZN 2023-01-26 ... OK BUY position=25.00% posture=cautious bullish
+[78/127] AMZN 2023-01-27 ... OK BUY position=25.00% posture=bullish
+[79/127] AMZN 2023-01-30 ... OK BUY position=25.00% posture=conservative
+[80/127] AMZN 2023-01-31 ... OK BUY position=25.00% posture=bullish
+  [checkpoint: 80/127 tasks saved]
+[81/127] AMZN 2023-02-01 ... OK BUY position=25.00% posture=cautious
+[82/127] AMZN 2023-02-02 ... OK BUY position=25.00% posture=bullish
+[83/127] AMZN 2023-02-03 ... OK BUY position=25.00% posture=bullish
+[84/127] AMZN 2023-02-06 ... OK BUY position=25.00% posture=cautious
+[85/127] AMZN 2023-02-07 ... OK BUY position=25.00% posture=cautious
+[86/127] AMZN 2023-02-09 ... OK HOLD position=0.00% posture=neutral
+[87/127] AMZN 2023-02-08 ... OK BUY position=25.00% posture=cautious
+[88/127] AMZN 2023-02-10 ... OK BUY position=25.00% posture=cautious
+  [checkpoint: 88/127 tasks saved]
+[89/127] AMZN 2023-02-13 ... OK BUY position=25.00% posture=cautious
+[90/127] AMZN 2023-02-14 ... OK HOLD position=0.00% posture=neutral
+[91/127] AMZN 2023-02-15 ... OK BUY position=25.00% posture=bullish
+[92/127] AMZN 2023-02-17 ... OK HOLD position=0.00% posture=neutral
+[93/127] AMZN 2023-02-16 ... OK HOLD position=0.00% posture=neutral
+[94/127] AMZN 2023-02-21 ... OK HOLD position=0.00% posture=neutral
+[95/127] AMZN 2023-02-22 ... OK BUY position=25.00% posture=cautious
+[96/127] AMZN 2023-02-23 ... OK HOLD position=0.00% posture=neutral
+  [checkpoint: 96/127 tasks saved]
+[97/127] AMZN 2023-02-24 ... OK HOLD position=0.00% posture=neutral
+[98/127] AMZN 2023-02-27 ... OK HOLD position=0.00% posture=neutral
+[99/127] AMZN 2023-02-28 ... OK HOLD position=0.00% posture=neutral
+[100/127] AMZN 2023-03-01 ... OK HOLD position=0.00% posture=neutral
+[101/127] AMZN 2023-03-02 ... OK HOLD position=0.00% posture=neutral
+[102/127] AMZN 2023-03-03 ... 

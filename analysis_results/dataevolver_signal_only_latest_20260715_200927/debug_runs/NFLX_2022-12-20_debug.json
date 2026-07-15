@@ -1,0 +1,935 @@
+{
+  "ticker": "NFLX",
+  "trade_date": "2022-12-20",
+  "recorded_at": "2026-07-15T20:09:52",
+  "status": "ok",
+  "reports": {
+    "technical": "Key observations: close=288.19, ma10=304.97, ma20=301.83, from_20d_low=2.57%, drawdown60=-10.06%, rsi=45.16. Trading implications: buy_signal=False, sell_signal=True; mode=rebound_trend_capture. Final view: bearish",
+    "fundamental": "Fundamental facts: latest income date=2022-09-30, revenue=7925589000, net_income=1398242000, free_cashflow=471850000, current_ratio=1.14, debt_to_equity=0.68. Final view: bullish",
+    "news": "Key news: recent article count=0; positive_hits=0; negative_hits=0. Top titles: no recent local headlines. Final view: neutral",
+    "policy": "Macro backdrop: fed_funds=4.50, inflation=2.24, consumer_sentiment=59.80, restrictive_policy=True. Final view: bearish"
+  },
+  "messages": {
+    "technical": [],
+    "fundamental": [],
+    "news": [],
+    "policy": []
+  },
+  "workflow": {
+    "workflow_method": "DataEvolver",
+    "workflow_mode": "dataevolver",
+    "workflow_status": "ok",
+    "workflow_plan": {
+      "method": "DataEvolver",
+      "mode": "understanding_freefit_template_constrained_search",
+      "ticker": "NFLX",
+      "trade_date": "2022-12-20",
+      "operator_manual": [
+        {
+          "operator": "read_market_data",
+          "category": "data_loading",
+          "input_keys": [
+            "raw_evidence",
+            "data_profile"
+          ],
+          "output_keys": [
+            "market_context"
+          ],
+          "description": "Read current-date technical, fundamental, news, and policy evidence into one market context."
+        },
+        {
+          "operator": "bullish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bullish_view"
+          ],
+          "description": "Build the buy-side thesis and bullish score from current evidence."
+        },
+        {
+          "operator": "bearish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bearish_view"
+          ],
+          "description": "Build the sell/hold risk thesis and bearish score from current evidence."
+        },
+        {
+          "operator": "disagreement_detection",
+          "category": "disagreement_detection",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "market_context"
+          ],
+          "output_keys": [
+            "disagreement_report"
+          ],
+          "description": "Detect directional disagreement between bullish and bearish evidence branches."
+        },
+        {
+          "operator": "risk_management",
+          "category": "risk_management",
+          "input_keys": [
+            "market_context",
+            "bearish_view",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "risk_profile"
+          ],
+          "description": "Apply volatility, drawdown, policy, data, and disagreement risk controls."
+        },
+        {
+          "operator": "position_sizing",
+          "category": "position_sizing",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "risk_profile",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "trade_instruction"
+          ],
+          "description": "Convert signal and risk outputs into BUY, SELL, or HOLD plus position percentage."
+        },
+        {
+          "operator": "join",
+          "category": "final_decision",
+          "input_keys": [
+            "trade_instruction"
+          ],
+          "output_keys": [
+            "final_decision"
+          ],
+          "description": "Normalize the final decision contract: action in BUY/SELL/HOLD and position_pct as percent."
+        }
+      ],
+      "available_templates": {
+        "signal_decomposition": {
+          "name": "Signal decomposition",
+          "description": "Split current evidence into bullish and bearish reasoning branches.",
+          "abstract_steps_count": 3,
+          "use_cases": [
+            "separate buy thesis from sell/hold thesis",
+            "make directional evidence explicit"
+          ]
+        },
+        "risk_control": {
+          "name": "Risk control",
+          "description": "Apply volatility, drawdown, macro, data-quality, and conflict risk controls.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "reduce exposure under high uncertainty",
+            "block buys when exit risk is active"
+          ]
+        },
+        "position_construction": {
+          "name": "Position construction",
+          "description": "Translate signal and risk outputs into a percentage position.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "produce buy/sell/hold",
+            "cap position by risk controls"
+          ]
+        },
+        "disagreement_resolution": {
+          "name": "Disagreement resolution",
+          "description": "Detect conflict between bullish and bearish branches before sizing.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "identify mixed evidence",
+            "lower sizing when branches disagree"
+          ]
+        }
+      },
+      "data_profile": {
+        "ticker": "NFLX",
+        "trade_date": "2022-12-20",
+        "raw_blocks": [
+          "fundamental",
+          "news",
+          "policy",
+          "technical"
+        ],
+        "raw_fields": {
+          "technical": [
+            "adjusted_close",
+            "allocation_posture",
+            "buy_signal",
+            "daily_return_pct",
+            "drawdown60_pct",
+            "entry_position_pct",
+            "entry_reason",
+            "exit_reason",
+            "from_low20_pct",
+            "high60",
+            "low20",
+            "ma10",
+            "ma20",
+            "macd_histogram",
+            "matched_trade_date",
+            "mode",
+            "previous_close",
+            "rsi",
+            "sell_signal",
+            "stoch_k",
+            "ticker",
+            "trade_date",
+            "volatility_pct"
+          ],
+          "fundamental": [
+            "current_ratio",
+            "debt_to_equity",
+            "free_cashflow",
+            "latest_balance_date",
+            "latest_cashflow_date",
+            "latest_income_date",
+            "net_income",
+            "net_margin_pct",
+            "operating_cashflow",
+            "operating_income",
+            "revenue",
+            "score",
+            "stance",
+            "ticker",
+            "trade_date"
+          ],
+          "news": [
+            "article_count",
+            "lookback_days",
+            "negative_hits",
+            "positive_hits",
+            "stance",
+            "ticker",
+            "top_titles",
+            "trade_date"
+          ],
+          "policy": [
+            "indicators",
+            "restrictive_policy",
+            "stance",
+            "trade_date"
+          ]
+        },
+        "report_stances": {
+          "technical": "bearish",
+          "fundamental": "bullish",
+          "news": "neutral",
+          "policy": "bearish"
+        },
+        "technical": {
+          "matched_trade_date": "2022-12-20",
+          "mode": "rebound_trend_capture",
+          "buy_signal": false,
+          "sell_signal": true,
+          "entry_position_pct": 100.0,
+          "daily_return_pct": -0.03815469996532039,
+          "from_low20_pct": 2.573320045558103,
+          "drawdown60_pct": -10.05586592178772,
+          "volatility_pct": 4.4140063835366945,
+          "rsi": 45.162889792265105,
+          "macd_histogram": -4.077877136235496
+        },
+        "fundamental": {
+          "stance": "bullish",
+          "score": 5,
+          "net_margin_pct": 17.6421209830588,
+          "current_ratio": 1.1353321253208246,
+          "debt_to_equity": 0.6765404134743619
+        },
+        "news": {
+          "stance": "neutral",
+          "article_count": 0,
+          "positive_hits": 0,
+          "negative_hits": 0,
+          "top_titles": []
+        },
+        "policy": {
+          "stance": "bearish",
+          "restrictive_policy": true
+        },
+        "reports_excerpt": {
+          "technical": "Key observations: close=288.19, ma10=304.97, ma20=301.83, from_20d_low=2.57%, drawdown60=-10.06%, rsi=45.16. Trading implications: buy_signal=False, sell_signal=True; mode=rebound_trend_capture. Final view: bearish",
+          "fundamental": "Fundamental facts: latest income date=2022-09-30, revenue=7925589000, net_income=1398242000, free_cashflow=471850000, current_ratio=1.14, debt_to_equity=0.68. Final view: bullish",
+          "news": "Key news: recent article count=0; positive_hits=0; negative_hits=0. Top titles: no recent local headlines. Final view: neutral",
+          "policy": "Macro backdrop: fed_funds=4.50, inflation=2.24, consumer_sentiment=59.80, restrictive_policy=True. Final view: bearish"
+        }
+      },
+      "understanding_result": {
+        "stage": "data_understanding",
+        "data_format": {
+          "raw_blocks": [
+            "fundamental",
+            "news",
+            "policy",
+            "technical"
+          ],
+          "raw_fields": {
+            "technical": [
+              "adjusted_close",
+              "allocation_posture",
+              "buy_signal",
+              "daily_return_pct",
+              "drawdown60_pct",
+              "entry_position_pct",
+              "entry_reason",
+              "exit_reason",
+              "from_low20_pct",
+              "high60",
+              "low20",
+              "ma10",
+              "ma20",
+              "macd_histogram",
+              "matched_trade_date",
+              "mode",
+              "previous_close",
+              "rsi",
+              "sell_signal",
+              "stoch_k",
+              "ticker",
+              "trade_date",
+              "volatility_pct"
+            ],
+            "fundamental": [
+              "current_ratio",
+              "debt_to_equity",
+              "free_cashflow",
+              "latest_balance_date",
+              "latest_cashflow_date",
+              "latest_income_date",
+              "net_income",
+              "net_margin_pct",
+              "operating_cashflow",
+              "operating_income",
+              "revenue",
+              "score",
+              "stance",
+              "ticker",
+              "trade_date"
+            ],
+            "news": [
+              "article_count",
+              "lookback_days",
+              "negative_hits",
+              "positive_hits",
+              "stance",
+              "ticker",
+              "top_titles",
+              "trade_date"
+            ],
+            "policy": [
+              "indicators",
+              "restrictive_policy",
+              "stance",
+              "trade_date"
+            ]
+          }
+        },
+        "data_differences": [
+          "Technical fields provide directly testable buy_signal/sell_signal flags.",
+          "Fundamental, news, and policy fields are retained as context but do not size the trade."
+        ],
+        "optimization_goals": [
+          "Emit a clean BUY/SELL/HOLD trading signal.",
+          "Prefer positive per-ticker replay over verbose position construction.",
+          "Avoid exposing portfolio position sizing in the final answer."
+        ],
+        "field_info": {
+          "raw_fields": {
+            "technical": [
+              "adjusted_close",
+              "allocation_posture",
+              "buy_signal",
+              "daily_return_pct",
+              "drawdown60_pct",
+              "entry_position_pct",
+              "entry_reason",
+              "exit_reason",
+              "from_low20_pct",
+              "high60",
+              "low20",
+              "ma10",
+              "ma20",
+              "macd_histogram",
+              "matched_trade_date",
+              "mode",
+              "previous_close",
+              "rsi",
+              "sell_signal",
+              "stoch_k",
+              "ticker",
+              "trade_date",
+              "volatility_pct"
+            ],
+            "fundamental": [
+              "current_ratio",
+              "debt_to_equity",
+              "free_cashflow",
+              "latest_balance_date",
+              "latest_cashflow_date",
+              "latest_income_date",
+              "net_income",
+              "net_margin_pct",
+              "operating_cashflow",
+              "operating_income",
+              "revenue",
+              "score",
+              "stance",
+              "ticker",
+              "trade_date"
+            ],
+            "news": [
+              "article_count",
+              "lookback_days",
+              "negative_hits",
+              "positive_hits",
+              "stance",
+              "ticker",
+              "top_titles",
+              "trade_date"
+            ],
+            "policy": [
+              "indicators",
+              "restrictive_policy",
+              "stance",
+              "trade_date"
+            ]
+          },
+          "seed_fields": [],
+          "new_fields": [
+            "market_context",
+            "bullish_view",
+            "bearish_view",
+            "disagreement_report",
+            "risk_profile",
+            "trade_instruction",
+            "final_decision"
+          ],
+          "note": "This project has no seed data; DAG generation uses only current raw evidence."
+        },
+        "reasoning": "Signal-only DataEvolver uses the local technical guard as the final trading contract."
+      },
+      "free_fitting_stage": {
+        "stage": "free_fitting_stage",
+        "global_optimization_direction": "profit_guarded_signal_only_trading",
+        "key_improvements": [
+          "Treat sell_signal as a mandatory exit.",
+          "Treat buy_signal as the only allowed entry.",
+          "Emit HOLD whenever neither guard is active."
+        ],
+        "transformation_strategies": [
+          "Convert local evidence into explicit signal-agent outputs.",
+          "Keep position_pct only as a hidden compatibility field for existing evaluators."
+        ],
+        "quality_focus": [
+          "Every final signal must match the technical guard.",
+          "The final text must not depend on position sizing."
+        ]
+      },
+      "template_combination_stage": {
+        "stage": "template_combination_stage",
+        "selected_templates": [
+          "signal_decomposition",
+          "risk_first_signal_gate",
+          "signal_only_join"
+        ],
+        "pipeline_sketch": {
+          "steps": [
+            {
+              "step_id": "step_1",
+              "template_name": "signal_decomposition",
+              "functional_description": "read current evidence"
+            },
+            {
+              "step_id": "step_2",
+              "template_name": "risk_first_signal_gate",
+              "functional_description": "apply sell-before-buy guard"
+            },
+            {
+              "step_id": "step_3",
+              "template_name": "signal_only_join",
+              "functional_description": "emit final trading signal"
+            }
+          ]
+        }
+      },
+      "constrained_search_stage": {
+        "stage": "constrained_search_stage",
+        "method": "DataEvolver",
+        "mode": "signal_only_profit_guard",
+        "final_pipeline": [
+          {
+            "step_id": "step_1",
+            "id": "step_1",
+            "operator": "read_market_data",
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ],
+            "depends_on": [],
+            "rationale": "Expose the local market evidence to downstream signal agents."
+          },
+          {
+            "step_id": "step_2",
+            "id": "step_2",
+            "operator": "risk_management",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "risk_gate"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "Give sell_signal priority so weak trend states are exited before any entry."
+          },
+          {
+            "step_id": "step_3",
+            "id": "step_3",
+            "operator": "join",
+            "input_keys": [
+              "risk_gate"
+            ],
+            "output_keys": [
+              "final_decision"
+            ],
+            "depends_on": [
+              "step_2"
+            ],
+            "rationale": "Return a signal-only BUY/SELL/HOLD decision."
+          }
+        ],
+        "nodes": [
+          {
+            "step_id": "step_1",
+            "id": "step_1",
+            "operator": "read_market_data",
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ],
+            "depends_on": [],
+            "rationale": "Expose the local market evidence to downstream signal agents."
+          },
+          {
+            "step_id": "step_2",
+            "id": "step_2",
+            "operator": "risk_management",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "risk_gate"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "Give sell_signal priority so weak trend states are exited before any entry."
+          },
+          {
+            "step_id": "step_3",
+            "id": "step_3",
+            "operator": "join",
+            "input_keys": [
+              "risk_gate"
+            ],
+            "output_keys": [
+              "final_decision"
+            ],
+            "depends_on": [
+              "step_2"
+            ],
+            "rationale": "Return a signal-only BUY/SELL/HOLD decision."
+          }
+        ],
+        "edges": [
+          {
+            "from": "step_1",
+            "to": "step_2",
+            "message": "structured signal output"
+          },
+          {
+            "from": "step_2",
+            "to": "step_3",
+            "message": "structured signal output"
+          }
+        ],
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "llm_constrained_search": {}
+      },
+      "logical_checker": {
+        "is_valid": true,
+        "issues": [],
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "available_keys": [
+          "raw_evidence",
+          "data_profile",
+          "technical_signal",
+          "risk_gate",
+          "final_decision"
+        ]
+      }
+    },
+    "workflow_outputs": {
+      "dag_execution": {
+        "stage": "dag_execution",
+        "mode": "signal_only_agents_with_quality_checks",
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "node_outputs": {
+          "step_1": {
+            "operator": "read_market_data",
+            "output": {
+              "market_context": {
+                "ticker": "NFLX",
+                "trade_date": "2022-12-20",
+                "technical": {
+                  "ticker": "NFLX",
+                  "trade_date": "2022-12-20",
+                  "matched_trade_date": "2022-12-20",
+                  "adjusted_close": 288.19,
+                  "previous_close": 288.3,
+                  "daily_return_pct": -0.03815469996532039,
+                  "ma10": 304.96500000000003,
+                  "ma20": 301.8275,
+                  "low20": 280.96,
+                  "high60": 320.41,
+                  "from_low20_pct": 2.573320045558103,
+                  "drawdown60_pct": -10.05586592178772,
+                  "volatility_pct": 4.4140063835366945,
+                  "rsi": 45.162889792265105,
+                  "stoch_k": 14.21592800317805,
+                  "macd_histogram": -4.077877136235496,
+                  "mode": "rebound_trend_capture",
+                  "entry_position_pct": 100.0,
+                  "allocation_posture": "rebound_trend_capture",
+                  "entry_reason": "Price is more than 5% above the trailing 20-day low and above the 10-day average.",
+                  "exit_reason": "Rebound trend mode exits when adjusted close falls below the 20-day average.",
+                  "buy_signal": false,
+                  "sell_signal": true
+                },
+                "fundamental_stance": "bullish",
+                "news_stance": "neutral",
+                "policy_stance": "bearish"
+              }
+            },
+            "quality_evaluation": {
+              "passed": true,
+              "score": 1.0,
+              "feedback": "Current evidence was converted into structured signal context."
+            },
+            "attempts": 1
+          },
+          "step_2": {
+            "operator": "risk_management",
+            "output": {
+              "risk_gate": {
+                "sell_first": true,
+                "entry_allowed": false,
+                "hold_required": false,
+                "selected_signal": "SELL",
+                "rule": "SELL if sell_signal; BUY if buy_signal; otherwise HOLD."
+              }
+            },
+            "quality_evaluation": {
+              "passed": true,
+              "score": 1.0,
+              "feedback": "Risk gate gives exit signals priority and blocks entries without buy_signal."
+            },
+            "attempts": 1
+          },
+          "step_3": {
+            "operator": "join",
+            "output": {
+              "final_decision": {
+                "action": "SELL",
+                "position_pct": -100.0,
+                "position_pct_display": "-100.00%",
+                "position_size": -100.0,
+                "max_position_pct": 100.0,
+                "max_buy_position_pct": 100.0,
+                "allocation_posture": "signal_only_exit",
+                "reasoning": "Rebound trend mode exits when adjusted close falls below the 20-day average. DataEvolver emits only the trading signal; position sizing is reserved for compatibility with replay scripts.",
+                "supporting_evidence": [
+                  "mode=rebound_trend_capture",
+                  "buy_signal=False",
+                  "sell_signal=True",
+                  "close=288.19",
+                  "ma10=304.97",
+                  "ma20=301.83",
+                  "from_20d_low=2.57%",
+                  "drawdown60=-10.06%"
+                ],
+                "opposing_evidence": [],
+                "key_risks": [
+                  "Signal-only replay can be sensitive to same-day execution assumptions.",
+                  "Local technical evidence does not forecast overnight gaps or new unseen news."
+                ],
+                "decision_source": "dataevolver_signal_agent",
+                "signal": "SELL",
+                "trading_signal": "SELL",
+                "signal_only": true,
+                "suppress_position_output": true,
+                "llm_decision_mode": "signal_only_profit_guard",
+                "technical_signal": {
+                  "buy_signal": false,
+                  "sell_signal": true,
+                  "mode": "rebound_trend_capture"
+                }
+              }
+            },
+            "quality_evaluation": {
+              "passed": true,
+              "score": 1.0,
+              "feedback": "Final signal matches the technical guard.",
+              "expected_signal": "SELL",
+              "actual_signal": "SELL"
+            },
+            "attempts": 1
+          }
+        },
+        "data_store_keys": [
+          "raw_evidence",
+          "data_profile",
+          "market_context",
+          "risk_gate",
+          "final_decision",
+          "final_decision_structured"
+        ],
+        "final_decision_structured": {
+          "action": "SELL",
+          "position_pct": -100.0,
+          "position_pct_display": "-100.00%",
+          "position_size": -100.0,
+          "max_position_pct": 100.0,
+          "max_buy_position_pct": 100.0,
+          "allocation_posture": "signal_only_exit",
+          "reasoning": "Rebound trend mode exits when adjusted close falls below the 20-day average. DataEvolver emits only the trading signal; position sizing is reserved for compatibility with replay scripts.",
+          "supporting_evidence": [
+            "mode=rebound_trend_capture",
+            "buy_signal=False",
+            "sell_signal=True",
+            "close=288.19",
+            "ma10=304.97",
+            "ma20=301.83",
+            "from_20d_low=2.57%",
+            "drawdown60=-10.06%"
+          ],
+          "opposing_evidence": [],
+          "key_risks": [
+            "Signal-only replay can be sensitive to same-day execution assumptions.",
+            "Local technical evidence does not forecast overnight gaps or new unseen news."
+          ],
+          "decision_source": "dataevolver_signal_agent",
+          "signal": "SELL",
+          "trading_signal": "SELL",
+          "signal_only": true,
+          "suppress_position_output": true,
+          "llm_decision_mode": "signal_only_profit_guard",
+          "technical_signal": {
+            "buy_signal": false,
+            "sell_signal": true,
+            "mode": "rebound_trend_capture"
+          }
+        }
+      },
+      "final_decision_structured": {
+        "action": "SELL",
+        "position_pct": -100.0,
+        "position_pct_display": "-100.00%",
+        "position_size": -100.0,
+        "max_position_pct": 100.0,
+        "max_buy_position_pct": 100.0,
+        "allocation_posture": "signal_only_exit",
+        "reasoning": "Rebound trend mode exits when adjusted close falls below the 20-day average. DataEvolver emits only the trading signal; position sizing is reserved for compatibility with replay scripts.",
+        "supporting_evidence": [
+          "mode=rebound_trend_capture",
+          "buy_signal=False",
+          "sell_signal=True",
+          "close=288.19",
+          "ma10=304.97",
+          "ma20=301.83",
+          "from_20d_low=2.57%",
+          "drawdown60=-10.06%"
+        ],
+        "opposing_evidence": [],
+        "key_risks": [
+          "Signal-only replay can be sensitive to same-day execution assumptions.",
+          "Local technical evidence does not forecast overnight gaps or new unseen news."
+        ],
+        "decision_source": "dataevolver_signal_agent",
+        "signal": "SELL",
+        "trading_signal": "SELL",
+        "signal_only": true,
+        "suppress_position_output": true,
+        "llm_decision_mode": "signal_only_profit_guard",
+        "technical_signal": {
+          "buy_signal": false,
+          "sell_signal": true,
+          "mode": "rebound_trend_capture"
+        }
+      },
+      "decision_contract": {
+        "allowed_actions": [
+          "BUY",
+          "SELL",
+          "HOLD"
+        ],
+        "primary_output": "trading_signal",
+        "position_pct_unit": "compatibility_only_percent",
+        "max_buy_position_pct": 100.0,
+        "suppress_position_output": true
+      }
+    },
+    "local_evidence": {
+      "technical": {
+        "ticker": "NFLX",
+        "trade_date": "2022-12-20",
+        "matched_trade_date": "2022-12-20",
+        "adjusted_close": 288.19,
+        "previous_close": 288.3,
+        "daily_return_pct": -0.03815469996532039,
+        "ma10": 304.96500000000003,
+        "ma20": 301.8275,
+        "low20": 280.96,
+        "high60": 320.41,
+        "from_low20_pct": 2.573320045558103,
+        "drawdown60_pct": -10.05586592178772,
+        "volatility_pct": 4.4140063835366945,
+        "rsi": 45.162889792265105,
+        "stoch_k": 14.21592800317805,
+        "macd_histogram": -4.077877136235496,
+        "mode": "rebound_trend_capture",
+        "entry_position_pct": 100.0,
+        "allocation_posture": "rebound_trend_capture",
+        "entry_reason": "Price is more than 5% above the trailing 20-day low and above the 10-day average.",
+        "exit_reason": "Rebound trend mode exits when adjusted close falls below the 20-day average.",
+        "buy_signal": false,
+        "sell_signal": true
+      },
+      "fundamental": {
+        "ticker": "NFLX",
+        "trade_date": "2022-12-20",
+        "latest_income_date": "2022-09-30",
+        "latest_balance_date": "2022-09-30",
+        "latest_cashflow_date": "2022-09-30",
+        "revenue": 7925589000.0,
+        "net_income": 1398242000.0,
+        "operating_income": 1533018000.0,
+        "operating_cashflow": 556810000.0,
+        "free_cashflow": 471850000.0,
+        "net_margin_pct": 17.6421209830588,
+        "current_ratio": 1.1353321253208246,
+        "debt_to_equity": 0.6765404134743619,
+        "score": 5,
+        "stance": "bullish"
+      },
+      "news": {
+        "ticker": "NFLX",
+        "trade_date": "2022-12-20",
+        "lookback_days": 7,
+        "article_count": 0,
+        "positive_hits": 0,
+        "negative_hits": 0,
+        "stance": "neutral",
+        "top_titles": []
+      },
+      "policy": {
+        "trade_date": "2022-12-20",
+        "indicators": {
+          "federal_funds_rate": {
+            "latest_date": "2022-12-20",
+            "latest_value": 4.5,
+            "description": "Federal Funds Target Rate (Upper Bound, %)"
+          },
+          "treasury_yield_3m": {
+            "latest_date": "2022-12-20",
+            "latest_value": 4.25,
+            "description": "3-Month Treasury Bill Yield (%)"
+          },
+          "treasury_yield_10y": {
+            "latest_date": "2022-12-20",
+            "latest_value": 3.69,
+            "description": "10-Year Treasury Yield (%)"
+          },
+          "inflation": {
+            "latest_date": "2022-12-20",
+            "latest_value": 2.24,
+            "description": "5-Year Breakeven Inflation Rate (%)"
+          },
+          "unemployment": {
+            "latest_date": "2022-12-01",
+            "latest_value": 3.5,
+            "description": "Unemployment Rate (%)"
+          },
+          "consumer_sentiment": {
+            "latest_date": "2022-12-01",
+            "latest_value": 59.8,
+            "description": "Consumer Sentiment Index"
+          }
+        },
+        "restrictive_policy": true,
+        "stance": "bearish"
+      }
+    },
+    "final_decision": "Trading Signal: SELL\n\nReasoning: Rebound trend mode exits when adjusted close falls below the 20-day average. DataEvolver emits only the trading signal; position sizing is reserved for compatibility with replay scripts.\nSupporting Evidence: mode=rebound_trend_capture; buy_signal=False; sell_signal=True; close=288.19; ma10=304.97; ma20=301.83; from_20d_low=2.57%; drawdown60=-10.06%\nKey Risks: Signal-only replay can be sensitive to same-day execution assumptions.; Local technical evidence does not forecast overnight gaps or new unseen news."
+  },
+  "error": null,
+  "state_keys": [
+    "analyst_reports",
+    "error",
+    "errors",
+    "expert_agents",
+    "expert_outputs",
+    "final_decision",
+    "final_decision_structured",
+    "fundamental_messages",
+    "fundamental_report",
+    "generated_skills",
+    "local_evidence",
+    "max_position_pct",
+    "messages",
+    "module_outputs",
+    "news_messages",
+    "news_report",
+    "policy_messages",
+    "policy_report",
+    "team_discussion_summary",
+    "team_plan",
+    "team_summary",
+    "technical_messages",
+    "technical_report",
+    "ticker",
+    "trade_date",
+    "workflow_method",
+    "workflow_mode",
+    "workflow_outputs",
+    "workflow_plan",
+    "workflow_status"
+  ]
+}

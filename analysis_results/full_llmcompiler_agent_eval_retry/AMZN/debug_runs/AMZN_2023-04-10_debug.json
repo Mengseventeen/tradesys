@@ -1,0 +1,1308 @@
+{
+  "ticker": "AMZN",
+  "trade_date": "2023-04-10",
+  "recorded_at": "2026-07-13T23:54:29",
+  "status": "ok",
+  "reports": {
+    "technical": "Key observations: close=102.17, ma10=101.25, ma20=99.44, from_20d_low=10.54%, drawdown60=-9.51%, rsi=58.07. Trading implications: buy_signal=True, sell_signal=False; mode=rebound_trend_capture. Final view: bullish",
+    "fundamental": "Fundamental facts: latest income date=2023-03-31, revenue=127358000000, net_income=3172000000, free_cashflow=-9419000000, current_ratio=0.92, debt_to_equity=0.43. Final view: neutral",
+    "news": "Key news: recent article count=82; positive_hits=60; negative_hits=16. Top titles: Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to; Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production ; US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq <.IXIC> led losses among the major indexes after the long weekend, with gr; Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge. That’s an unusually hi; Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN, Microsoft M. Final view: bullish",
+    "policy": "Macro backdrop: fed_funds=5.00, inflation=2.27, consumer_sentiment=63.70, restrictive_policy=True. Final view: bearish"
+  },
+  "messages": {
+    "technical": [],
+    "fundamental": [],
+    "news": [],
+    "policy": []
+  },
+  "workflow": {
+    "workflow_method": "LLMCompiler",
+    "workflow_mode": "llmcompiler",
+    "workflow_status": "ok",
+    "workflow_plan": {
+      "method": "LLMCompiler",
+      "planner": "few_shot_text_function_calling_planner",
+      "parser": "regex_extract_dollar_id_function_calls",
+      "task_fetching": "dependency_ready_parallel_layers",
+      "joiner": "join_agent",
+      "ticker": "AMZN",
+      "trade_date": "2023-04-10",
+      "data_profile": {
+        "ticker": "AMZN",
+        "trade_date": "2023-04-10",
+        "raw_blocks": [
+          "fundamental",
+          "news",
+          "policy",
+          "technical"
+        ],
+        "raw_fields": {
+          "technical": [
+            "adjusted_close",
+            "allocation_posture",
+            "buy_signal",
+            "daily_return_pct",
+            "drawdown60_pct",
+            "entry_position_pct",
+            "entry_reason",
+            "exit_reason",
+            "from_low20_pct",
+            "high60",
+            "low20",
+            "ma10",
+            "ma20",
+            "macd_histogram",
+            "matched_trade_date",
+            "mode",
+            "previous_close",
+            "rsi",
+            "sell_signal",
+            "stoch_k",
+            "ticker",
+            "trade_date",
+            "volatility_pct"
+          ],
+          "fundamental": [
+            "current_ratio",
+            "debt_to_equity",
+            "free_cashflow",
+            "latest_balance_date",
+            "latest_cashflow_date",
+            "latest_income_date",
+            "net_income",
+            "net_margin_pct",
+            "operating_cashflow",
+            "operating_income",
+            "revenue",
+            "score",
+            "stance",
+            "ticker",
+            "trade_date"
+          ],
+          "news": [
+            "article_count",
+            "lookback_days",
+            "negative_hits",
+            "positive_hits",
+            "stance",
+            "ticker",
+            "top_titles",
+            "trade_date"
+          ],
+          "policy": [
+            "indicators",
+            "restrictive_policy",
+            "stance",
+            "trade_date"
+          ]
+        },
+        "report_stances": {
+          "technical": "bullish",
+          "fundamental": "neutral",
+          "news": "bullish",
+          "policy": "bearish"
+        },
+        "technical": {
+          "matched_trade_date": "2023-04-10",
+          "mode": "rebound_trend_capture",
+          "buy_signal": true,
+          "sell_signal": false,
+          "entry_position_pct": 100.0,
+          "daily_return_pct": 0.10777973740936364,
+          "from_low20_pct": 10.53770420859028,
+          "drawdown60_pct": -9.512000708528912,
+          "volatility_pct": 2.794325592228493,
+          "rsi": 58.0743007915715,
+          "macd_histogram": 0.3055716989365562
+        },
+        "fundamental": {
+          "stance": "neutral",
+          "score": 1,
+          "net_margin_pct": 2.4906170008951145,
+          "current_ratio": 0.9230941248221183,
+          "debt_to_equity": 0.434127590178999
+        },
+        "news": {
+          "stance": "bullish",
+          "article_count": 82,
+          "positive_hits": 60,
+          "negative_hits": 16,
+          "top_titles": [
+            "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to",
+            "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production ",
+            "US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq <.IXIC> led losses among the major indexes after the long weekend, with gr",
+            "Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge. That’s an unusually hi",
+            "Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN, Microsoft M"
+          ]
+        },
+        "policy": {
+          "stance": "bearish",
+          "restrictive_policy": true
+        },
+        "reports_excerpt": {
+          "technical": "Key observations: close=102.17, ma10=101.25, ma20=99.44, from_20d_low=10.54%, drawdown60=-9.51%, rsi=58.07. Trading implications: buy_signal=True, sell_signal=False; mode=rebound_trend_capture. Final view: bullish",
+          "fundamental": "Fundamental facts: latest income date=2023-03-31, revenue=127358000000, net_income=3172000000, free_cashflow=-9419000000, current_ratio=0.92, debt_to_equity=0.43. Final view: neutral",
+          "news": "Key news: recent article count=82; positive_hits=60; negative_hits=16. Top titles: Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to; Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production ; US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq <.IXIC> led losses among the major indexes after the long weekend, with gr; Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge. That’s an unusually hi; Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN, Microsoft M. Final v\n...[truncated]",
+          "policy": "Macro backdrop: fed_funds=5.00, inflation=2.27, consumer_sentiment=63.70, restrictive_policy=True. Final view: bearish"
+        }
+      },
+      "operator_manual": [
+        {
+          "operator": "read_market_data",
+          "category": "data_loading",
+          "input_keys": [
+            "raw_evidence",
+            "data_profile"
+          ],
+          "output_keys": [
+            "market_context"
+          ],
+          "description": "Read current-date technical, fundamental, news, and policy evidence into one market context."
+        },
+        {
+          "operator": "bullish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bullish_view"
+          ],
+          "description": "Build the buy-side thesis and bullish score from current evidence."
+        },
+        {
+          "operator": "bearish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bearish_view"
+          ],
+          "description": "Build the sell/hold risk thesis and bearish score from current evidence."
+        },
+        {
+          "operator": "disagreement_detection",
+          "category": "disagreement_detection",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "market_context"
+          ],
+          "output_keys": [
+            "disagreement_report"
+          ],
+          "description": "Detect directional disagreement between bullish and bearish evidence branches."
+        },
+        {
+          "operator": "risk_management",
+          "category": "risk_management",
+          "input_keys": [
+            "market_context",
+            "bearish_view",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "risk_profile"
+          ],
+          "description": "Apply volatility, drawdown, policy, data, and disagreement risk controls."
+        },
+        {
+          "operator": "position_sizing",
+          "category": "position_sizing",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "risk_profile",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "trade_instruction"
+          ],
+          "description": "Convert signal and risk outputs into BUY, SELL, or HOLD plus position percentage."
+        },
+        {
+          "operator": "join",
+          "category": "final_decision",
+          "input_keys": [
+            "trade_instruction"
+          ],
+          "output_keys": [
+            "final_decision"
+          ],
+          "description": "Normalize the final decision contract: action in BUY/SELL/HOLD and position_pct as percent."
+        }
+      ],
+      "raw_plan_text": "$1 = read_market_data(raw_evidence, data_profile)  \n$2 = bullish_signal($1)  \n$3 = bearish_signal($1)  \n$4 = disagreement_detection($2, $3, $1)  \n$5 = risk_management($1, $3, $4)  \n$6 = position_sizing($2, $3, $5, $4)  \n$7 = join($6)  ",
+      "parser_warnings": [],
+      "nodes": [
+        {
+          "id": "$1",
+          "name": "read_market_data",
+          "tool": "read_market_data",
+          "operator": "read_market_data",
+          "depends_on": [],
+          "input_keys": [
+            "raw_evidence",
+            "data_profile"
+          ],
+          "output_key": "market_context",
+          "output_keys": [
+            "market_context"
+          ],
+          "description": "Read current-date technical, fundamental, news, and policy evidence into one market context."
+        },
+        {
+          "id": "$2",
+          "name": "bullish_signal",
+          "tool": "bullish_signal",
+          "operator": "bullish_signal",
+          "depends_on": [
+            "$1"
+          ],
+          "input_keys": [
+            "market_context"
+          ],
+          "output_key": "bullish_view",
+          "output_keys": [
+            "bullish_view"
+          ],
+          "description": "Build the buy-side thesis and bullish score from current evidence."
+        },
+        {
+          "id": "$3",
+          "name": "bearish_signal",
+          "tool": "bearish_signal",
+          "operator": "bearish_signal",
+          "depends_on": [
+            "$1"
+          ],
+          "input_keys": [
+            "market_context"
+          ],
+          "output_key": "bearish_view",
+          "output_keys": [
+            "bearish_view"
+          ],
+          "description": "Build the sell/hold risk thesis and bearish score from current evidence."
+        },
+        {
+          "id": "$4",
+          "name": "disagreement_detection",
+          "tool": "disagreement_detection",
+          "operator": "disagreement_detection",
+          "depends_on": [
+            "$2",
+            "$3",
+            "$1"
+          ],
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "market_context"
+          ],
+          "output_key": "disagreement_report",
+          "output_keys": [
+            "disagreement_report"
+          ],
+          "description": "Detect directional disagreement between bullish and bearish evidence branches."
+        },
+        {
+          "id": "$5",
+          "name": "risk_management",
+          "tool": "risk_management",
+          "operator": "risk_management",
+          "depends_on": [
+            "$1",
+            "$3",
+            "$4"
+          ],
+          "input_keys": [
+            "market_context",
+            "bearish_view",
+            "disagreement_report"
+          ],
+          "output_key": "risk_profile",
+          "output_keys": [
+            "risk_profile"
+          ],
+          "description": "Apply volatility, drawdown, policy, data, and disagreement risk controls."
+        },
+        {
+          "id": "$6",
+          "name": "position_sizing",
+          "tool": "position_sizing",
+          "operator": "position_sizing",
+          "depends_on": [
+            "$2",
+            "$3",
+            "$5",
+            "$4"
+          ],
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "risk_profile",
+            "disagreement_report"
+          ],
+          "output_key": "trade_instruction",
+          "output_keys": [
+            "trade_instruction"
+          ],
+          "description": "Convert signal and risk outputs into BUY, SELL, or HOLD plus position percentage."
+        },
+        {
+          "id": "$7",
+          "name": "join",
+          "tool": "join",
+          "operator": "join",
+          "depends_on": [
+            "$6"
+          ],
+          "input_keys": [
+            "trade_instruction"
+          ],
+          "output_key": "final_decision",
+          "output_keys": [
+            "final_decision"
+          ],
+          "description": "Normalize the final decision contract: action in BUY/SELL/HOLD and position_pct as percent."
+        }
+      ],
+      "edges": [
+        {
+          "from": "$1",
+          "to": "$2",
+          "message": "agent output"
+        },
+        {
+          "from": "$1",
+          "to": "$3",
+          "message": "agent output"
+        },
+        {
+          "from": "$2",
+          "to": "$4",
+          "message": "agent output"
+        },
+        {
+          "from": "$3",
+          "to": "$4",
+          "message": "agent output"
+        },
+        {
+          "from": "$1",
+          "to": "$4",
+          "message": "agent output"
+        },
+        {
+          "from": "$1",
+          "to": "$5",
+          "message": "agent output"
+        },
+        {
+          "from": "$3",
+          "to": "$5",
+          "message": "agent output"
+        },
+        {
+          "from": "$4",
+          "to": "$5",
+          "message": "agent output"
+        },
+        {
+          "from": "$2",
+          "to": "$6",
+          "message": "agent output"
+        },
+        {
+          "from": "$3",
+          "to": "$6",
+          "message": "agent output"
+        },
+        {
+          "from": "$5",
+          "to": "$6",
+          "message": "agent output"
+        },
+        {
+          "from": "$4",
+          "to": "$6",
+          "message": "agent output"
+        },
+        {
+          "from": "$6",
+          "to": "$7",
+          "message": "agent output"
+        }
+      ],
+      "join_task": "$7"
+    },
+    "workflow_outputs": {
+      "compiler_execution": {
+        "outputs_by_task": {
+          "$1": {
+            "task_id": "$1",
+            "task_name": "read_market_data",
+            "tool": "read_market_data",
+            "depends_on": [],
+            "output_key": "market_context",
+            "operator_output": {
+              "market_context": {
+                "report": "As of April 10, 2023, Amazon (AMZN) exhibits a bullish technical posture, supported by a positive news sentiment, while facing a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, reflecting a daily return of approximately 0.11%. The technical indicators suggest a rebound trend capture mode, with a buy signal confirmed due to the price being over 5% above the trailing 20-day low and above the 10-day moving average. However, the fundamental analysis indicates a neutral stance with a net margin of 2.49% and a current ratio of 0.92, suggesting potential liquidity concerns. The news sentiment is bullish, with 60 out of 82 articles being positive, highlighting Amazon's growth in its AWS segment. Conversely, the policy environment is restrictive, with a federal funds rate of 5.0% and a bearish stance, indicating potential headwinds for growth.",
+                "technical": {
+                  "adjusted_close": 102.17,
+                  "previous_close": 102.06,
+                  "daily_return_pct": 0.10777973740936364,
+                  "ma10": 101.251,
+                  "ma20": 99.4435,
+                  "from_low20_pct": 10.53770420859028,
+                  "rsi": 58.0743007915715,
+                  "buy_signal": true,
+                  "sell_signal": false,
+                  "mode": "rebound_trend_capture"
+                },
+                "fundamental": {
+                  "revenue": 127358000000.0,
+                  "net_income": 3172000000.0,
+                  "current_ratio": 0.9230941248221183,
+                  "debt_to_equity": 0.434127590178999,
+                  "net_margin_pct": 2.4906170008951145,
+                  "stance": "neutral"
+                },
+                "news": {
+                  "article_count": 82,
+                  "positive_hits": 60,
+                  "negative_hits": 16,
+                  "stance": "bullish",
+                  "top_titles": [
+                    "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS).",
+                    "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production.",
+                    "US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq led losses among the major indexes after the long weekend.",
+                    "Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge.",
+                    "Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN."
+                  ]
+                },
+                "policy": {
+                  "federal_funds_rate": 5.0,
+                  "restrictive_policy": true,
+                  "stance": "bearish"
+                },
+                "data_quality_notes": []
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output is well-grounded in the inputs, demonstrates fresh reasoning by synthesizing the data into a coherent market context, adheres to the schema, and avoids simple concatenation of upstream report text. No revisions are necessary.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "market_context": {
+                    "report": "As of April 10, 2023, Amazon (AMZN) exhibits a bullish technical posture, supported by a positive news sentiment, while facing a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, reflecting a daily return of approximately 0.11%. The technical indicators suggest a rebound trend capture mode, with a buy signal confirmed due to the price being over 5% above the trailing 20-day low and above the 10-day moving average. However, the fundamental analysis indicates a neutral stance with a net margin of 2.49% and a current ratio of 0.92, suggesting potential liquidity concerns. The news sentiment is bullish, with 60 out of 82 articles being positive, highlighting Amazon's growth in its AWS segment. Conversely, the policy environment is restrictive, with a federal funds rate of 5.0% and a bearish stance, indicating potential headwinds for growth.",
+                    "technical": {
+                      "adjusted_close": 102.17,
+                      "previous_close": 102.06,
+                      "daily_return_pct": 0.10777973740936364,
+                      "ma10": 101.251,
+                      "ma20": 99.4435,
+                      "from_low20_pct": 10.53770420859028,
+                      "rsi": 58.0743007915715,
+                      "buy_signal": true,
+                      "sell_signal": false,
+                      "mode": "rebound_trend_capture"
+                    },
+                    "fundamental": {
+                      "revenue": 127358000000.0,
+                      "net_income": 3172000000.0,
+                      "current_ratio": 0.9230941248221183,
+                      "debt_to_equity": 0.434127590178999,
+                      "net_margin_pct": 2.4906170008951145,
+                      "stance": "neutral"
+                    },
+                    "news": {
+                      "article_count": 82,
+                      "positive_hits": 60,
+                      "negative_hits": 16,
+                      "stance": "bullish",
+                      "top_titles": [
+                        "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS).",
+                        "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production.",
+                        "US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq led losses among the major indexes after the long weekend.",
+                        "Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge.",
+                        "Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN."
+                      ]
+                    },
+                    "policy": {
+                      "federal_funds_rate": 5.0,
+                      "restrictive_policy": true,
+                      "stance": "bearish"
+                    },
+                    "data_quality_notes": []
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output is well-grounded in the inputs, demonstrates fresh reasoning by synthesizing the data into a coherent market context, adheres to the schema, and avoids simple concatenation of upstream report text. No revisions are necessary.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "As of April 10, 2023, Amazon (AMZN) exhibits a bullish technical posture, supported by a positive news sentiment, while facing a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, reflecting a daily return of approximately 0.11%. The technical indicators suggest a rebo\n...[truncated]"
+          },
+          "$2": {
+            "task_id": "$2",
+            "task_name": "bullish_signal",
+            "tool": "bullish_signal",
+            "depends_on": [
+              "$1"
+            ],
+            "output_key": "bullish_view",
+            "operator_output": {
+              "bullish_view": {
+                "report": "Amazon (AMZN) shows a bullish technical posture despite a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, with a daily return of approximately 0.11%. Technical indicators confirm a buy signal, supported by the price being over 5% above the trailing 20-day low and above the 10-day moving average. Positive news sentiment further bolsters the bullish outlook.",
+                "thesis": "The bullish case for Amazon is supported by strong technical indicators and positive news sentiment, suggesting potential for upward price movement.",
+                "supporting_evidence": [
+                  "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                  "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                ],
+                "cautions": [
+                  "Fundamental analysis indicates a neutral stance with a net margin of 2.49% and a current ratio of 0.92, suggesting potential liquidity concerns.",
+                  "The policy environment is restrictive, with a federal funds rate of 5.0%, which could pose headwinds for growth."
+                ],
+                "confidence": 0.75,
+                "action_bias": "BUY"
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output is well-grounded in the inputs, provides fresh reasoning, and adheres to the schema. However, it could be improved by reducing redundancy in the report section and ensuring that all statements are concise and directly tied to the inputs.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "bullish_view": {
+                    "report": "Amazon (AMZN) shows a bullish technical posture despite a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, with a daily return of approximately 0.11%. Technical indicators confirm a buy signal, supported by the price being over 5% above the trailing 20-day low and above the 10-day moving average. Positive news sentiment further bolsters the bullish outlook.",
+                    "thesis": "The bullish case for Amazon is supported by strong technical indicators and positive news sentiment, suggesting potential for upward price movement.",
+                    "supporting_evidence": [
+                      "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                      "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                    ],
+                    "cautions": [
+                      "Fundamental analysis indicates a neutral stance with a net margin of 2.49% and a current ratio of 0.92, suggesting potential liquidity concerns.",
+                      "The policy environment is restrictive, with a federal funds rate of 5.0%, which could pose headwinds for growth."
+                    ],
+                    "confidence": 0.75,
+                    "action_bias": "BUY"
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output is well-grounded in the inputs, provides fresh reasoning, and adheres to the schema. However, it could be improved by reducing redundancy in the report section and ensuring that all statements are concise and directly tied to the inputs.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "Amazon (AMZN) shows a bullish technical posture despite a neutral fundamental stance and a bearish policy environment. The stock's adjusted close is at 102.17, with a daily return of approximately 0.11%. Technical indicators confirm a buy signal, supported by the price being over 5% above the trailing 20-day low and ab\n...[truncated]"
+          },
+          "$3": {
+            "task_id": "$3",
+            "task_name": "bearish_signal",
+            "tool": "bearish_signal",
+            "depends_on": [
+              "$1"
+            ],
+            "output_key": "bearish_view",
+            "operator_output": {
+              "bearish_view": {
+                "report": "The current market context for Amazon (AMZN) presents a mixed outlook, with significant bearish indicators stemming from the policy environment despite some bullish technical signals.",
+                "risk_thesis": "The restrictive policy environment, characterized by a federal funds rate of 5.0%, poses substantial headwinds for growth, overshadowing the positive technical signals.",
+                "risk_evidence": [
+                  "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                  "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations.",
+                  "The net margin of 2.49% is relatively low, indicating that profitability may be under pressure."
+                ],
+                "offsets": [
+                  "The technical indicators show a bullish posture with a confirmed buy signal, as the stock is trading over 5% above the trailing 20-day low and above the 10-day moving average.",
+                  "Positive news sentiment with 60 out of 82 articles being bullish highlights growth in Amazon's AWS segment."
+                ],
+                "confidence": 0.75,
+                "action_bias": "HOLD"
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output is well-grounded in the inputs and provides fresh reasoning by synthesizing the mixed signals from the market context. It effectively satisfies the schema and avoids simple concatenation of upstream report text. Future attempts could enhance clarity by explicitly linking each piece of evidence to the overall bearish view.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "bearish_view": {
+                    "report": "The current market context for Amazon (AMZN) presents a mixed outlook, with significant bearish indicators stemming from the policy environment despite some bullish technical signals.",
+                    "risk_thesis": "The restrictive policy environment, characterized by a federal funds rate of 5.0%, poses substantial headwinds for growth, overshadowing the positive technical signals.",
+                    "risk_evidence": [
+                      "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                      "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations.",
+                      "The net margin of 2.49% is relatively low, indicating that profitability may be under pressure."
+                    ],
+                    "offsets": [
+                      "The technical indicators show a bullish posture with a confirmed buy signal, as the stock is trading over 5% above the trailing 20-day low and above the 10-day moving average.",
+                      "Positive news sentiment with 60 out of 82 articles being bullish highlights growth in Amazon's AWS segment."
+                    ],
+                    "confidence": 0.75,
+                    "action_bias": "HOLD"
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output is well-grounded in the inputs and provides fresh reasoning by synthesizing the mixed signals from the market context. It effectively satisfies the schema and avoids simple concatenation of upstream report text. Future attempts could enhance clarity by explicitly linking each piece of evidence to the overall bearish view.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "The current market context for Amazon (AMZN) presents a mixed outlook, with significant bearish indicators stemming from the policy environment despite some bullish technical signals."
+          },
+          "$4": {
+            "task_id": "$4",
+            "task_name": "disagreement_detection",
+            "tool": "disagreement_detection",
+            "depends_on": [
+              "$2",
+              "$3",
+              "$1"
+            ],
+            "output_key": "disagreement_report",
+            "operator_output": {
+              "disagreement_report": {
+                "report": "The analysis reveals a conflict between bullish and bearish perspectives on Amazon (AMZN). The bullish view emphasizes strong technical indicators and positive news sentiment, suggesting potential for upward price movement. In contrast, the bearish view highlights significant risks stemming from a restrictive policy environment and liquidity concerns, which could limit growth and profitability.",
+                "has_material_disagreement": true,
+                "conflicts": [
+                  "The bullish view supports a buy action based on technical indicators, while the bearish view advocates for a hold due to concerns over the policy environment and liquidity."
+                ],
+                "resolution_guidance": "Given the material disagreement, it is advisable to adopt a cautious approach. Position sizing should be limited to the maximum buy position percentage of 25% to mitigate risk while monitoring the evolving market context."
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output is well-grounded in the inputs, demonstrates fresh reasoning by synthesizing the bullish and bearish views, and adheres to the schema. However, it could be improved by providing more specific examples or data points from the inputs to strengthen the analysis further.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "disagreement_report": {
+                    "report": "The analysis reveals a conflict between bullish and bearish perspectives on Amazon (AMZN). The bullish view emphasizes strong technical indicators and positive news sentiment, suggesting potential for upward price movement. In contrast, the bearish view highlights significant risks stemming from a restrictive policy environment and liquidity concerns, which could limit growth and profitability.",
+                    "has_material_disagreement": true,
+                    "conflicts": [
+                      "The bullish view supports a buy action based on technical indicators, while the bearish view advocates for a hold due to concerns over the policy environment and liquidity."
+                    ],
+                    "resolution_guidance": "Given the material disagreement, it is advisable to adopt a cautious approach. Position sizing should be limited to the maximum buy position percentage of 25% to mitigate risk while monitoring the evolving market context."
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output is well-grounded in the inputs, demonstrates fresh reasoning by synthesizing the bullish and bearish views, and adheres to the schema. However, it could be improved by providing more specific examples or data points from the inputs to strengthen the analysis further.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "The analysis reveals a conflict between bullish and bearish perspectives on Amazon (AMZN). The bullish view emphasizes strong technical indicators and positive news sentiment, suggesting potential for upward price movement. In contrast, the bearish view highlights significant risks stemming from a restrictive policy en\n...[truncated]"
+          },
+          "$5": {
+            "task_id": "$5",
+            "task_name": "risk_management",
+            "tool": "risk_management",
+            "depends_on": [
+              "$1",
+              "$3",
+              "$4"
+            ],
+            "output_key": "risk_profile",
+            "operator_output": {
+              "risk_profile": {
+                "report": "The analysis of Amazon (AMZN) indicates a mixed risk profile due to conflicting bullish and bearish indicators. While technical signals suggest a bullish trend, the restrictive policy environment and liquidity concerns present significant risks.",
+                "risk_level": "medium",
+                "risk_items": [
+                  "Restrictive policy environment limiting growth potential",
+                  "Liquidity concerns indicated by a current ratio of 0.92",
+                  "Low net margin of 2.49% suggesting profitability pressure"
+                ],
+                "sizing_guidance": "Given the material disagreement between bullish and bearish views, position sizing should be limited to a maximum of 25% to mitigate risk while monitoring market developments.",
+                "block_buy": false
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output is well-grounded in the inputs, provides fresh reasoning by synthesizing the conflicting views, and adheres to the schema. However, it could enhance clarity by explicitly stating how the risk level was determined based on the inputs.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "risk_profile": {
+                    "report": "The analysis of Amazon (AMZN) indicates a mixed risk profile due to conflicting bullish and bearish indicators. While technical signals suggest a bullish trend, the restrictive policy environment and liquidity concerns present significant risks.",
+                    "risk_level": "medium",
+                    "risk_items": [
+                      "Restrictive policy environment limiting growth potential",
+                      "Liquidity concerns indicated by a current ratio of 0.92",
+                      "Low net margin of 2.49% suggesting profitability pressure"
+                    ],
+                    "sizing_guidance": "Given the material disagreement between bullish and bearish views, position sizing should be limited to a maximum of 25% to mitigate risk while monitoring market developments.",
+                    "block_buy": false
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output is well-grounded in the inputs, provides fresh reasoning by synthesizing the conflicting views, and adheres to the schema. However, it could enhance clarity by explicitly stating how the risk level was determined based on the inputs.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "The analysis of Amazon (AMZN) indicates a mixed risk profile due to conflicting bullish and bearish indicators. While technical signals suggest a bullish trend, the restrictive policy environment and liquidity concerns present significant risks."
+          },
+          "$6": {
+            "task_id": "$6",
+            "task_name": "position_sizing",
+            "tool": "position_sizing",
+            "depends_on": [
+              "$2",
+              "$3",
+              "$5",
+              "$4"
+            ],
+            "output_key": "trade_instruction",
+            "operator_output": {
+              "trade_instruction": {
+                "action": "BUY",
+                "position_pct": 25.0,
+                "position_pct_display": "25.00%",
+                "position_size": 25.0,
+                "max_position_pct": 25.0,
+                "max_buy_position_pct": 25.0,
+                "allocation_posture": "bullish",
+                "reasoning": "The bullish view is reinforced by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average, alongside positive news sentiment. However, the risks associated with the restrictive policy environment and liquidity concerns necessitate limiting the position size to 25%.",
+                "supporting_evidence": [
+                  "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                  "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                ],
+                "opposing_evidence": [
+                  "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                  "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+                ],
+                "key_risks": [
+                  "Restrictive policy environment limiting growth potential",
+                  "Liquidity concerns indicated by a current ratio of 0.92",
+                  "Low net margin of 2.49% suggesting profitability pressure"
+                ],
+                "decision_source": "llmcompiler_regex_dag_position_sizing_agent",
+                "report": "The analysis of Amazon (AMZN) indicates a bullish technical posture supported by positive news sentiment, despite a neutral fundamental stance and a restrictive policy environment. Given the mixed signals, a cautious approach is warranted."
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The output effectively grounds its reasoning in the provided inputs, synthesizes information without simple concatenation, and adheres to the schema requirements. No revisions are necessary.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "trade_instruction": {
+                    "action": "BUY",
+                    "position_pct": 25.0,
+                    "position_pct_display": "25.00%",
+                    "position_size": 25.0,
+                    "max_position_pct": 25.0,
+                    "max_buy_position_pct": 25.0,
+                    "allocation_posture": "bullish",
+                    "reasoning": "The bullish view is reinforced by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average, alongside positive news sentiment. However, the risks associated with the restrictive policy environment and liquidity concerns necessitate limiting the position size to 25%.",
+                    "supporting_evidence": [
+                      "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                      "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                    ],
+                    "opposing_evidence": [
+                      "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                      "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+                    ],
+                    "key_risks": [
+                      "Restrictive policy environment limiting growth potential",
+                      "Liquidity concerns indicated by a current ratio of 0.92",
+                      "Low net margin of 2.49% suggesting profitability pressure"
+                    ],
+                    "decision_source": "llmcompiler_regex_dag_position_sizing_agent",
+                    "report": "The analysis of Amazon (AMZN) indicates a bullish technical posture supported by positive news sentiment, despite a neutral fundamental stance and a restrictive policy environment. Given the mixed signals, a cautious approach is warranted."
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The output effectively grounds its reasoning in the provided inputs, synthesizes information without simple concatenation, and adheres to the schema requirements. No revisions are necessary.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "The analysis of Amazon (AMZN) indicates a bullish technical posture supported by positive news sentiment, despite a neutral fundamental stance and a restrictive policy environment. Given the mixed signals, a cautious approach is warranted."
+          },
+          "$7": {
+            "task_id": "$7",
+            "task_name": "join",
+            "tool": "join",
+            "depends_on": [
+              "$6"
+            ],
+            "output_key": "final_decision",
+            "operator_output": {
+              "final_decision": {
+                "action": "BUY",
+                "position_pct": 25.0,
+                "position_pct_display": "25.00%",
+                "position_size": 25.0,
+                "max_position_pct": 25.0,
+                "max_buy_position_pct": 25.0,
+                "allocation_posture": "bullish",
+                "reasoning": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.",
+                "supporting_evidence": [
+                  "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                  "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                ],
+                "opposing_evidence": [
+                  "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                  "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+                ],
+                "key_risks": [
+                  "Restrictive policy environment limiting growth potential",
+                  "Liquidity concerns indicated by a current ratio of 0.92",
+                  "Low net margin of 2.49% suggesting profitability pressure"
+                ],
+                "decision_source": "llmcompiler_regex_dag_join_agent"
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "revision_brief": "The agent has successfully grounded the output in the inputs, provided fresh reasoning, satisfied the schema, and avoided simple concatenation of upstream report text. No improvements are necessary.",
+              "evaluator": "llm"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "final_decision": {
+                    "action": "BUY",
+                    "position_pct": 25.0,
+                    "position_pct_display": "25.00%",
+                    "position_size": 25.0,
+                    "max_position_pct": 25.0,
+                    "max_buy_position_pct": 25.0,
+                    "allocation_posture": "bullish",
+                    "reasoning": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.",
+                    "supporting_evidence": [
+                      "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                      "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                    ],
+                    "opposing_evidence": [
+                      "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                      "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+                    ],
+                    "key_risks": [
+                      "Restrictive policy environment limiting growth potential",
+                      "Liquidity concerns indicated by a current ratio of 0.92",
+                      "Low net margin of 2.49% suggesting profitability pressure"
+                    ],
+                    "decision_source": "llmcompiler_regex_dag_join_agent"
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "revision_brief": "The agent has successfully grounded the output in the inputs, provided fresh reasoning, satisfied the schema, and avoided simple concatenation of upstream report text. No improvements are necessary.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "summary": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy envi\n...[truncated]"
+          }
+        },
+        "execution_layers": [
+          [
+            "$1"
+          ],
+          [
+            "$2",
+            "$3"
+          ],
+          [
+            "$4"
+          ],
+          [
+            "$5"
+          ],
+          [
+            "$6"
+          ],
+          [
+            "$7"
+          ]
+        ],
+        "task_fetching_events": [
+          {
+            "ready_tasks": [
+              "$1"
+            ],
+            "waiting_tasks": [
+              "$2",
+              "$3",
+              "$4",
+              "$5",
+              "$6",
+              "$7"
+            ]
+          },
+          {
+            "ready_tasks": [
+              "$2",
+              "$3"
+            ],
+            "waiting_tasks": [
+              "$4",
+              "$5",
+              "$6",
+              "$7"
+            ]
+          },
+          {
+            "ready_tasks": [
+              "$4"
+            ],
+            "waiting_tasks": [
+              "$5",
+              "$6",
+              "$7"
+            ]
+          },
+          {
+            "ready_tasks": [
+              "$5"
+            ],
+            "waiting_tasks": [
+              "$6",
+              "$7"
+            ]
+          },
+          {
+            "ready_tasks": [
+              "$6"
+            ],
+            "waiting_tasks": [
+              "$7"
+            ]
+          },
+          {
+            "ready_tasks": [
+              "$7"
+            ],
+            "waiting_tasks": []
+          }
+        ],
+        "topological_order": [
+          "$1",
+          "$2",
+          "$3",
+          "$4",
+          "$5",
+          "$6",
+          "$7"
+        ],
+        "join_output": {
+          "task_id": "$7",
+          "task_name": "join",
+          "tool": "join",
+          "depends_on": [
+            "$6"
+          ],
+          "output_key": "final_decision",
+          "operator_output": {
+            "final_decision": {
+              "action": "BUY",
+              "position_pct": 25.0,
+              "position_pct_display": "25.00%",
+              "position_size": 25.0,
+              "max_position_pct": 25.0,
+              "max_buy_position_pct": 25.0,
+              "allocation_posture": "bullish",
+              "reasoning": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.",
+              "supporting_evidence": [
+                "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+              ],
+              "opposing_evidence": [
+                "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+              ],
+              "key_risks": [
+                "Restrictive policy environment limiting growth potential",
+                "Liquidity concerns indicated by a current ratio of 0.92",
+                "Low net margin of 2.49% suggesting profitability pressure"
+              ],
+              "decision_source": "llmcompiler_regex_dag_join_agent"
+            }
+          },
+          "quality_evaluation": {
+            "score": 1.0,
+            "passed": true,
+            "issues": [],
+            "revision_brief": "The agent has successfully grounded the output in the inputs, provided fresh reasoning, satisfied the schema, and avoided simple concatenation of upstream report text. No improvements are necessary.",
+            "evaluator": "llm"
+          },
+          "attempts": [
+            {
+              "attempt": 1,
+              "output": {
+                "final_decision": {
+                  "action": "BUY",
+                  "position_pct": 25.0,
+                  "position_pct_display": "25.00%",
+                  "position_size": 25.0,
+                  "max_position_pct": 25.0,
+                  "max_buy_position_pct": 25.0,
+                  "allocation_posture": "bullish",
+                  "reasoning": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.",
+                  "supporting_evidence": [
+                    "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+                    "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+                  ],
+                  "opposing_evidence": [
+                    "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+                    "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+                  ],
+                  "key_risks": [
+                    "Restrictive policy environment limiting growth potential",
+                    "Liquidity concerns indicated by a current ratio of 0.92",
+                    "Low net margin of 2.49% suggesting profitability pressure"
+                  ],
+                  "decision_source": "llmcompiler_regex_dag_join_agent"
+                }
+              },
+              "evaluation": {
+                "score": 1.0,
+                "passed": true,
+                "issues": [],
+                "revision_brief": "The agent has successfully grounded the output in the inputs, provided fresh reasoning, satisfied the schema, and avoided simple concatenation of upstream report text. No improvements are necessary.",
+                "evaluator": "llm"
+              }
+            }
+          ],
+          "summary": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy envi\n...[truncated]"
+        },
+        "data_store_keys": [
+          "bearish_view",
+          "bullish_view",
+          "data_profile",
+          "disagreement_report",
+          "final_decision",
+          "market_context",
+          "raw_evidence",
+          "risk_profile",
+          "trade_instruction"
+        ]
+      },
+      "final_decision_structured": {
+        "action": "BUY",
+        "position_pct": 25.0,
+        "position_pct_display": "25.00%",
+        "position_size": 25.0,
+        "max_position_pct": 25.0,
+        "max_buy_position_pct": 25.0,
+        "allocation_posture": "bullish",
+        "reasoning": "The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.",
+        "supporting_evidence": [
+          "Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.",
+          "Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment."
+        ],
+        "opposing_evidence": [
+          "The policy environment is restrictive, which can limit Amazon's growth potential and profitability.",
+          "The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations."
+        ],
+        "key_risks": [
+          "Restrictive policy environment limiting growth potential",
+          "Liquidity concerns indicated by a current ratio of 0.92",
+          "Low net margin of 2.49% suggesting profitability pressure"
+        ],
+        "decision_source": "llmcompiler_regex_dag_join_agent"
+      },
+      "decision_contract": {
+        "allowed_actions": [
+          "BUY",
+          "SELL",
+          "HOLD"
+        ],
+        "position_pct_unit": "percent",
+        "max_buy_position_pct": 25.0
+      }
+    },
+    "local_evidence": {
+      "technical": {
+        "ticker": "AMZN",
+        "trade_date": "2023-04-10",
+        "matched_trade_date": "2023-04-10",
+        "adjusted_close": 102.17,
+        "previous_close": 102.06,
+        "daily_return_pct": 0.10777973740936364,
+        "ma10": 101.251,
+        "ma20": 99.4435,
+        "low20": 92.43,
+        "high60": 112.91,
+        "from_low20_pct": 10.53770420859028,
+        "drawdown60_pct": -9.512000708528912,
+        "volatility_pct": 2.794325592228493,
+        "rsi": 58.0743007915715,
+        "stoch_k": 74.33628317644292,
+        "macd_histogram": 0.3055716989365562,
+        "mode": "rebound_trend_capture",
+        "entry_position_pct": 100.0,
+        "allocation_posture": "rebound_trend_capture",
+        "entry_reason": "Price is more than 5% above the trailing 20-day low and above the 10-day average.",
+        "exit_reason": "Rebound trend mode exits when adjusted close falls below the 20-day average.",
+        "buy_signal": true,
+        "sell_signal": false
+      },
+      "fundamental": {
+        "ticker": "AMZN",
+        "trade_date": "2023-04-10",
+        "latest_income_date": "2023-03-31",
+        "latest_balance_date": "2023-03-31",
+        "latest_cashflow_date": "2023-03-31",
+        "revenue": 127358000000.0,
+        "net_income": 3172000000.0,
+        "operating_income": 4774000000.0,
+        "operating_cashflow": 4788000000.0,
+        "free_cashflow": -9419000000.0,
+        "net_margin_pct": 2.4906170008951145,
+        "current_ratio": 0.9230941248221183,
+        "debt_to_equity": 0.434127590178999,
+        "score": 1,
+        "stance": "neutral"
+      },
+      "news": {
+        "ticker": "AMZN",
+        "trade_date": "2023-04-10",
+        "lookback_days": 7,
+        "article_count": 82,
+        "positive_hits": 60,
+        "negative_hits": 16,
+        "stance": "bullish",
+        "top_titles": [
+          "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to",
+          "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production ",
+          "US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq <.IXIC> led losses among the major indexes after the long weekend, with gr",
+          "Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge. That’s an unusually hi",
+          "Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN, Microsoft M"
+        ]
+      },
+      "policy": {
+        "trade_date": "2023-04-10",
+        "indicators": {
+          "federal_funds_rate": {
+            "latest_date": "2023-04-10",
+            "latest_value": 5.0,
+            "description": "Federal Funds Target Rate (Upper Bound, %)"
+          },
+          "treasury_yield_3m": {
+            "latest_date": "2023-04-10",
+            "latest_value": 4.94,
+            "description": "3-Month Treasury Bill Yield (%)"
+          },
+          "treasury_yield_10y": {
+            "latest_date": "2023-04-10",
+            "latest_value": 3.41,
+            "description": "10-Year Treasury Yield (%)"
+          },
+          "inflation": {
+            "latest_date": "2023-04-10",
+            "latest_value": 2.27,
+            "description": "5-Year Breakeven Inflation Rate (%)"
+          },
+          "unemployment": {
+            "latest_date": "2023-04-01",
+            "latest_value": 3.4,
+            "description": "Unemployment Rate (%)"
+          },
+          "consumer_sentiment": {
+            "latest_date": "2023-04-01",
+            "latest_value": 63.7,
+            "description": "Consumer Sentiment Index"
+          }
+        },
+        "restrictive_policy": true,
+        "stance": "bearish"
+      }
+    },
+    "final_decision": "Final Decision: BUY\nPosition Percentage: 25.00%\nAllocation Posture: bullish\n\nReasoning: The decision to buy is supported by strong technical indicators, with the stock trading 10.54% above the 20-day low and above the 10-day moving average. Additionally, positive news sentiment reinforces this bullish view. However, the position size is limited to 25% due to risks associated with a restrictive policy environment and liquidity concerns.\nSupporting Evidence: Technical indicators show a buy signal with the stock trading 10.54% above the 20-day low and above the 10-day moving average.; Positive news sentiment with 60 out of 82 articles being bullish, highlighting growth in the AWS segment.\nOpposing Evidence: The policy environment is restrictive, which can limit Amazon's growth potential and profitability.; The current ratio of 0.92 indicates potential liquidity concerns, suggesting that the company may struggle to meet short-term obligations.\nKey Risks: Restrictive policy environment limiting growth potential; Liquidity concerns indicated by a current ratio of 0.92; Low net margin of 2.49% suggesting profitability pressure"
+  },
+  "error": null,
+  "state_keys": [
+    "analyst_reports",
+    "error",
+    "errors",
+    "expert_agents",
+    "expert_outputs",
+    "final_decision",
+    "final_decision_structured",
+    "fundamental_messages",
+    "fundamental_report",
+    "generated_skills",
+    "local_evidence",
+    "max_position_pct",
+    "messages",
+    "module_outputs",
+    "news_messages",
+    "news_report",
+    "policy_messages",
+    "policy_report",
+    "team_discussion_summary",
+    "team_plan",
+    "team_summary",
+    "technical_messages",
+    "technical_report",
+    "ticker",
+    "trade_date",
+    "workflow_method",
+    "workflow_mode",
+    "workflow_outputs",
+    "workflow_plan",
+    "workflow_status"
+  ]
+}
