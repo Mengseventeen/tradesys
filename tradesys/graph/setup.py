@@ -18,15 +18,14 @@ from tradesys.agents.analyst.technical_analyst import (
 )
 from tradesys.agents.utils.agent_states import AgentState
 from tradesys.graph.conditional_logic import ConditionalLogic
-from tradesys.workflows import create_dataevolver_node, create_llmcompiler_node
+from tradesys.workflows import create_dataevolver_node
 
 
 class GraphSetup:
-    """Build a four-analyst workflow with a selectable decision compiler."""
+    """Build the four-analyst workflow followed by the DataEvolver LLM DAG."""
 
-    def __init__(self, llm, decision_workflow: str = "llmcompiler"):
+    def __init__(self, llm):
         self.llm = llm
-        self.decision_workflow = decision_workflow
         self.conditional_logic = ConditionalLogic()
 
     def setup_graph(self):
@@ -55,7 +54,7 @@ class GraphSetup:
         workflow.add_node("news_done", _done_node)
         workflow.add_node("policy_done", _done_node)
 
-        workflow.add_node("decision_workflow", self._create_decision_node())
+        workflow.add_node("dataevolver", create_dataevolver_node(self.llm))
 
     def _add_edges(self, workflow: StateGraph):
         workflow.add_edge(START, "technical_analyst")
@@ -93,14 +92,9 @@ class GraphSetup:
 
         workflow.add_edge(
             ["technical_done", "fundamental_done", "news_done", "policy_done"],
-            "decision_workflow",
+            "dataevolver",
         )
-        workflow.add_edge("decision_workflow", END)
-
-    def _create_decision_node(self):
-        if self.decision_workflow == "dataevolver":
-            return create_dataevolver_node(self.llm)
-        return create_llmcompiler_node(self.llm)
+        workflow.add_edge("dataevolver", END)
 
     def _route_technical(self, state: AgentState) -> str:
         return self.conditional_logic.should_continue_analysis(state, "technical_messages")
@@ -115,8 +109,8 @@ class GraphSetup:
         return self.conditional_logic.should_continue_analysis(state, "policy_messages")
 
 
-def create_workflow(llm, decision_workflow: str = "llmcompiler"):
-    return GraphSetup(llm, decision_workflow=decision_workflow).setup_graph()
+def create_workflow(llm):
+    return GraphSetup(llm).setup_graph()
 
 
 def _done_node(_state: AgentState) -> dict:

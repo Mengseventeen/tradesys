@@ -3,22 +3,12 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.prebuilt import ToolNode
 
 from tradesys.agents.utils.agent_states import AgentState
-from tradesys.agents.utils.policy_data_tools import (
-    get_economic_data,
-    get_federal_funds_rate,
-    get_latest_economic_summary,
-    get_macro_summary,
-    get_treasury_yield,
-)
+from tradesys.agents.utils.ptc_data_tools import collect_policy_evidence_ptc
 from tradesys.agents.utils.report_logger import get_report_logger
 
 
 POLICY_TOOLS = [
-    get_economic_data,
-    get_macro_summary,
-    get_federal_funds_rate,
-    get_treasury_yield,
-    get_latest_economic_summary,
+    collect_policy_evidence_ptc,
 ]
 
 
@@ -27,7 +17,9 @@ You are a macro policy analyst tasked with analyzing the policy and
 macroeconomic backdrop for the given ticker as of the trade date. Treat the
 trade date as the analysis cutoff and do not use future information. Use the
 available tools to inspect macroeconomic and policy-sensitive data; let the
-tools provide the numbers and do not invent data.
+tools provide the numbers and do not invent data. On the first turn, call
+collect_policy_evidence_ptc exactly once. It joins the snapshot and recent
+histories; then write the final report without another tool call.
 
 Write a comprehensive, trader-facing report on how the macro and policy
 environment may affect the ticker. Include interest-rate context, Treasury
@@ -66,7 +58,12 @@ def create_policy_analyst(llm):
             MessagesPlaceholder(variable_name="messages"),
         ])
 
-        chain = prompt | llm.bind_tools(POLICY_TOOLS)
+        bound_llm = (
+            llm.bind_tools(POLICY_TOOLS, tool_choice=POLICY_TOOLS[0].name)
+            if not messages
+            else llm.bind_tools(POLICY_TOOLS)
+        )
+        chain = prompt | bound_llm
         result = chain.invoke({
             "system_message": POLICY_SYSTEM_MESSAGE,
             "tool_names": ", ".join(tool.name for tool in POLICY_TOOLS),

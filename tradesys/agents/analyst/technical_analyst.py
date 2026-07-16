@@ -4,23 +4,11 @@ from langgraph.prebuilt import ToolNode
 
 from tradesys.agents.utils.agent_states import AgentState
 from tradesys.agents.utils.report_logger import get_report_logger
-from tradesys.agents.utils.technical_indicators_tools import (
-    list_available_stocks,
-    list_available_indicators,
-    get_indicator_data,
-    get_indicators_data,
-    get_indicator_on_date,
-    get_stock_data,
-)
+from tradesys.agents.utils.ptc_data_tools import collect_technical_evidence_ptc
 
 
 TECHNICAL_TOOLS = [
-    list_available_stocks,
-    list_available_indicators,
-    get_stock_data,
-    get_indicator_data,
-    get_indicators_data,
-    get_indicator_on_date,
+    collect_technical_evidence_ptc,
 ]
 
 
@@ -29,7 +17,10 @@ You are a technical analyst tasked with analyzing price action and technical
 indicators for the given ticker as of the trade date. Treat the trade date as
 the analysis cutoff and do not use future information. Use the available tools
 to inspect recent OHLCV data and relevant indicators; let the tools provide
-the data and do not invent numbers.
+the data and do not invent numbers. On the first turn, call
+collect_technical_evidence_ptc exactly once. It runs the complete read-only
+data collection program; after receiving its result, write the final report
+without making another tool call.
 
 Write a comprehensive, trader-facing report with as much useful detail as the
 tool evidence supports. Include specific price levels, trend direction, moving
@@ -65,7 +56,12 @@ def create_technical_analyst(llm):
             MessagesPlaceholder(variable_name="messages"),
         ])
 
-        chain = prompt | llm.bind_tools(TECHNICAL_TOOLS)
+        bound_llm = (
+            llm.bind_tools(TECHNICAL_TOOLS, tool_choice=TECHNICAL_TOOLS[0].name)
+            if not messages
+            else llm.bind_tools(TECHNICAL_TOOLS)
+        )
+        chain = prompt | bound_llm
         result = chain.invoke({
             "system_message": TECHNICAL_SYSTEM_MESSAGE,
             "tool_names": ", ".join(tool.name for tool in TECHNICAL_TOOLS),

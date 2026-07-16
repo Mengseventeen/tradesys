@@ -9,11 +9,12 @@ class Propagator:
     def __init__(
         self,
         recursion_limit: int = 80,
-        portfolio_cash: float = 0.0,
         max_position_pct: float = 10.0,
+        execution_mode: str = "baseline",
     ):
         self.recursion_limit = recursion_limit
         self.max_position_pct = min(100.0, max(0.0, float(max_position_pct or 0.0)))
+        self.execution_mode = execution_mode
 
     def create_initial_state(self, ticker: str, trade_date: str) -> Dict[str, Any]:
         return {
@@ -25,6 +26,7 @@ class Propagator:
             "ticker": ticker,
             "trade_date": trade_date,
             "max_position_pct": self.max_position_pct,
+            "execution_mode": self.execution_mode,
             "technical_report": "",
             "fundamental_report": "",
             "news_report": "",

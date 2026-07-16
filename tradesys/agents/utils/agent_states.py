@@ -34,6 +34,7 @@ class AgentState(TypedDict, total=False):
     ticker: str
     trade_date: str
     max_position_pct: float
+    execution_mode: str
 
     technical_report: str
     fundamental_report: str

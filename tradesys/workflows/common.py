@@ -261,34 +261,6 @@ def policy_snapshot(trade_date: str) -> dict[str, Any]:
     }
 
 
-def recent_seed_examples(ticker: str, trade_date: str, lookback: int = 24) -> list[dict[str, Any]]:
-    rows = [row for row in _read_csv_rows(STOCK_ROOT / ticker / "daily_prices.csv") if row.get("date", "") < trade_date]
-    rows = rows[-lookback:]
-    seeds = []
-    for index, row in enumerate(rows):
-        current_close = _float(row.get("adjusted_close"))
-        next_close = _float(rows[index + 1].get("adjusted_close")) if index + 1 < len(rows) else current_close
-        forward_return_pct = (next_close / current_close - 1.0) * 100.0 if current_close else 0.0
-        if forward_return_pct > 1.5:
-            target_action = "BUY"
-            target_pct = 60.0
-        elif forward_return_pct < -1.5:
-            target_action = "SELL"
-            target_pct = -100.0
-        else:
-            target_action = "HOLD"
-            target_pct = 0.0
-        seeds.append({
-            "ticker": ticker,
-            "trade_date": row.get("date", ""),
-            "close": current_close,
-            "forward_return_pct": forward_return_pct,
-            "target_action": target_action,
-            "target_position_pct": target_pct,
-        })
-    return seeds
-
-
 def decision_from_instruction(
     instruction: dict[str, Any],
     max_position_pct: float,

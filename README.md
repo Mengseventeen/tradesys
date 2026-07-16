@@ -1,37 +1,74 @@
-# TradeSys Dynamic Team Exercise
+# TradeSys: LangGraph Analysts + DataEvolver LLM DAG
 
-This repository contains an offline stock-trading workflow experiment for four tickers: AMZN, MSFT, NFLX, and TSLA.
+This repository contains one stock-trading research workflow for AMZN, MSFT, NFLX, and TSLA:
 
-The project uses local price, technical indicator, fundamental, news, and macroeconomic data under `tradesys/data_portfolio`. The latest submitted experiment is:
+1. Four LangGraph analysts use one programmatic data-collection tool each to produce technical, fundamental, news, and policy reports with fewer model/tool round trips.
+2. DataEvolver uses an LLM-driven data-understanding, free-fitting, template-combination, and constrained-search process to build the trading DAG.
+3. Seven evaluated LLM agents execute the DAG: `read_market_data`, `bullish_signal`, `bearish_signal`, `disagreement_detection`, `risk_management`, `position_sizing`, and `join`.
+4. The final decision is written as BUY, SELL, or HOLD with a percentage position.
 
-`analysis_results/dataevolver_signal_only_latest_20260715_200927`
+An OpenAI-compatible API is required. Configure `OPENAI_API_KEY` and optionally `OPENAI_BASE_URL`, `OPENAI_MODEL`, `OPENAI_TIMEOUT`, and `OPENAI_MAX_RETRIES` in the environment or a supported `.env` file.
 
-## Main Scripts
+## Run
 
-- `run_analysis.py`: generate daily BUY/SELL/HOLD decisions.
-- `evaluate_performance.py`: replay decisions with same-day execution.
-- `evaluate_position_pct_replay.py`: replay decisions with position percentage and configurable execution timing.
-- `evaluate_buy_and_hold.py`: calculate buy-and-hold baseline metrics.
+Single date:
 
-## Latest Result
+```powershell
+python run_analysis.py --ticker AMZN --date 2023-04-10
+```
 
-The latest pushed metrics use second-day open execution:
+Choose one of three execution modes:
+
+```powershell
+python run_analysis.py --ticker AMZN --date 2023-04-10 --execution-mode baseline
+python run_analysis.py --ticker AMZN --date 2023-04-10 --execution-mode static_ptc
+python run_analysis.py --ticker AMZN --date 2023-04-10 --execution-mode dynamic_ptc
+```
+
+- `baseline`: sequential execution of the current seven-agent DAG.
+- `static_ptc`: compile the same DAG to validated PTC IR and execute dependency-ready layers in parallel.
+- `dynamic_ptc`: compile a conditional PTC program that may replace bullish, bearish, or disagreement calls with safe constants based on the market regime.
+
+PTC programs are not passed to Python `exec`. The runtime accepts only registered tool calls and validated constant instructions, checks dependencies and output schemas, and records the rendered program plus its call trace.
+
+Multi-ticker batch:
+
+```powershell
+python run_analysis.py `
+  --tickers AMZN MSFT NFLX TSLA `
+  --start-date 2022-10-06 `
+  --end-date 2023-04-10 `
+  --batch-size 8 `
+  --results-dir analysis_results\dataevolver_llm_run
+```
+
+The run writes `decisions.csv`, per-date debug trajectories, analyst reports, DAG plans, node outputs, quality evaluations, and final decisions.
+
+## Evaluate
+
+Replay percentage decisions at the next trading day's open:
 
 ```powershell
 python evaluate_position_pct_replay.py `
-  --decisions analysis_results\dataevolver_signal_only_latest_20260715_200927\decisions.csv `
+  --decisions analysis_results\dataevolver_llm_run\decisions.csv `
   --execution next_day_open `
   --final-liquidation `
-  --output-dir analysis_results\dataevolver_signal_only_latest_20260715_200927\performance_decision_metrics_next_day_open
+  --output-dir analysis_results\dataevolver_llm_run\performance_next_day_open
 ```
 
-Summary:
+Use `evaluate_buy_and_hold.py` to create a buy-and-hold comparison baseline. Existing folders under `analysis_results` are retained as historical experiment records and may refer to workflows that are no longer present in the codebase.
 
-| Ticker | SPR | CR | MDD | AV |
-| --- | ---: | ---: | ---: | ---: |
-| AMZN | 0.252 | 4.618 | -22.530 | 26.536 |
-| MSFT | 0.779 | 13.236 | -11.363 | 20.447 |
-| NFLX | 0.904 | 19.243 | -13.475 | 27.101 |
-| TSLA | 1.174 | 31.823 | -13.144 | 34.247 |
-| Average | 0.777 | 17.230 | -15.128 | 27.083 |
+## PTC Ablation
 
+Run the baseline, static PTC, and dynamic PTC experiments over identical inputs:
+
+```powershell
+python run_ptc_ablation.py `
+  --tickers AMZN MSFT NFLX TSLA `
+  --start-date 2022-10-06 `
+  --end-date 2023-04-10 `
+  --workers 8 `
+  --results-dir analysis_results\ptc_ablation_full
+```
+
+The runner evaluates every mode with next-day-open execution and writes `ablation_summary.json` and `ablation_summary.csv`, including financial metrics, runtime, errors, average LLM tool calls, skipped calls, execution layers, action counts, and dynamic routing frequencies.
