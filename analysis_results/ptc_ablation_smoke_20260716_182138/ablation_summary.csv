@@ -1,0 +1,4 @@
+mode,analysis_seconds,evaluation_seconds,decision_count,ok_count,error_count,average_tool_calls,average_skipped_calls,average_execution_layers,SPR,CR,MDD,AV
+baseline,170.889,0.225,1,1,0,7.0,0.0,7.0,,,,
+static_ptc,104.09,0.22,1,1,0,7.0,0.0,6.0,,,,
+dynamic_ptc,129.652,0.14,1,1,0,7.0,0.0,6.0,,,,
