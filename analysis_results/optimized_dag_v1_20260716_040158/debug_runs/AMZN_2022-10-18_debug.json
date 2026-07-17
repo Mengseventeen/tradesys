@@ -1,0 +1,576 @@
+{
+  "ticker": "AMZN",
+  "trade_date": "2022-10-18",
+  "recorded_at": "2026-07-16T04:01:59",
+  "status": "ok",
+  "reports": {
+    "technical": "Key observations: close=116.36, ma10=113.69, ma20=113.69, from_20d_low=8.85%, drawdown60=-3.28%, rsi=48.31. Trading implications: buy_signal=True, sell_signal=False; mode=rebound_trend_capture. Final view: bullish",
+    "fundamental": "Fundamental facts: latest income date=2022-09-30, revenue=127101000000, net_income=2872000000, free_cashflow=-4974000000, current_ratio=0.94, debt_to_equity=0.43. Final view: neutral",
+    "news": "Key news: recent article count=0; positive_hits=0; negative_hits=0. Top titles: no recent local headlines. Final view: neutral",
+    "policy": "Macro backdrop: fed_funds=3.25, inflation=2.41, consumer_sentiment=59.90, restrictive_policy=False. Final view: bullish"
+  },
+  "workflow": {
+    "workflow_method": "OptimizedDAG",
+    "workflow_mode": "optimized_dag_ma10_exit_vol_guard_v1",
+    "workflow_status": "ok",
+    "workflow_plan": {
+      "method": "OptimizedDAG",
+      "mode": "optimized_dag_ma10_exit_vol_guard_v1",
+      "ticker": "AMZN",
+      "trade_date": "2022-10-18",
+      "data_profile": {
+        "ticker": "AMZN",
+        "trade_date": "2022-10-18",
+        "raw_blocks": [
+          "fundamental",
+          "news",
+          "policy",
+          "technical"
+        ],
+        "raw_fields": {
+          "technical": [
+            "adjusted_close",
+            "allocation_posture",
+            "buy_signal",
+            "daily_return_pct",
+            "drawdown60_pct",
+            "entry_position_pct",
+            "entry_reason",
+            "exit_reason",
+            "from_low20_pct",
+            "high60",
+            "low20",
+            "ma10",
+            "ma20",
+            "macd_histogram",
+            "matched_trade_date",
+            "mode",
+            "previous_close",
+            "rsi",
+            "sell_signal",
+            "stoch_k",
+            "ticker",
+            "trade_date",
+            "volatility_pct"
+          ],
+          "fundamental": [
+            "current_ratio",
+            "debt_to_equity",
+            "free_cashflow",
+            "latest_balance_date",
+            "latest_cashflow_date",
+            "latest_income_date",
+            "net_income",
+            "net_margin_pct",
+            "operating_cashflow",
+            "operating_income",
+            "revenue",
+            "score",
+            "stance",
+            "ticker",
+            "trade_date"
+          ],
+          "news": [
+            "article_count",
+            "lookback_days",
+            "negative_hits",
+            "positive_hits",
+            "stance",
+            "ticker",
+            "top_titles",
+            "trade_date"
+          ],
+          "policy": [
+            "indicators",
+            "restrictive_policy",
+            "stance",
+            "trade_date"
+          ]
+        },
+        "report_stances": {
+          "technical": "bullish",
+          "fundamental": "neutral",
+          "news": "neutral",
+          "policy": "bullish"
+        },
+        "technical": {
+          "matched_trade_date": "2022-10-18",
+          "mode": "rebound_trend_capture",
+          "buy_signal": true,
+          "sell_signal": false,
+          "entry_position_pct": 100.0,
+          "daily_return_pct": 2.2585464452060666,
+          "from_low20_pct": 8.849391955098218,
+          "drawdown60_pct": -3.2751454696591797,
+          "volatility_pct": 3.2834578157499323,
+          "rsi": 48.305654051525124,
+          "macd_histogram": -0.4574562245039475
+        },
+        "fundamental": {
+          "stance": "neutral",
+          "score": 1,
+          "net_margin_pct": 2.2596203019645795,
+          "current_ratio": 0.9365929767816304,
+          "debt_to_equity": 0.42853610106990375
+        },
+        "news": {
+          "stance": "neutral",
+          "article_count": 0,
+          "positive_hits": 0,
+          "negative_hits": 0,
+          "top_titles": []
+        },
+        "policy": {
+          "stance": "bullish",
+          "restrictive_policy": false
+        },
+        "reports_excerpt": {
+          "technical": "Key observations: close=116.36, ma10=113.69, ma20=113.69, from_20d_low=8.85%, drawdown60=-3.28%, rsi=48.31. Trading implications: buy_signal=True, sell_signal=False; mode=rebound_trend_capture. Final view: bullish",
+          "fundamental": "Fundamental facts: latest income date=2022-09-30, revenue=127101000000, net_income=2872000000, free_cashflow=-4974000000, current_ratio=0.94, debt_to_equity=0.43. Final view: neutral",
+          "news": "Key news: recent article count=0; positive_hits=0; negative_hits=0. Top titles: no recent local headlines. Final view: neutral",
+          "policy": "Macro backdrop: fed_funds=3.25, inflation=2.41, consumer_sentiment=59.90, restrictive_policy=False. Final view: bullish"
+        }
+      },
+      "nodes": [
+        {
+          "step_id": "step_1",
+          "operator": "read_market_data",
+          "depends_on": [],
+          "output_keys": [
+            "market_context"
+          ],
+          "rationale": "Collect current local evidence and compact field profile."
+        },
+        {
+          "step_id": "step_2",
+          "operator": "trend_confirmation",
+          "depends_on": [
+            "step_1"
+          ],
+          "output_keys": [
+            "trend_gate"
+          ],
+          "rationale": "Use a faster MA10 exit and require rebound entries to be confirmed by RSI and volatility."
+        },
+        {
+          "step_id": "step_3",
+          "operator": "risk_gate",
+          "depends_on": [
+            "step_2"
+          ],
+          "output_keys": [
+            "risk_gate"
+          ],
+          "rationale": "Block rebound entries when ATR volatility is elevated; allow repair entries only with RSI/stochastic confirmation."
+        },
+        {
+          "step_id": "step_4",
+          "operator": "position_sizing",
+          "depends_on": [
+            "step_3"
+          ],
+          "output_keys": [
+            "trade_instruction"
+          ],
+          "rationale": "Keep the signal-only contract: full entry, full exit, or no position."
+        },
+        {
+          "step_id": "step_5",
+          "operator": "join",
+          "depends_on": [
+            "step_4"
+          ],
+          "output_keys": [
+            "final_decision"
+          ],
+          "rationale": "Normalize BUY/SELL/HOLD plus compatibility position_pct."
+        }
+      ],
+      "edges": [
+        {
+          "from": "step_1",
+          "to": "step_2",
+          "message": "structured node output"
+        },
+        {
+          "from": "step_2",
+          "to": "step_3",
+          "message": "structured node output"
+        },
+        {
+          "from": "step_3",
+          "to": "step_4",
+          "message": "structured node output"
+        },
+        {
+          "from": "step_4",
+          "to": "step_5",
+          "message": "structured node output"
+        }
+      ],
+      "execution_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5"
+      ]
+    },
+    "workflow_outputs": {
+      "dag_execution": {
+        "stage": "dag_execution",
+        "mode": "optimized_dag_ma10_exit_vol_guard_v1",
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5"
+        ],
+        "node_outputs": {
+          "step_1": {
+            "operator": "read_market_data",
+            "output": {
+              "market_context": {
+                "ticker": "AMZN",
+                "trade_date": "2022-10-18",
+                "technical": {
+                  "ticker": "AMZN",
+                  "trade_date": "2022-10-18",
+                  "matched_trade_date": "2022-10-18",
+                  "adjusted_close": 116.36,
+                  "previous_close": 113.79,
+                  "daily_return_pct": 2.2585464452060666,
+                  "ma10": 113.69111111111111,
+                  "ma20": 113.69111111111111,
+                  "low20": 106.9,
+                  "high60": 120.3,
+                  "from_low20_pct": 8.849391955098218,
+                  "drawdown60_pct": -3.2751454696591797,
+                  "volatility_pct": 3.2834578157499323,
+                  "rsi": 48.305654051525124,
+                  "stoch_k": 68.056842751433,
+                  "macd_histogram": -0.4574562245039475,
+                  "mode": "rebound_trend_capture",
+                  "entry_position_pct": 100.0,
+                  "allocation_posture": "rebound_trend_capture",
+                  "entry_reason": "Price is more than 5% above the trailing 20-day low and above the 10-day average.",
+                  "exit_reason": "Rebound trend mode exits when adjusted close falls below the 20-day average.",
+                  "buy_signal": true,
+                  "sell_signal": false
+                },
+                "fundamental_stance": "neutral",
+                "news_stance": "neutral",
+                "policy_stance": "bullish"
+              }
+            }
+          },
+          "step_2": {
+            "operator": "trend_confirmation",
+            "output": {
+              "trend_gate": {
+                "fast_exit": false,
+                "repair_mode": false,
+                "rebound_entry": true,
+                "repair_entry": false,
+                "inputs": {
+                  "close": 116.36,
+                  "ma10": 113.69111111111111,
+                  "rsi": 48.305654051525124,
+                  "stoch_k": 68.056842751433,
+                  "from_low20_pct": 8.849391955098218,
+                  "drawdown60_pct": -3.2751454696591797,
+                  "volatility_pct": 3.2834578157499323
+                },
+                "rule": "SELL when close < MA10; BUY rebound when from_low20>=5, close>=MA10, RSI>=45, ATR/close<=4%; BUY repair when deep drawdown has RSI/stochastic confirmation."
+              }
+            }
+          },
+          "step_3": {
+            "operator": "risk_gate",
+            "output": {
+              "risk_gate": {
+                "buy_allowed": true,
+                "sell_required": false,
+                "hold_required": false,
+                "volatility_guard_pct": 4.0,
+                "risk_note": "The optimized DAG exits faster than the prior MA20 rule and blocks high-volatility rebound entries."
+              }
+            }
+          },
+          "step_4": {
+            "operator": "position_sizing",
+            "output": {
+              "trade_instruction": {
+                "action": "BUY",
+                "position_pct": 100.0,
+                "position_pct_display": "100.00%",
+                "position_size": 100.0,
+                "max_position_pct": 100.0,
+                "max_buy_position_pct": 100.0,
+                "allocation_posture": "optimized_rebound_entry",
+                "reasoning": "Entry passed trend confirmation and the volatility guard.",
+                "supporting_evidence": [
+                  "close=116.36",
+                  "ma10=113.69",
+                  "rsi=48.31",
+                  "stoch_k=68.06",
+                  "from_low20_pct=8.85",
+                  "drawdown60_pct=-3.28",
+                  "volatility_pct=3.28"
+                ],
+                "opposing_evidence": [],
+                "key_risks": [
+                  "Next-day-open execution can differ materially from signal-close evidence."
+                ],
+                "decision_source": "optimized_dag_ma10_exit_vol_guard_v1",
+                "signal_only": true,
+                "trading_signal": "BUY",
+                "technical_signal": {
+                  "fast_exit": false,
+                  "rebound_entry": true,
+                  "repair_entry": false,
+                  "volatility_guard_pct": 4.0
+                }
+              }
+            }
+          },
+          "step_5": {
+            "operator": "join",
+            "output": {
+              "final_decision": {
+                "action": "BUY",
+                "position_pct": 100.0,
+                "position_pct_display": "100.00%",
+                "position_size": 100.0,
+                "max_position_pct": 100.0,
+                "max_buy_position_pct": 100.0,
+                "allocation_posture": "optimized_rebound_entry",
+                "reasoning": "Entry passed trend confirmation and the volatility guard.",
+                "supporting_evidence": [
+                  "close=116.36",
+                  "ma10=113.69",
+                  "rsi=48.31",
+                  "stoch_k=68.06",
+                  "from_low20_pct=8.85",
+                  "drawdown60_pct=-3.28",
+                  "volatility_pct=3.28"
+                ],
+                "opposing_evidence": [],
+                "key_risks": [
+                  "Next-day-open execution can differ materially from signal-close evidence."
+                ],
+                "decision_source": "optimized_dag_ma10_exit_vol_guard_v1",
+                "signal_only": true,
+                "trading_signal": "BUY",
+                "technical_signal": {
+                  "fast_exit": false,
+                  "rebound_entry": true,
+                  "repair_entry": false,
+                  "volatility_guard_pct": 4.0
+                }
+              }
+            }
+          }
+        },
+        "final_decision_structured": {
+          "action": "BUY",
+          "position_pct": 100.0,
+          "position_pct_display": "100.00%",
+          "position_size": 100.0,
+          "max_position_pct": 100.0,
+          "max_buy_position_pct": 100.0,
+          "allocation_posture": "optimized_rebound_entry",
+          "reasoning": "Entry passed trend confirmation and the volatility guard.",
+          "supporting_evidence": [
+            "close=116.36",
+            "ma10=113.69",
+            "rsi=48.31",
+            "stoch_k=68.06",
+            "from_low20_pct=8.85",
+            "drawdown60_pct=-3.28",
+            "volatility_pct=3.28"
+          ],
+          "opposing_evidence": [],
+          "key_risks": [
+            "Next-day-open execution can differ materially from signal-close evidence."
+          ],
+          "decision_source": "optimized_dag_ma10_exit_vol_guard_v1",
+          "signal_only": true,
+          "trading_signal": "BUY",
+          "technical_signal": {
+            "fast_exit": false,
+            "rebound_entry": true,
+            "repair_entry": false,
+            "volatility_guard_pct": 4.0
+          }
+        }
+      },
+      "final_decision_structured": {
+        "action": "BUY",
+        "position_pct": 100.0,
+        "position_pct_display": "100.00%",
+        "position_size": 100.0,
+        "max_position_pct": 100.0,
+        "max_buy_position_pct": 100.0,
+        "allocation_posture": "optimized_rebound_entry",
+        "reasoning": "Entry passed trend confirmation and the volatility guard.",
+        "supporting_evidence": [
+          "close=116.36",
+          "ma10=113.69",
+          "rsi=48.31",
+          "stoch_k=68.06",
+          "from_low20_pct=8.85",
+          "drawdown60_pct=-3.28",
+          "volatility_pct=3.28"
+        ],
+        "opposing_evidence": [],
+        "key_risks": [
+          "Next-day-open execution can differ materially from signal-close evidence."
+        ],
+        "decision_source": "optimized_dag_ma10_exit_vol_guard_v1",
+        "signal_only": true,
+        "trading_signal": "BUY",
+        "technical_signal": {
+          "fast_exit": false,
+          "rebound_entry": true,
+          "repair_entry": false,
+          "volatility_guard_pct": 4.0
+        }
+      },
+      "decision_contract": {
+        "allowed_actions": [
+          "BUY",
+          "SELL",
+          "HOLD"
+        ],
+        "position_pct_unit": "compatibility_only_percent",
+        "execution_assumption": "evaluated separately by replay script"
+      }
+    },
+    "local_evidence": {
+      "technical": {
+        "ticker": "AMZN",
+        "trade_date": "2022-10-18",
+        "matched_trade_date": "2022-10-18",
+        "adjusted_close": 116.36,
+        "previous_close": 113.79,
+        "daily_return_pct": 2.2585464452060666,
+        "ma10": 113.69111111111111,
+        "ma20": 113.69111111111111,
+        "low20": 106.9,
+        "high60": 120.3,
+        "from_low20_pct": 8.849391955098218,
+        "drawdown60_pct": -3.2751454696591797,
+        "volatility_pct": 3.2834578157499323,
+        "rsi": 48.305654051525124,
+        "stoch_k": 68.056842751433,
+        "macd_histogram": -0.4574562245039475,
+        "mode": "rebound_trend_capture",
+        "entry_position_pct": 100.0,
+        "allocation_posture": "rebound_trend_capture",
+        "entry_reason": "Price is more than 5% above the trailing 20-day low and above the 10-day average.",
+        "exit_reason": "Rebound trend mode exits when adjusted close falls below the 20-day average.",
+        "buy_signal": true,
+        "sell_signal": false
+      },
+      "fundamental": {
+        "ticker": "AMZN",
+        "trade_date": "2022-10-18",
+        "latest_income_date": "2022-09-30",
+        "latest_balance_date": "2022-09-30",
+        "latest_cashflow_date": "2022-09-30",
+        "revenue": 127101000000.0,
+        "net_income": 2872000000.0,
+        "operating_income": 2525000000.0,
+        "operating_cashflow": 11404000000.0,
+        "free_cashflow": -4974000000.0,
+        "net_margin_pct": 2.2596203019645795,
+        "current_ratio": 0.9365929767816304,
+        "debt_to_equity": 0.42853610106990375,
+        "score": 1,
+        "stance": "neutral"
+      },
+      "news": {
+        "ticker": "AMZN",
+        "trade_date": "2022-10-18",
+        "lookback_days": 7,
+        "article_count": 0,
+        "positive_hits": 0,
+        "negative_hits": 0,
+        "stance": "neutral",
+        "top_titles": []
+      },
+      "policy": {
+        "trade_date": "2022-10-18",
+        "indicators": {
+          "federal_funds_rate": {
+            "latest_date": "2022-10-18",
+            "latest_value": 3.25,
+            "description": "Federal Funds Target Rate (Upper Bound, %)"
+          },
+          "treasury_yield_3m": {
+            "latest_date": "2022-10-18",
+            "latest_value": 3.89,
+            "description": "3-Month Treasury Bill Yield (%)"
+          },
+          "treasury_yield_10y": {
+            "latest_date": "2022-10-18",
+            "latest_value": 4.01,
+            "description": "10-Year Treasury Yield (%)"
+          },
+          "inflation": {
+            "latest_date": "2022-10-18",
+            "latest_value": 2.41,
+            "description": "5-Year Breakeven Inflation Rate (%)"
+          },
+          "unemployment": {
+            "latest_date": "2022-10-01",
+            "latest_value": 3.6,
+            "description": "Unemployment Rate (%)"
+          },
+          "consumer_sentiment": {
+            "latest_date": "2022-10-01",
+            "latest_value": 59.9,
+            "description": "Consumer Sentiment Index"
+          }
+        },
+        "restrictive_policy": false,
+        "stance": "bullish"
+      }
+    },
+    "final_decision": "Final Decision: BUY\nPosition Percentage: 100.00%\nAllocation Posture: optimized_rebound_entry\n\nReasoning: Entry passed trend confirmation and the volatility guard.\nSupporting Evidence: close=116.36; ma10=113.69; rsi=48.31; stoch_k=68.06; from_low20_pct=8.85; drawdown60_pct=-3.28; volatility_pct=3.28\nKey Risks: Next-day-open execution can differ materially from signal-close evidence."
+  },
+  "state_keys": [
+    "analyst_reports",
+    "error",
+    "errors",
+    "expert_agents",
+    "expert_outputs",
+    "final_decision",
+    "final_decision_structured",
+    "fundamental_messages",
+    "fundamental_report",
+    "generated_skills",
+    "local_evidence",
+    "max_position_pct",
+    "messages",
+    "module_outputs",
+    "news_messages",
+    "news_report",
+    "policy_messages",
+    "policy_report",
+    "team_discussion_summary",
+    "team_plan",
+    "team_summary",
+    "technical_messages",
+    "technical_report",
+    "ticker",
+    "trade_date",
+    "workflow_method",
+    "workflow_mode",
+    "workflow_outputs",
+    "workflow_plan",
+    "workflow_status"
+  ]
+}

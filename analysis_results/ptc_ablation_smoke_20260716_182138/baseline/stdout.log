@@ -1,0 +1,16 @@
+Tickers: AMZN
+Dates: 2023-04-10 to 2023-04-10 (AMZN=1 trading days)
+Workers: 1
+Model: gpt-4o-mini
+Base URL: https://api2.aigcbest.top/v1
+Max BUY position pct: 100.00%
+Workflow: LangGraph four analysts + DataEvolver LLM DAG
+Execution mode: baseline
+Results dir: D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\analysis_results\ptc_ablation_smoke_20260716_182138\baseline
+[Serial mode]
+[1/1] AMZN 2023-04-10 ... OK HOLD position=0.00% posture=neutral
+  [checkpoint: 1/1 tasks saved]
+
+Done. Total analyses: 1
+Results saved to: D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\analysis_results\ptc_ablation_smoke_20260716_182138\baseline
+Decisions CSV: D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\analysis_results\ptc_ablation_smoke_20260716_182138\baseline\decisions.csv

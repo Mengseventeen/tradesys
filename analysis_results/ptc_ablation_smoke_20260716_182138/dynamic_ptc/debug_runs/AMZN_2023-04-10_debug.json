@@ -1,0 +1,2124 @@
+{
+  "ticker": "AMZN",
+  "trade_date": "2023-04-10",
+  "recorded_at": "2026-07-16T18:28:22",
+  "status": "ok",
+  "reports": {
+    "technical": "### Key Observations\n- **Current Price Action**: As of April 10, 2023, AMZN closed at $102.17, up from a previous close of $102.06 on April 6, 2023.\n- **Recent Highs and Lows**: The stock reached a high of $102.20 and a low of $99.57 on April 10, indicating some volatility within the session.\n- **Volume**: The trading volume on April 10 was 37,261,191 shares, which is lower than the previous session's volume of 43,808,020 shares, suggesting a decrease in trading activity.\n- **Moving Averages**: The stock's price is currently above its short-term moving averages, indicating a potential bullish trend.\n- **Momentum Indicators**: The RSI is at 58.07, suggesting that the stock is neither overbought nor oversold. The MACD shows a positive histogram, indicating bullish momentum.\n\n### Technical Interpretation\n- **Trend Analysis**: The stock appears to be in a bullish trend, having recovered from lower levels in March. The recent price action shows higher lows and higher highs, which is characteristic of an uptrend.\n- **Support and Resistance Levels**: The recent low of $99.57 serves as a potential support level, while the high of $102.20 could act as resistance. A break above this resistance could lead to further upside.\n- **Momentum Indicators**:\n  - **RSI**: At 58.07, the RSI is approaching overbought territory but is not yet there, indicating room for further upward movement.\n  - **MACD**: The MACD line is above the signal line, and the histogram is positive, suggesting bullish momentum.\n  - **Stochastic Oscillator**: The %K is at 74.34 and %D is at 70.90, indicating that the stock is nearing overbought conditions but still has momentum.\n\n### Trading Implications and Risk Controls\n- **Entry Points**: Traders may consider entering a long position if AMZN breaks above the resistance level of $102.20 with strong volume. A confirmation of this breakout could provide a favorable risk-reward scenario.\n- **Stop-Loss Strategy**: A stop-loss could be placed below the recent support level of $99.57 to manage risk in case of a reversal.\n- **Profit Targets**: If the stock continues to trend upward, potential profit targets could be set at psychological levels such as $105 and $110, which align with previous resistance levels.\n\n### Final View: Bullish\nOverall, the technical evidence supports a bullish outlook for AMZN as of April 10, 2023. The stock is showing positive momentum, and if it can maintain above key support levels, it may continue to trend higher.\n\n| Technical Evidence         | Signal Direction | Trading Implication          | Confidence/Risk Note          |\n|----------------------------|------------------|------------------------------|-------------------------------|\n| Current Price: $102.17     | Bullish          | Consider long positions above $102.20 | Moderate; watch for volume confirmation |\n| RSI: 58.07                 | Neutral          | Monitor for overbought signals | Moderate; not yet overbought  |\n| MACD: Positive Histogram    | Bullish          | Supports bullish trend       | High; indicates momentum      |\n| Stochastic: %K 74.34, %D 70.90 | Bullish     | Watch for potential overbought conditions | Moderate; nearing overbought  |\n| Volume: 37,261,191         | Neutral          | Decreased activity           | Moderate; watch for increases  |\n| Support: $99.57            | Neutral          | Use as stop-loss level      | High; recent low              |\n| Resistance: $102.20        | Neutral          | Breakout target              | High; key level to watch      |",
+    "fundamental": "### 1. Fundamental Facts\n- **Ticker**: AMZN\n- **Trade Date**: April 10, 2023\n- **Latest Financial Statements**: \n  - **Balance Sheet (as of March 31, 2023)**:\n    - Total Assets: $464.38 billion\n    - Total Liabilities: $309.85 billion\n    - Total Shareholder Equity: $154.53 billion\n  - **Income Statement (for the quarter ending March 31, 2023)**:\n    - Total Revenue: $127.36 billion\n    - Gross Profit: $59.57 billion\n    - Operating Income: $4.77 billion\n    - Net Income: $3.17 billion\n  - **Cash Flow Statement (for the quarter ending March 31, 2023)**:\n    - Operating Cash Flow: $4.79 billion\n    - Capital Expenditures: $14.21 billion\n    - Cash Flow from Financing: $6.35 billion\n\n### 2. Financial Trend and Quality Analysis\n- **Revenue Growth**: Amazon reported a total revenue of $127.36 billion for Q1 2023, indicating a strong demand across its segments, particularly in e-commerce and AWS.\n- **Profitability**: The net income of $3.17 billion shows a recovery from previous quarters, where the company faced losses, such as a net loss of $2.02 billion in Q2 2022.\n- **Cash Generation**: Operating cash flow of $4.79 billion suggests healthy cash generation capabilities, although capital expenditures are high at $14.21 billion, indicating ongoing investments in infrastructure and technology.\n- **Leverage**: Total liabilities of $309.85 billion against total assets of $464.38 billion results in a debt-to-equity ratio of approximately 2.00, which is relatively high, indicating significant leverage.\n\n### 3. Business Interpretation for Traders\n- **Growth Potential**: Amazon's diverse business model, including e-commerce, AWS, and subscription services, positions it well for continued growth. The recent increase in net income and strong revenue figures suggest that the company is on a positive trajectory.\n- **Investment in Future Growth**: The high capital expenditures indicate that Amazon is investing heavily in its future, which could lead to higher returns in the long run. Traders should consider the potential for growth against the backdrop of current spending.\n- **Market Position**: Amazon remains a leader in e-commerce and cloud services, with a strong competitive advantage due to its scale and customer loyalty.\n\n### 4. Key Risks and Uncertainties\n- **Market Competition**: The competitive landscape is intense, with numerous players in both e-commerce and cloud services. This could pressure margins and market share.\n- **Economic Conditions**: Economic downturns or changes in consumer spending habits could adversely affect revenue growth.\n- **Regulatory Risks**: Increased scrutiny from regulators regarding antitrust issues and data privacy could pose risks to Amazon's operations and growth strategies.\n\n### 5. Final View: Bullish\nGiven the strong revenue growth, recovery in net income, and ongoing investments in infrastructure, Amazon appears to be in a solid position for future growth. While there are risks associated with competition and economic conditions, the company's diversified business model and strong market presence support a bullish outlook.\n\n| Key Fundamental Points | Supporting Evidence | Trading Implication | Confidence/Risk Note |\n|-----------------------|---------------------|---------------------|----------------------|\n| Total Revenue         | $127.36 billion     | Buy                  | Strong growth potential |\n| Net Income            | $3.17 billion       | Buy                  | Recovery from losses   |\n| Operating Cash Flow   | $4.79 billion       | Buy                  | Healthy cash generation |\n| Capital Expenditures   | $14.21 billion      | Hold                 | High investment risk   |\n| Debt-to-Equity Ratio  | 2.00                | Neutral              | High leverage concern  |\n| Competitive Landscape  | Intense competition  | Monitor              | Risk of margin pressure |",
+    "news": "### Key News\n\n1. **AWS Client Expansion**: Amazon's cloud computing division, AWS, continues to expand its clientele, recently partnering with Experian. This development highlights AWS's ongoing strength and its role as a key growth driver for Amazon.\n\n2. **Whole Foods Production Shift**: Whole Foods Market, owned by Amazon, plans to transition from outsourcing food production to establishing in-house commercial kitchens. This strategic move aims to enhance food quality and operational efficiency.\n\n3. **Market Reaction to Job Gains**: The broader market experienced a downturn, with Amazon's stock slipping between 1.7% and 2.1% due to concerns over potential interest rate hikes following strong job growth data.\n\n4. **Cloud Computing Leadership**: Analysts continue to recognize Amazon as a leader in the cloud computing sector, with significant market share gains reported.\n\n5. **Economic Concerns**: Articles discuss the broader economic environment, including fears of a recession and the impact of Federal Reserve policies on growth stocks like Amazon.\n\n### Catalyst and Sentiment Analysis\n\n- **Positive Sentiment**: The expansion of AWS and the strategic shift at Whole Foods are seen as positive catalysts that could enhance Amazon's operational efficiency and revenue potential.\n- **Negative Sentiment**: The overall market sentiment is cautious, influenced by economic indicators suggesting potential rate hikes. This has led to a decline in stock prices for growth companies, including Amazon.\n\n### Market Impact for Traders\n\n- **Short-Term Volatility**: Traders should expect continued volatility in Amazon's stock due to macroeconomic factors and market sentiment surrounding interest rates.\n- **Long-Term Growth Potential**: The developments in AWS and Whole Foods suggest that Amazon is positioning itself for long-term growth, making it a potential buy for investors with a longer time horizon.\n\n### Key Risks and Unresolved Questions\n\n- **Interest Rate Hikes**: The potential for further interest rate increases poses a risk to growth stocks, including Amazon, which could lead to further declines in stock prices.\n- **Economic Slowdown**: Concerns about a recession could impact consumer spending and, consequently, Amazon's revenue growth.\n\n### Final View: Neutral\n\nGiven the mixed signals from recent news—positive developments in AWS and Whole Foods countered by broader market concerns—our view on Amazon is neutral. Traders should monitor economic indicators closely while considering the company's long-term growth potential.\n\n| Key News Item | Evidence | Expected Market Impact | Trading Implication | Confidence/Risk Note |\n|---------------|----------|-----------------------|---------------------|-----------------------|\n| AWS Client Expansion | \"Amazon's (AMZN) AWS Clientele Expands With Experian's Pick\" | Positive for long-term growth | Buy for long-term | Moderate confidence due to market volatility |\n| Whole Foods Production Shift | \"Whole Foods Market plans to shift from outsourcing most of its food production\" | Positive for operational efficiency | Buy for long-term | Moderate confidence, depends on execution |\n| Market Reaction to Job Gains | \"Wall Street drops as job gains fuel rate-hike worries\" | Negative short-term volatility | Hold or sell short-term | High risk due to macroeconomic factors |\n| Cloud Computing Leadership | \"Amazon is the undisputed leader in the multi-billion dollar cloud infrastructure services market\" | Positive for long-term growth | Buy for long-term | High confidence in AWS growth |\n| Economic Concerns | \"Fears of a recession could impact consumer spending\" | Negative for growth stocks | Caution advised | High risk due to economic uncertainty |",
+    "policy": "### Macro Backdrop\nAs of April 10, 2023, the macroeconomic environment presents a mixed picture for Amazon (AMZN). The U.S. economy is experiencing moderate growth, with a real GDP of approximately $27.53 trillion and a stable unemployment rate of 3.4%. Consumer sentiment has shown slight improvement, with the Consumer Sentiment Index at 63.7, indicating a cautiously optimistic outlook among consumers. Retail sales are robust, recorded at $670.49 billion, which is crucial for a consumer-driven company like Amazon.\n\n### Policy and Rate Environment\nThe Federal Funds Target Rate is currently set at 5.0%, reflecting the Federal Reserve's ongoing efforts to combat inflation. The 3-Month Treasury Bill Yield stands at 4.94%, while the 10-Year Treasury Yield is at 3.41%. These rates indicate a relatively high cost of borrowing, which could impact consumer spending and corporate financing. The 5-Year Breakeven Inflation Rate is at 2.27%, suggesting that inflation expectations are moderating but still present a concern for policymakers.\n\n### Transmission to the Company or Sector\nFor Amazon, the high interest rates may lead to increased borrowing costs, affecting its capital expenditures and potentially slowing down expansion plans. However, the strong retail sales figures indicate that consumer demand remains resilient, which is positive for Amazon's e-commerce and cloud services. The stable unemployment rate suggests that consumers have disposable income, which could support Amazon's sales.\n\n### Key Macro Risks and Uncertainties\n1. **Inflation Persistence**: If inflation remains high, it could lead to further rate hikes, impacting consumer spending and borrowing costs.\n2. **Consumer Sentiment Volatility**: A decline in consumer sentiment could lead to reduced spending, particularly in discretionary categories where Amazon operates.\n3. **Global Economic Conditions**: Any geopolitical tensions or economic slowdowns in key markets could adversely affect Amazon's international sales.\n\n### Final View: Neutral\nGiven the current macroeconomic indicators, the outlook for Amazon is neutral. While consumer demand remains strong, the high interest rates and inflationary pressures pose risks that could affect future growth. Traders should monitor economic indicators closely, particularly consumer sentiment and inflation trends, to gauge the appropriate timing for trading decisions.\n\n| Macro/Policy Point               | Supporting Evidence                     | Trading Implication                      | Confidence/Risk Note                |\n|----------------------------------|----------------------------------------|-----------------------------------------|-------------------------------------|\n| Federal Funds Rate               | 5.0%                                   | High borrowing costs may impact growth  | Moderate risk                       |\n| 3-Month Treasury Yield           | 4.94%                                  | Increased financing costs                | Moderate risk                       |\n| 10-Year Treasury Yield           | 3.41%                                  | Long-term borrowing costs                | Moderate risk                       |\n| Inflation Rate                   | 5-Year Breakeven at 2.27%             | Inflation concerns persist               | High risk                           |\n| Unemployment Rate                | 3.4%                                   | Stable labor market supports spending    | Low risk                            |\n| Consumer Sentiment Index         | 63.7                                   | Cautiously optimistic outlook            | Moderate risk                       |\n| Retail Sales                     | $670.49 billion                        | Strong demand for e-commerce             | Low risk                            |"
+  },
+  "messages": {
+    "technical": [
+      {
+        "index": 0,
+        "type": "ai",
+        "content": "",
+        "content_truncated": false,
+        "tool_calls": [
+          {
+            "name": "collect_technical_evidence_ptc",
+            "args": {
+              "trade_date": "2023-04-10",
+              "ticker": "AMZN"
+            },
+            "id": "call_nYPvmcysUlzDbKvRmg11fCOD",
+            "type": "tool_call"
+          }
+        ],
+        "name": null
+      },
+      {
+        "index": 1,
+        "type": "tool",
+        "content": "{\"ptc_program\": \"technical_evidence_v1\", \"tool_call_count\": 2, \"call_trace\": [{\"tool\": \"prices\", \"output_keys\": [\"data\", \"end_date\", \"matched_count\", \"returned_count\", \"start_date\", \"symbol\"], \"serialized_chars\": 14733}, {\"tool\": \"indicators\", \"output_keys\": [\"curr_date\", \"data\", \"descriptions\", \"indicators\", \"look_back_days\", \"matched_count\", \"returned_count\", \"symbol\"], \"serialized_chars\": 12577}], \"outputs\": {\"prices\": {\"symbol\": \"AMZN\", \"start_date\": \"2022-12-11\", \"end_date\": \"2023-04-10\", \"matched_count\": 81, \"returned_count\": 80, \"data\": [{\"date\": \"2023-04-10\", \"open\": 100.96, \"close\": 102.17, \"high\": 102.2, \"low\": 99.57, \"volume\": 37261191, \"adjusted_close\": 102.17}, {\"date\": \"2023-04-06\", \"open\": 100.75, \"close\": 102.06, \"high\": 102.3817, \"low\": 99.8008, \"volume\": 43808020, \"adjusted_close\": 102.06}, {\"date\": \"2023-04-05\", \"open\": 103.91, \"close\": 101.1, \"high\": 103.91, \"low\": 100.7506, \"volume\": 45175391, \"adjusted_close\": 101.1}, {\"date\": \"2023-04-04\", \"open\": 102.75, \"close\": 103.95, \"high\": 104.2, \"low\": 102.11, \"volume\": 48662500, \"adjusted_close\": 103.95}, {\"date\": \"2023-04-03\", \"open\": 102.3, \"close\": 102.41, \"high\": 103.29, \"low\": 101.43, \"volume\": 41135727, \"adjusted_close\": 102.41}, {\"date\": \"2023-03-31\", \"open\": 102.16, \"close\": 103.29, \"high\": 103.49, \"low\": 101.95, \"volume\": 56750320, \"adjusted_close\": 103.29}, {\"date\": \"2023-03-30\", \"open\": 101.55, \"close\": 102.0, \"high\": 103.04, \"low\": 101.01, \"volume\": 53633398, \"adjusted_close\": 102.0}, {\"date\": \"2023-03-29\", \"open\": 98.69, \"close\": 100.25, \"high\": 100.4218, \"low\": 98.56, \"volume\": 49783281, \"adjusted_close\": 100.25}, {\"date\": \"2023-03-28\", \"open\": 98.11, \"close\": 97.24, \"high\": 98.44, \"low\": 96.29, \"volume\": 38720047, \"adjusted_close\": 97.24}, {\"date\": \"2023-03-27\", \"open\": 99.07, \"close\": 98.04, \"high\": 99.34, \"low\": 97.08, \"volume\": 46721301, \"adjusted_close\": 98.04}, {\"date\": \"2023-03-24\", \"open\": 98.065, \"close\": 98.13, \"high\": 98.3, \"low\": 96.4, \"volume\": 56144801, \"adjusted_close\": 98",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": "collect_technical_evidence_ptc"
+      },
+      {
+        "index": 2,
+        "type": "ai",
+        "content": "### Key Observations\n- **Current Price Action**: As of April 10, 2023, AMZN closed at $102.17, up from a previous close of $102.06 on April 6, 2023.\n- **Recent Highs and Lows**: The stock reached a high of $102.20 and a low of $99.57 on April 10, indicating some volatility within the session.\n- **Volume**: The trading volume on April 10 was 37,261,191 shares, which is lower than the previous session's volume of 43,808,020 shares, suggesting a decrease in trading activity.\n- **Moving Averages**: The stock's price is currently above its short-term moving averages, indicating a potential bullish trend.\n- **Momentum Indicators**: The RSI is at 58.07, suggesting that the stock is neither overbought nor oversold. The MACD shows a positive histogram, indicating bullish momentum.\n\n### Technical Interpretation\n- **Trend Analysis**: The stock appears to be in a bullish trend, having recovered from lower levels in March. The recent price action shows higher lows and higher highs, which is characteristic of an uptrend.\n- **Support and Resistance Levels**: The recent low of $99.57 serves as a potential support level, while the high of $102.20 could act as resistance. A break above this resistance could lead to further upside.\n- **Momentum Indicators**:\n  - **RSI**: At 58.07, the RSI is approaching overbought territory but is not yet there, indicating room for further upward movement.\n  - **MACD**: The MACD line is above the signal line, and the histogram is positive, suggesting bullish momentum.\n  - **Stochastic Oscillator**: The %K is at 74.34 and %D is at 70.90, indicating that the stock is nearing overbought conditions but still has momentum.\n\n### Trading Implications and Risk Controls\n- **Entry Points**: Traders may consider entering a long position if AMZN breaks above the resistance level of $102.20 with strong volume. A confirmation of this breakout could provide a favorable risk-reward scenario.\n- **Stop-Loss Strategy**: A stop-loss could be placed below the recent suppo",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": null
+      }
+    ],
+    "fundamental": [
+      {
+        "index": 0,
+        "type": "ai",
+        "content": "",
+        "content_truncated": false,
+        "tool_calls": [
+          {
+            "name": "collect_fundamental_evidence_ptc",
+            "args": {
+              "trade_date": "2023-04-10",
+              "ticker": "AMZN"
+            },
+            "id": "call_Ce3zDkCAeHBvmuRdMfJ4mfW4",
+            "type": "tool_call"
+          }
+        ],
+        "name": null
+      },
+      {
+        "index": 1,
+        "type": "tool",
+        "content": "{\"ptc_program\": \"fundamental_evidence_v1\", \"tool_call_count\": 3, \"call_trace\": [{\"tool\": \"statement_summary\", \"output_keys\": [\"compact\", \"curr_date\", \"frequency\", \"statements\", \"ticker\"], \"serialized_chars\": 1828}, {\"tool\": \"earnings\", \"output_keys\": [\"annualEarnings\", \"annual_matched_count\", \"annual_returned_count\", \"curr_date\", \"quarterlyEarnings\", \"quarterly_matched_count\", \"quarterly_returned_count\", \"ticker\"], \"serialized_chars\": 815}, {\"tool\": \"filings\", \"output_keys\": [\"curr_date\", \"filings\", \"matched_count\", \"returned_count\", \"ticker\"], \"serialized_chars\": 5303}], \"outputs\": {\"statement_summary\": {\"ticker\": \"AMZN\", \"curr_date\": \"2023-04-10\", \"frequency\": \"quarterly\", \"compact\": true, \"statements\": {\"balance_sheet\": {\"fiscalDateEnding\": \"2023-03-31\", \"reportedCurrency\": \"USD\", \"totalAssets\": 464378000000, \"totalLiabilities\": 309852000000, \"totalCurrentAssets\": 136221000000, \"totalCurrentLiabilities\": 147570000000, \"cashAndCashEquivalentsAtCarryingValue\": 49343000000, \"inventory\": 34170000000, \"currentNetReceivables\": 37646000000, \"propertyPlantEquipment\": 259016000000, \"goodwill\": 22749000000, \"intangibleAssets\": null, \"currentAccountsPayable\": 66907000000, \"shortTermDebt\": 13428000000, \"longTermDebt\": 67084000000, \"totalShareholderEquity\": 154526000000}, \"cashflow\": {\"fiscalDateEnding\": \"2023-03-31\", \"reportedCurrency\": \"USD\", \"operatingCashflow\": 4788000000, \"capitalExpenditures\": 14207000000, \"cashflowFromInvestment\": -15806000000, \"cashflowFromFinancing\": 6354000000, \"depreciationDepletionAndAmortization\": 11123000000, \"changeInReceivables\": 1521000000, \"changeInInventory\": 371000000, \"stockBasedCompensation\": 4748000000, \"netIncome\": 3172000000}, \"income_statement\": {\"fiscalDateEnding\": \"2023-03-31\", \"reportedCurrency\": \"USD\", \"totalRevenue\": 127358000000, \"grossProfit\": 59567000000, \"operatingIncome\": 4774000000, \"netIncome\": 3172000000, \"ebit\": 4774000000, \"ebitda\": 15897000000, \"researchAndDevelopment\": 17420000000, \"sellingGeneralAndAdministrative\": ",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": "collect_fundamental_evidence_ptc"
+      },
+      {
+        "index": 2,
+        "type": "ai",
+        "content": "### 1. Fundamental Facts\n- **Ticker**: AMZN\n- **Trade Date**: April 10, 2023\n- **Latest Financial Statements**: \n  - **Balance Sheet (as of March 31, 2023)**:\n    - Total Assets: $464.38 billion\n    - Total Liabilities: $309.85 billion\n    - Total Shareholder Equity: $154.53 billion\n  - **Income Statement (for the quarter ending March 31, 2023)**:\n    - Total Revenue: $127.36 billion\n    - Gross Profit: $59.57 billion\n    - Operating Income: $4.77 billion\n    - Net Income: $3.17 billion\n  - **Cash Flow Statement (for the quarter ending March 31, 2023)**:\n    - Operating Cash Flow: $4.79 billion\n    - Capital Expenditures: $14.21 billion\n    - Cash Flow from Financing: $6.35 billion\n\n### 2. Financial Trend and Quality Analysis\n- **Revenue Growth**: Amazon reported a total revenue of $127.36 billion for Q1 2023, indicating a strong demand across its segments, particularly in e-commerce and AWS.\n- **Profitability**: The net income of $3.17 billion shows a recovery from previous quarters, where the company faced losses, such as a net loss of $2.02 billion in Q2 2022.\n- **Cash Generation**: Operating cash flow of $4.79 billion suggests healthy cash generation capabilities, although capital expenditures are high at $14.21 billion, indicating ongoing investments in infrastructure and technology.\n- **Leverage**: Total liabilities of $309.85 billion against total assets of $464.38 billion results in a debt-to-equity ratio of approximately 2.00, which is relatively high, indicating significant leverage.\n\n### 3. Business Interpretation for Traders\n- **Growth Potential**: Amazon's diverse business model, including e-commerce, AWS, and subscription services, positions it well for continued growth. The recent increase in net income and strong revenue figures suggest that the company is on a positive trajectory.\n- **Investment in Future Growth**: The high capital expenditures indicate that Amazon is investing heavily in its future, which could lead to higher returns in the long ru",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": null
+      }
+    ],
+    "news": [
+      {
+        "index": 0,
+        "type": "ai",
+        "content": "",
+        "content_truncated": false,
+        "tool_calls": [
+          {
+            "name": "collect_news_evidence_ptc",
+            "args": {
+              "ticker": "AMZN",
+              "trade_date": "2023-04-10"
+            },
+            "id": "call_weGkAGivZJ0lhCrkU1ctL7yp",
+            "type": "tool_call"
+          }
+        ],
+        "name": null
+      },
+      {
+        "index": 1,
+        "type": "tool",
+        "content": "{\"ptc_program\": \"news_evidence_v1\", \"tool_call_count\": 1, \"call_trace\": [{\"tool\": \"get_news_data\", \"matched\": 101}], \"outputs\": {\"ticker\": \"AMZN\", \"start_date\": \"2023-04-03\", \"trade_date\": \"2023-04-10\", \"returned_count\": 15, \"articles\": [{\"time_published\": \"20230410T000000\", \"title\": \"Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to\", \"summary\": \"Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to get this free report Amazon.com, Inc. (AMZN) : Free Stock Analysis Report Microsoft Corporation (MSFT) : Free Stock Analysis Report Southwest Airlines Co. (LUV) : Free Stock Analysis Report Alphabet Inc. (GOOGL) : Free Stock Analysis Report To read this article on Zacks.com click here. Moreover, strengthening AWS offerings, which are constantly driving the company’s cloud customer momentum, remains the key catalyst.\", \"overall_sentiment_score\": null, \"overall_sentiment_label\": null}, {\"time_published\": \"20230410T000000\", \"title\": \"Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production\", \"summary\": \"Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production to building commercial kitchens with a focus on making meals for its food bars and refrigerated cases, The Wall Street Journal reported, citing sources familiar with the matter. International Game Technology (IGT) was rising past 2% after saying it signed a three-year contract extension to continue providing its sports betting technology to the Rhode Island Lottery. Canoo (GOEV) was up more than 3% after saying it executed a 10-year lease agreement for the leaseback of about 500,000 square feet of the ",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": "collect_news_evidence_ptc"
+      },
+      {
+        "index": 2,
+        "type": "ai",
+        "content": "### Key News\n\n1. **AWS Client Expansion**: Amazon's cloud computing division, AWS, continues to expand its clientele, recently partnering with Experian. This development highlights AWS's ongoing strength and its role as a key growth driver for Amazon.\n\n2. **Whole Foods Production Shift**: Whole Foods Market, owned by Amazon, plans to transition from outsourcing food production to establishing in-house commercial kitchens. This strategic move aims to enhance food quality and operational efficiency.\n\n3. **Market Reaction to Job Gains**: The broader market experienced a downturn, with Amazon's stock slipping between 1.7% and 2.1% due to concerns over potential interest rate hikes following strong job growth data.\n\n4. **Cloud Computing Leadership**: Analysts continue to recognize Amazon as a leader in the cloud computing sector, with significant market share gains reported.\n\n5. **Economic Concerns**: Articles discuss the broader economic environment, including fears of a recession and the impact of Federal Reserve policies on growth stocks like Amazon.\n\n### Catalyst and Sentiment Analysis\n\n- **Positive Sentiment**: The expansion of AWS and the strategic shift at Whole Foods are seen as positive catalysts that could enhance Amazon's operational efficiency and revenue potential.\n- **Negative Sentiment**: The overall market sentiment is cautious, influenced by economic indicators suggesting potential rate hikes. This has led to a decline in stock prices for growth companies, including Amazon.\n\n### Market Impact for Traders\n\n- **Short-Term Volatility**: Traders should expect continued volatility in Amazon's stock due to macroeconomic factors and market sentiment surrounding interest rates.\n- **Long-Term Growth Potential**: The developments in AWS and Whole Foods suggest that Amazon is positioning itself for long-term growth, making it a potential buy for investors with a longer time horizon.\n\n### Key Risks and Unresolved Questions\n\n- **Interest Rate Hikes**: The potential f",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": null
+      }
+    ],
+    "policy": [
+      {
+        "index": 0,
+        "type": "ai",
+        "content": "",
+        "content_truncated": false,
+        "tool_calls": [
+          {
+            "name": "collect_policy_evidence_ptc",
+            "args": {
+              "trade_date": "2023-04-10"
+            },
+            "id": "call_s09YLAxsc87oAAcdkyeSgVi6",
+            "type": "tool_call"
+          }
+        ],
+        "name": null
+      },
+      {
+        "index": 1,
+        "type": "tool",
+        "content": "{\"ptc_program\": \"policy_evidence_v1\", \"tool_call_count\": 7, \"call_trace\": [{\"tool\": \"latest_summary\", \"output_keys\": [\"curr_date\", \"indicators\"], \"serialized_chars\": 2011}, {\"tool\": \"federal_funds_rate\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 942}, {\"tool\": \"treasury_yield_3m\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 937}, {\"tool\": \"treasury_yield_10y\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 933}, {\"tool\": \"inflation\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 936}, {\"tool\": \"unemployment\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 912}, {\"tool\": \"consumer_sentiment\", \"output_keys\": [\"curr_date\", \"data\", \"data_type\", \"description\", \"matched_count\", \"returned_count\", \"series_id\"], \"serialized_chars\": 934}], \"outputs\": {\"latest_summary\": {\"curr_date\": \"2023-04-10\", \"indicators\": {\"federal_funds_rate\": {\"description\": \"Federal Funds Target Rate (Upper Bound, %)\", \"series_id\": \"DFEDTARU\", \"latest_date\": \"2023-04-10\", \"latest_value\": 5.0}, \"treasury_yield_3m\": {\"description\": \"3-Month Treasury Bill Yield (%)\", \"series_id\": \"DTB3\", \"latest_date\": \"2023-04-10\", \"latest_value\": 4.94}, \"treasury_yield_10y\": {\"description\": \"10-Year Treasury Yield (%)\", \"series_id\": \"DGS10\", \"latest_date\": \"2023-04-10\", \"latest_value\": 3.41}, \"treasury_yield_30y\": {\"description\": \"30-Year Treasury Yield (%)\", \"series_id\": \"DGS30\", \"latest_date\": \"2023-04-10\", \"latest_value\": 3.62}, \"cpi\": {\"description\": \"Consumer Price Index (All Urban Consumers)\", \"series_id\": \"CPIAUCSL\", \"latest_date\": \"2023-04-01\", \"latest_value\": 302.845}, \"infl",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": "collect_policy_evidence_ptc"
+      },
+      {
+        "index": 2,
+        "type": "ai",
+        "content": "### Macro Backdrop\nAs of April 10, 2023, the macroeconomic environment presents a mixed picture for Amazon (AMZN). The U.S. economy is experiencing moderate growth, with a real GDP of approximately $27.53 trillion and a stable unemployment rate of 3.4%. Consumer sentiment has shown slight improvement, with the Consumer Sentiment Index at 63.7, indicating a cautiously optimistic outlook among consumers. Retail sales are robust, recorded at $670.49 billion, which is crucial for a consumer-driven company like Amazon.\n\n### Policy and Rate Environment\nThe Federal Funds Target Rate is currently set at 5.0%, reflecting the Federal Reserve's ongoing efforts to combat inflation. The 3-Month Treasury Bill Yield stands at 4.94%, while the 10-Year Treasury Yield is at 3.41%. These rates indicate a relatively high cost of borrowing, which could impact consumer spending and corporate financing. The 5-Year Breakeven Inflation Rate is at 2.27%, suggesting that inflation expectations are moderating but still present a concern for policymakers.\n\n### Transmission to the Company or Sector\nFor Amazon, the high interest rates may lead to increased borrowing costs, affecting its capital expenditures and potentially slowing down expansion plans. However, the strong retail sales figures indicate that consumer demand remains resilient, which is positive for Amazon's e-commerce and cloud services. The stable unemployment rate suggests that consumers have disposable income, which could support Amazon's sales.\n\n### Key Macro Risks and Uncertainties\n1. **Inflation Persistence**: If inflation remains high, it could lead to further rate hikes, impacting consumer spending and borrowing costs.\n2. **Consumer Sentiment Volatility**: A decline in consumer sentiment could lead to reduced spending, particularly in discretionary categories where Amazon operates.\n3. **Global Economic Conditions**: Any geopolitical tensions or economic slowdowns in key markets could adversely affect Amazon's international s",
+        "content_truncated": true,
+        "tool_calls": [],
+        "name": null
+      }
+    ]
+  },
+  "workflow": {
+    "workflow_method": "DataEvolverDynamicPTC",
+    "workflow_mode": "dataevolver",
+    "workflow_status": "ok",
+    "workflow_plan": {
+      "method": "DataEvolver",
+      "mode": "understanding_freefit_template_constrained_search",
+      "execution_mode": "dynamic_ptc",
+      "ticker": "AMZN",
+      "trade_date": "2023-04-10",
+      "operator_manual": [
+        {
+          "operator": "read_market_data",
+          "category": "data_loading",
+          "input_keys": [
+            "raw_evidence",
+            "data_profile"
+          ],
+          "output_keys": [
+            "market_context"
+          ],
+          "description": "Read current-date technical, fundamental, news, and policy evidence into one market context."
+        },
+        {
+          "operator": "bullish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bullish_view"
+          ],
+          "description": "Build the buy-side thesis and bullish score from current evidence."
+        },
+        {
+          "operator": "bearish_signal",
+          "category": "bullish_bearish",
+          "input_keys": [
+            "market_context"
+          ],
+          "output_keys": [
+            "bearish_view"
+          ],
+          "description": "Build the sell/hold risk thesis and bearish score from current evidence."
+        },
+        {
+          "operator": "disagreement_detection",
+          "category": "disagreement_detection",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "market_context"
+          ],
+          "output_keys": [
+            "disagreement_report"
+          ],
+          "description": "Detect directional disagreement between bullish and bearish evidence branches."
+        },
+        {
+          "operator": "risk_management",
+          "category": "risk_management",
+          "input_keys": [
+            "market_context",
+            "bearish_view",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "risk_profile"
+          ],
+          "description": "Apply volatility, drawdown, policy, data, and disagreement risk controls."
+        },
+        {
+          "operator": "position_sizing",
+          "category": "position_sizing",
+          "input_keys": [
+            "bullish_view",
+            "bearish_view",
+            "risk_profile",
+            "disagreement_report"
+          ],
+          "output_keys": [
+            "trade_instruction"
+          ],
+          "description": "Convert signal and risk outputs into BUY, SELL, or HOLD plus position percentage."
+        },
+        {
+          "operator": "join",
+          "category": "final_decision",
+          "input_keys": [
+            "trade_instruction"
+          ],
+          "output_keys": [
+            "final_decision"
+          ],
+          "description": "Normalize the final decision contract: action in BUY/SELL/HOLD and position_pct as percent."
+        }
+      ],
+      "available_templates": {
+        "signal_decomposition": {
+          "name": "Signal decomposition",
+          "description": "Split current evidence into bullish and bearish reasoning branches.",
+          "abstract_steps_count": 3,
+          "use_cases": [
+            "separate buy thesis from sell/hold thesis",
+            "make directional evidence explicit"
+          ]
+        },
+        "risk_control": {
+          "name": "Risk control",
+          "description": "Apply volatility, drawdown, macro, data-quality, and conflict risk controls.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "reduce exposure under high uncertainty",
+            "block buys when exit risk is active"
+          ]
+        },
+        "position_construction": {
+          "name": "Position construction",
+          "description": "Translate signal and risk outputs into a percentage position.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "produce buy/sell/hold",
+            "cap position by risk controls"
+          ]
+        },
+        "disagreement_resolution": {
+          "name": "Disagreement resolution",
+          "description": "Detect conflict between bullish and bearish branches before sizing.",
+          "abstract_steps_count": 2,
+          "use_cases": [
+            "identify mixed evidence",
+            "lower sizing when branches disagree"
+          ]
+        }
+      },
+      "data_profile": {
+        "ticker": "AMZN",
+        "trade_date": "2023-04-10",
+        "raw_blocks": [
+          "fundamental",
+          "news",
+          "policy",
+          "technical"
+        ],
+        "raw_fields": {
+          "technical": [
+            "adjusted_close",
+            "allocation_posture",
+            "buy_signal",
+            "daily_return_pct",
+            "drawdown60_pct",
+            "entry_position_pct",
+            "entry_reason",
+            "exit_reason",
+            "from_low20_pct",
+            "high60",
+            "low20",
+            "ma10",
+            "ma20",
+            "macd_histogram",
+            "matched_trade_date",
+            "mode",
+            "previous_close",
+            "rsi",
+            "sell_signal",
+            "stoch_k",
+            "ticker",
+            "trade_date",
+            "volatility_pct"
+          ],
+          "fundamental": [
+            "current_ratio",
+            "debt_to_equity",
+            "free_cashflow",
+            "latest_balance_date",
+            "latest_cashflow_date",
+            "latest_income_date",
+            "net_income",
+            "net_margin_pct",
+            "operating_cashflow",
+            "operating_income",
+            "revenue",
+            "score",
+            "stance",
+            "ticker",
+            "trade_date"
+          ],
+          "news": [
+            "article_count",
+            "lookback_days",
+            "negative_hits",
+            "positive_hits",
+            "stance",
+            "ticker",
+            "top_titles",
+            "trade_date"
+          ],
+          "policy": [
+            "indicators",
+            "restrictive_policy",
+            "stance",
+            "trade_date"
+          ]
+        },
+        "report_stances": {
+          "technical": "bullish",
+          "fundamental": "bullish",
+          "news": "neutral",
+          "policy": "neutral"
+        },
+        "technical": {
+          "matched_trade_date": "2023-04-10",
+          "mode": "rebound_trend_capture",
+          "buy_signal": true,
+          "sell_signal": false,
+          "entry_position_pct": 100.0,
+          "daily_return_pct": 0.10777973740936364,
+          "from_low20_pct": 10.53770420859028,
+          "drawdown60_pct": -9.512000708528912,
+          "volatility_pct": 2.794325592228493,
+          "rsi": 58.0743007915715,
+          "macd_histogram": 0.3055716989365562
+        },
+        "fundamental": {
+          "stance": "neutral",
+          "score": 1,
+          "net_margin_pct": 2.4906170008951145,
+          "current_ratio": 0.9230941248221183,
+          "debt_to_equity": 0.434127590178999
+        },
+        "news": {
+          "stance": "bullish",
+          "article_count": 82,
+          "positive_hits": 60,
+          "negative_hits": 16,
+          "top_titles": [
+            "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS). Click to",
+            "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production ",
+            "US STOCKS-Wall Street drops as job gains fuel rate-hike worries-The tech-heavy Nasdaq <.IXIC> led losses among the major indexes after the long weekend, with gr",
+            "Finding the Best Stocks to Buy Amid Market Volatility-High-quality growth companies – like Amazon (AMZN) – saw their stock prices plunge. That’s an unusually hi",
+            "Grid Dynamics (GDYN) to Revamp Global Inventory Allocation-Grid Dynamics is banking on its strategic partnerships with enterprises like Amazon AMZN, Microsoft M"
+          ]
+        },
+        "policy": {
+          "stance": "bearish",
+          "restrictive_policy": true
+        },
+        "reports_excerpt": {
+          "technical": "### Key Observations\n- **Current Price Action**: As of April 10, 2023, AMZN closed at $102.17, up from a previous close of $102.06 on April 6, 2023.\n- **Recent Highs and Lows**: The stock reached a high of $102.20 and a low of $99.57 on April 10, indicating some volatility within the session.\n- **Volume**: The trading volume on April 10 was 37,261,191 shares, which is lower than the previous session's volume of 43,808,020 shares, suggesting a decrease in trading activity.\n- **Moving Averages**: The stock's price is currently above its short-term moving averages, indicating a potential bullish trend.\n- **Momentum Indicators**: The RSI is at 58.07, suggesting that the stock is neither overbought nor oversold. The MACD shows a positive histogram, indicating bullish momentum.\n\n### Technical Interpretation\n- **Trend Analysis**: The stock appears to be in a bullish trend, having recovered from\n...[truncated]",
+          "fundamental": "### 1. Fundamental Facts\n- **Ticker**: AMZN\n- **Trade Date**: April 10, 2023\n- **Latest Financial Statements**: \n  - **Balance Sheet (as of March 31, 2023)**:\n    - Total Assets: $464.38 billion\n    - Total Liabilities: $309.85 billion\n    - Total Shareholder Equity: $154.53 billion\n  - **Income Statement (for the quarter ending March 31, 2023)**:\n    - Total Revenue: $127.36 billion\n    - Gross Profit: $59.57 billion\n    - Operating Income: $4.77 billion\n    - Net Income: $3.17 billion\n  - **Cash Flow Statement (for the quarter ending March 31, 2023)**:\n    - Operating Cash Flow: $4.79 billion\n    - Capital Expenditures: $14.21 billion\n    - Cash Flow from Financing: $6.35 billion\n\n### 2. Financial Trend and Quality Analysis\n- **Revenue Growth**: Amazon reported a total revenue of $127.36 billion for Q1 2023, indicating a strong demand across its segments, particularly in e-commerce and\n...[truncated]",
+          "news": "### Key News\n\n1. **AWS Client Expansion**: Amazon's cloud computing division, AWS, continues to expand its clientele, recently partnering with Experian. This development highlights AWS's ongoing strength and its role as a key growth driver for Amazon.\n\n2. **Whole Foods Production Shift**: Whole Foods Market, owned by Amazon, plans to transition from outsourcing food production to establishing in-house commercial kitchens. This strategic move aims to enhance food quality and operational efficiency.\n\n3. **Market Reaction to Job Gains**: The broader market experienced a downturn, with Amazon's stock slipping between 1.7% and 2.1% due to concerns over potential interest rate hikes following strong job growth data.\n\n4. **Cloud Computing Leadership**: Analysts continue to recognize Amazon as a leader in the cloud computing sector, with significant market share gains reported.\n\n5. **Economic Co\n...[truncated]",
+          "policy": "### Macro Backdrop\nAs of April 10, 2023, the macroeconomic environment presents a mixed picture for Amazon (AMZN). The U.S. economy is experiencing moderate growth, with a real GDP of approximately $27.53 trillion and a stable unemployment rate of 3.4%. Consumer sentiment has shown slight improvement, with the Consumer Sentiment Index at 63.7, indicating a cautiously optimistic outlook among consumers. Retail sales are robust, recorded at $670.49 billion, which is crucial for a consumer-driven company like Amazon.\n\n### Policy and Rate Environment\nThe Federal Funds Target Rate is currently set at 5.0%, reflecting the Federal Reserve's ongoing efforts to combat inflation. The 3-Month Treasury Bill Yield stands at 4.94%, while the 10-Year Treasury Yield is at 3.41%. These rates indicate a relatively high cost of borrowing, which could impact consumer spending and corporate financing. The 5-\n...[truncated]"
+        }
+      },
+      "understanding_result": {
+        "data_format": {
+          "raw_blocks": [
+            "fundamental",
+            "news",
+            "policy",
+            "technical"
+          ],
+          "raw_fields": {
+            "technical": [
+              "adjusted_close",
+              "allocation_posture",
+              "buy_signal",
+              "daily_return_pct",
+              "drawdown60_pct",
+              "entry_position_pct",
+              "entry_reason",
+              "exit_reason",
+              "from_low20_pct",
+              "high60",
+              "low20",
+              "ma10",
+              "ma20",
+              "macd_histogram",
+              "matched_trade_date",
+              "mode",
+              "previous_close",
+              "rsi",
+              "sell_signal",
+              "stoch_k",
+              "ticker",
+              "trade_date",
+              "volatility_pct"
+            ],
+            "fundamental": [
+              "current_ratio",
+              "debt_to_equity",
+              "free_cashflow",
+              "latest_balance_date",
+              "latest_cashflow_date",
+              "latest_income_date",
+              "net_income",
+              "net_margin_pct",
+              "operating_cashflow",
+              "operating_income",
+              "revenue",
+              "score",
+              "stance",
+              "ticker",
+              "trade_date"
+            ],
+            "news": [
+              "article_count",
+              "lookback_days",
+              "negative_hits",
+              "positive_hits",
+              "stance",
+              "ticker",
+              "top_titles",
+              "trade_date"
+            ],
+            "policy": [
+              "indicators",
+              "restrictive_policy",
+              "stance",
+              "trade_date"
+            ]
+          }
+        },
+        "data_differences": [
+          "Technical data includes indicators like buy/sell signals and volatility, while fundamental data focuses on financial ratios and income metrics.",
+          "News data emphasizes sentiment and article counts, contrasting with policy data that discusses macroeconomic indicators and policy stances."
+        ],
+        "optimization_goals": [
+          "Enhance predictive accuracy by integrating diverse data sources effectively.",
+          "Streamline data processing to reduce latency in decision-making."
+        ],
+        "field_info": {
+          "raw_fields": {
+            "technical": [
+              "buy_signal",
+              "sell_signal",
+              "daily_return_pct",
+              "rsi"
+            ],
+            "fundamental": [
+              "current_ratio",
+              "debt_to_equity",
+              "net_margin_pct"
+            ],
+            "news": [
+              "article_count",
+              "positive_hits",
+              "negative_hits"
+            ],
+            "policy": [
+              "restrictive_policy"
+            ]
+          },
+          "seed_fields": [],
+          "new_fields": []
+        },
+        "reasoning": "The provided evidence showcases a comprehensive structure for stock trading analysis, highlighting the distinctions between technical, fundamental, news, and policy data, which are crucial for informed trading decisions.",
+        "stage": "data_understanding"
+      },
+      "free_fitting_stage": {
+        "global_optimization_direction": "Integrate diverse data sources for enhanced predictive accuracy",
+        "key_improvements": [
+          "Reduce latency in data processing",
+          "Enhance feature selection from each data type"
+        ],
+        "transformation_strategies": [
+          "Utilize machine learning models to combine technical and fundamental indicators",
+          "Implement real-time data streaming for news and policy updates"
+        ],
+        "quality_focus": [
+          "Ensure data integrity across all sources",
+          "Maintain consistency in data formats and timestamps"
+        ],
+        "stage": "free_fitting_stage"
+      },
+      "template_combination_stage": {
+        "selected_templates": [
+          "signal_decomposition",
+          "position_construction"
+        ],
+        "pipeline_sketch": {
+          "steps": [
+            {
+              "step_id": "step_1",
+              "template_name": "signal_decomposition",
+              "functional_description": "read current evidence"
+            },
+            {
+              "step_id": "step_2",
+              "template_name": "signal_decomposition",
+              "functional_description": "build bullish/bearish views"
+            },
+            {
+              "step_id": "step_3",
+              "template_name": "position_construction",
+              "functional_description": "size final position"
+            }
+          ]
+        },
+        "stage": "template_combination_stage"
+      },
+      "constrained_search_stage": {
+        "stage": "constrained_search_stage",
+        "method": "DataEvolver",
+        "mode": "understanding_freefit_template_constrained_search",
+        "final_pipeline": [
+          {
+            "step_id": "step_1",
+            "id": "step_1",
+            "operator": "read_market_data",
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ],
+            "depends_on": [],
+            "rationale": "This step reads current market data to create a comprehensive market context."
+          },
+          {
+            "step_id": "step_2",
+            "id": "step_2",
+            "operator": "bullish_signal",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bullish_view"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "This step generates a bullish view based on the current market context."
+          },
+          {
+            "step_id": "step_3",
+            "id": "step_3",
+            "operator": "bearish_signal",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bearish_view"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "This step generates a bearish view based on the current market context."
+          },
+          {
+            "step_id": "step_4",
+            "id": "step_4",
+            "operator": "disagreement_detection",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "market_context"
+            ],
+            "output_keys": [
+              "disagreement_report"
+            ],
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_1"
+            ],
+            "rationale": "This step detects any disagreement between bullish and bearish signals."
+          },
+          {
+            "step_id": "step_5",
+            "id": "step_5",
+            "operator": "risk_management",
+            "input_keys": [
+              "market_context",
+              "bearish_view",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "risk_profile"
+            ],
+            "depends_on": [
+              "step_1",
+              "step_3",
+              "step_4"
+            ],
+            "rationale": "This step assesses risk based on market context and bearish views."
+          },
+          {
+            "step_id": "step_6",
+            "id": "step_6",
+            "operator": "position_sizing",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "risk_profile",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "trade_instruction"
+            ],
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_5",
+              "step_4"
+            ],
+            "rationale": "This step determines the position size based on the generated signals and risk profile."
+          },
+          {
+            "step_id": "step_7",
+            "id": "step_7",
+            "operator": "join",
+            "input_keys": [
+              "trade_instruction"
+            ],
+            "output_keys": [
+              "final_decision"
+            ],
+            "depends_on": [
+              "step_6"
+            ],
+            "rationale": "This step consolidates the trade instructions into a final decision."
+          }
+        ],
+        "nodes": [
+          {
+            "step_id": "step_1",
+            "id": "step_1",
+            "operator": "read_market_data",
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ],
+            "depends_on": [],
+            "rationale": "This step reads current market data to create a comprehensive market context."
+          },
+          {
+            "step_id": "step_2",
+            "id": "step_2",
+            "operator": "bullish_signal",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bullish_view"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "This step generates a bullish view based on the current market context."
+          },
+          {
+            "step_id": "step_3",
+            "id": "step_3",
+            "operator": "bearish_signal",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bearish_view"
+            ],
+            "depends_on": [
+              "step_1"
+            ],
+            "rationale": "This step generates a bearish view based on the current market context."
+          },
+          {
+            "step_id": "step_4",
+            "id": "step_4",
+            "operator": "disagreement_detection",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "market_context"
+            ],
+            "output_keys": [
+              "disagreement_report"
+            ],
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_1"
+            ],
+            "rationale": "This step detects any disagreement between bullish and bearish signals."
+          },
+          {
+            "step_id": "step_5",
+            "id": "step_5",
+            "operator": "risk_management",
+            "input_keys": [
+              "market_context",
+              "bearish_view",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "risk_profile"
+            ],
+            "depends_on": [
+              "step_1",
+              "step_3",
+              "step_4"
+            ],
+            "rationale": "This step assesses risk based on market context and bearish views."
+          },
+          {
+            "step_id": "step_6",
+            "id": "step_6",
+            "operator": "position_sizing",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "risk_profile",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "trade_instruction"
+            ],
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_5",
+              "step_4"
+            ],
+            "rationale": "This step determines the position size based on the generated signals and risk profile."
+          },
+          {
+            "step_id": "step_7",
+            "id": "step_7",
+            "operator": "join",
+            "input_keys": [
+              "trade_instruction"
+            ],
+            "output_keys": [
+              "final_decision"
+            ],
+            "depends_on": [
+              "step_6"
+            ],
+            "rationale": "This step consolidates the trade instructions into a final decision."
+          }
+        ],
+        "edges": [
+          {
+            "from": "step_1",
+            "to": "step_2",
+            "message": "agent output"
+          },
+          {
+            "from": "step_1",
+            "to": "step_3",
+            "message": "agent output"
+          },
+          {
+            "from": "step_2",
+            "to": "step_4",
+            "message": "agent output"
+          },
+          {
+            "from": "step_3",
+            "to": "step_4",
+            "message": "agent output"
+          },
+          {
+            "from": "step_1",
+            "to": "step_4",
+            "message": "agent output"
+          },
+          {
+            "from": "step_1",
+            "to": "step_5",
+            "message": "agent output"
+          },
+          {
+            "from": "step_3",
+            "to": "step_5",
+            "message": "agent output"
+          },
+          {
+            "from": "step_4",
+            "to": "step_5",
+            "message": "agent output"
+          },
+          {
+            "from": "step_2",
+            "to": "step_6",
+            "message": "agent output"
+          },
+          {
+            "from": "step_3",
+            "to": "step_6",
+            "message": "agent output"
+          },
+          {
+            "from": "step_5",
+            "to": "step_6",
+            "message": "agent output"
+          },
+          {
+            "from": "step_4",
+            "to": "step_6",
+            "message": "agent output"
+          },
+          {
+            "from": "step_6",
+            "to": "step_7",
+            "message": "agent output"
+          }
+        ],
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "llm_constrained_search": {
+          "final_pipeline": [
+            {
+              "step_id": "step_1",
+              "operator": "read_market_data",
+              "input_keys": [
+                "raw_evidence",
+                "data_profile"
+              ],
+              "output_keys": [
+                "market_context"
+              ],
+              "depends_on": [],
+              "rationale": "This step reads current market data to create a comprehensive market context."
+            },
+            {
+              "step_id": "step_2",
+              "operator": "bullish_signal",
+              "input_keys": [
+                "market_context"
+              ],
+              "output_keys": [
+                "bullish_view"
+              ],
+              "depends_on": [
+                "step_1"
+              ],
+              "rationale": "This step generates a bullish view based on the current market context."
+            },
+            {
+              "step_id": "step_3",
+              "operator": "bearish_signal",
+              "input_keys": [
+                "market_context"
+              ],
+              "output_keys": [
+                "bearish_view"
+              ],
+              "depends_on": [
+                "step_1"
+              ],
+              "rationale": "This step generates a bearish view based on the current market context."
+            },
+            {
+              "step_id": "step_4",
+              "operator": "disagreement_detection",
+              "input_keys": [
+                "bullish_view",
+                "bearish_view",
+                "market_context"
+              ],
+              "output_keys": [
+                "disagreement_report"
+              ],
+              "depends_on": [
+                "step_2",
+                "step_3"
+              ],
+              "rationale": "This step detects any disagreement between bullish and bearish signals."
+            },
+            {
+              "step_id": "step_5",
+              "operator": "risk_management",
+              "input_keys": [
+                "market_context",
+                "bearish_view",
+                "disagreement_report"
+              ],
+              "output_keys": [
+                "risk_profile"
+              ],
+              "depends_on": [
+                "step_1",
+                "step_3",
+                "step_4"
+              ],
+              "rationale": "This step assesses risk based on market context and bearish views."
+            },
+            {
+              "step_id": "step_6",
+              "operator": "position_sizing",
+              "input_keys": [
+                "bullish_view",
+                "bearish_view",
+                "risk_profile",
+                "disagreement_report"
+              ],
+              "output_keys": [
+                "trade_instruction"
+              ],
+              "depends_on": [
+                "step_2",
+                "step_3",
+                "step_4",
+                "step_5"
+              ],
+              "rationale": "This step determines the position size based on the generated signals and risk profile."
+            },
+            {
+              "step_id": "step_7",
+              "operator": "join",
+              "input_keys": [
+                "trade_instruction"
+              ],
+              "output_keys": [
+                "final_decision"
+              ],
+              "depends_on": [
+                "step_6"
+              ],
+              "rationale": "This step consolidates the trade instructions into a final decision."
+            }
+          ]
+        }
+      },
+      "logical_checker": {
+        "is_valid": true,
+        "issues": [],
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "available_keys": [
+          "bearish_view",
+          "bullish_view",
+          "data_profile",
+          "disagreement_report",
+          "final_decision",
+          "market_context",
+          "raw_evidence",
+          "risk_profile",
+          "trade_instruction"
+        ]
+      },
+      "ptc_program": {
+        "version": "ptc-ir-v1",
+        "mode": "dynamic_ptc",
+        "strategy": "mixed_evidence_dual_branch",
+        "instructions": [
+          {
+            "id": "step_1",
+            "kind": "tool_call",
+            "operator": "read_market_data",
+            "depends_on": [],
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ]
+          },
+          {
+            "id": "step_2",
+            "kind": "tool_call",
+            "operator": "bullish_signal",
+            "depends_on": [
+              "step_1"
+            ],
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bullish_view"
+            ]
+          },
+          {
+            "id": "step_3",
+            "kind": "tool_call",
+            "operator": "bearish_signal",
+            "depends_on": [
+              "step_1"
+            ],
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bearish_view"
+            ]
+          },
+          {
+            "id": "step_4",
+            "kind": "tool_call",
+            "operator": "disagreement_detection",
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_1"
+            ],
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "market_context"
+            ],
+            "output_keys": [
+              "disagreement_report"
+            ]
+          },
+          {
+            "id": "step_5",
+            "kind": "tool_call",
+            "operator": "risk_management",
+            "depends_on": [
+              "step_1",
+              "step_3",
+              "step_4"
+            ],
+            "input_keys": [
+              "market_context",
+              "bearish_view",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "risk_profile"
+            ]
+          },
+          {
+            "id": "step_6",
+            "kind": "tool_call",
+            "operator": "position_sizing",
+            "depends_on": [
+              "step_2",
+              "step_3",
+              "step_5",
+              "step_4"
+            ],
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "risk_profile",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "trade_instruction"
+            ]
+          },
+          {
+            "id": "step_7",
+            "kind": "tool_call",
+            "operator": "join",
+            "depends_on": [
+              "step_6"
+            ],
+            "input_keys": [
+              "trade_instruction"
+            ],
+            "output_keys": [
+              "final_decision"
+            ]
+          }
+        ],
+        "routing": {
+          "name": "mixed_evidence_dual_branch",
+          "run_bullish_agent": true,
+          "run_bearish_agent": true,
+          "run_disagreement_agent": true,
+          "signals": {
+            "buy_signal": true,
+            "sell_signal": false,
+            "volatility_pct": 2.794325592228493,
+            "drawdown60_pct": -9.512000708528912,
+            "restrictive_policy": true
+          }
+        },
+        "validation": {
+          "is_valid": true,
+          "issues": [],
+          "produced_keys": [
+            "bearish_view",
+            "bullish_view",
+            "data_profile",
+            "disagreement_report",
+            "final_decision",
+            "market_context",
+            "raw_evidence",
+            "risk_profile",
+            "trade_instruction"
+          ]
+        },
+        "source": "# ptc-ir-v1 mode=dynamic_ptc strategy=mixed_evidence_dual_branch\nmarket_context = call_tool('read_market_data', raw_evidence, data_profile)  # depends: root\nbullish_view = call_tool('bullish_signal', market_context)  # depends: step_1\nbearish_view = call_tool('bearish_signal', market_context)  # depends: step_1\ndisagreement_report = call_tool('disagreement_detection', bullish_view, bearish_view, market_context)  # depends: step_2, step_3, step_1\nrisk_profile = call_tool('risk_management', market_context, bearish_view, disagreement_report)  # depends: step_1, step_3, step_4\ntrade_instruction = call_tool('position_sizing', bullish_view, bearish_view, risk_profile, disagreement_report)  # depends: step_2, step_3, step_5, step_4\nfinal_decision = call_tool('join', trade_instruction)  # depends: step_6"
+      }
+    },
+    "workflow_outputs": {
+      "dag_execution": {
+        "stage": "ptc_program_execution",
+        "mode": "dynamic_ptc",
+        "strategy": "mixed_evidence_dual_branch",
+        "program": {
+          "version": "ptc-ir-v1",
+          "mode": "dynamic_ptc",
+          "strategy": "mixed_evidence_dual_branch",
+          "instructions": [
+            {
+              "id": "step_1",
+              "kind": "tool_call",
+              "operator": "read_market_data",
+              "depends_on": [],
+              "input_keys": [
+                "raw_evidence",
+                "data_profile"
+              ],
+              "output_keys": [
+                "market_context"
+              ]
+            },
+            {
+              "id": "step_2",
+              "kind": "tool_call",
+              "operator": "bullish_signal",
+              "depends_on": [
+                "step_1"
+              ],
+              "input_keys": [
+                "market_context"
+              ],
+              "output_keys": [
+                "bullish_view"
+              ]
+            },
+            {
+              "id": "step_3",
+              "kind": "tool_call",
+              "operator": "bearish_signal",
+              "depends_on": [
+                "step_1"
+              ],
+              "input_keys": [
+                "market_context"
+              ],
+              "output_keys": [
+                "bearish_view"
+              ]
+            },
+            {
+              "id": "step_4",
+              "kind": "tool_call",
+              "operator": "disagreement_detection",
+              "depends_on": [
+                "step_2",
+                "step_3",
+                "step_1"
+              ],
+              "input_keys": [
+                "bullish_view",
+                "bearish_view",
+                "market_context"
+              ],
+              "output_keys": [
+                "disagreement_report"
+              ]
+            },
+            {
+              "id": "step_5",
+              "kind": "tool_call",
+              "operator": "risk_management",
+              "depends_on": [
+                "step_1",
+                "step_3",
+                "step_4"
+              ],
+              "input_keys": [
+                "market_context",
+                "bearish_view",
+                "disagreement_report"
+              ],
+              "output_keys": [
+                "risk_profile"
+              ]
+            },
+            {
+              "id": "step_6",
+              "kind": "tool_call",
+              "operator": "position_sizing",
+              "depends_on": [
+                "step_2",
+                "step_3",
+                "step_5",
+                "step_4"
+              ],
+              "input_keys": [
+                "bullish_view",
+                "bearish_view",
+                "risk_profile",
+                "disagreement_report"
+              ],
+              "output_keys": [
+                "trade_instruction"
+              ]
+            },
+            {
+              "id": "step_7",
+              "kind": "tool_call",
+              "operator": "join",
+              "depends_on": [
+                "step_6"
+              ],
+              "input_keys": [
+                "trade_instruction"
+              ],
+              "output_keys": [
+                "final_decision"
+              ]
+            }
+          ],
+          "routing": {
+            "name": "mixed_evidence_dual_branch",
+            "run_bullish_agent": true,
+            "run_bearish_agent": true,
+            "run_disagreement_agent": true,
+            "signals": {
+              "buy_signal": true,
+              "sell_signal": false,
+              "volatility_pct": 2.794325592228493,
+              "drawdown60_pct": -9.512000708528912,
+              "restrictive_policy": true
+            }
+          },
+          "validation": {
+            "is_valid": true,
+            "issues": [],
+            "produced_keys": [
+              "bearish_view",
+              "bullish_view",
+              "data_profile",
+              "disagreement_report",
+              "final_decision",
+              "market_context",
+              "raw_evidence",
+              "risk_profile",
+              "trade_instruction"
+            ]
+          },
+          "source": "# ptc-ir-v1 mode=dynamic_ptc strategy=mixed_evidence_dual_branch\nmarket_context = call_tool('read_market_data', raw_evidence, data_profile)  # depends: root\nbullish_view = call_tool('bullish_signal', market_context)  # depends: step_1\nbearish_view = call_tool('bearish_signal', market_context)  # depends: step_1\ndisagreement_report = call_tool('disagreement_detection', bullish_view, bearish_view, market_context)  # depends: step_2, step_3, step_1\nrisk_profile = call_tool('risk_management', market_context, bearish_view, disagreement_report)  # depends: step_1, step_3, step_4\ntrade_instruction = call_tool('position_sizing', bullish_view, bearish_view, risk_profile, disagreement_report)  # depends: step_2, step_3, step_5, step_4\nfinal_decision = call_tool('join', trade_instruction)  # depends: step_6"
+        },
+        "program_source": "# ptc-ir-v1 mode=dynamic_ptc strategy=mixed_evidence_dual_branch\nmarket_context = call_tool('read_market_data', raw_evidence, data_profile)  # depends: root\nbullish_view = call_tool('bullish_signal', market_context)  # depends: step_1\nbearish_view = call_tool('bearish_signal', market_context)  # depends: step_1\ndisagreement_report = call_tool('disagreement_detection', bullish_view, bearish_view, market_context)  # depends: step_2, step_3, step_1\nrisk_profile = call_tool('risk_management', market_context, bearish_view, disagreement_report)  # depends: step_1, step_3, step_4\ntrade_instruction = call_tool('position_sizing', bullish_view, bearish_view, risk_profile, disagreement_report)  # depends: step_2, step_3, step_5, step_4\nfinal_decision = call_tool('join', trade_instruction)  # depends: step_6",
+        "program_validation": {
+          "is_valid": true,
+          "issues": [],
+          "produced_keys": [
+            "bearish_view",
+            "bullish_view",
+            "data_profile",
+            "disagreement_report",
+            "final_decision",
+            "market_context",
+            "raw_evidence",
+            "risk_profile",
+            "trade_instruction"
+          ]
+        },
+        "execution_layers": [
+          [
+            "step_1"
+          ],
+          [
+            "step_2",
+            "step_3"
+          ],
+          [
+            "step_4"
+          ],
+          [
+            "step_5"
+          ],
+          [
+            "step_6"
+          ],
+          [
+            "step_7"
+          ]
+        ],
+        "execution_order": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "call_trace": [
+          {
+            "instruction": "step_1",
+            "operator": "read_market_data",
+            "kind": "tool_call",
+            "input_keys": [
+              "raw_evidence",
+              "data_profile"
+            ],
+            "output_keys": [
+              "market_context"
+            ]
+          },
+          {
+            "instruction": "step_2",
+            "operator": "bullish_signal",
+            "kind": "tool_call",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bullish_view"
+            ]
+          },
+          {
+            "instruction": "step_3",
+            "operator": "bearish_signal",
+            "kind": "tool_call",
+            "input_keys": [
+              "market_context"
+            ],
+            "output_keys": [
+              "bearish_view"
+            ]
+          },
+          {
+            "instruction": "step_4",
+            "operator": "disagreement_detection",
+            "kind": "tool_call",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "market_context"
+            ],
+            "output_keys": [
+              "disagreement_report"
+            ]
+          },
+          {
+            "instruction": "step_5",
+            "operator": "risk_management",
+            "kind": "tool_call",
+            "input_keys": [
+              "market_context",
+              "bearish_view",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "risk_profile"
+            ]
+          },
+          {
+            "instruction": "step_6",
+            "operator": "position_sizing",
+            "kind": "tool_call",
+            "input_keys": [
+              "bullish_view",
+              "bearish_view",
+              "risk_profile",
+              "disagreement_report"
+            ],
+            "output_keys": [
+              "trade_instruction"
+            ]
+          },
+          {
+            "instruction": "step_7",
+            "operator": "join",
+            "kind": "tool_call",
+            "input_keys": [
+              "trade_instruction"
+            ],
+            "output_keys": [
+              "final_decision"
+            ]
+          }
+        ],
+        "node_outputs": {
+          "step_1": {
+            "operator": "read_market_data",
+            "output": {
+              "market_context": {
+                "report": "As of April 10, 2023, Amazon (AMZN) is positioned in a rebound trend capture mode, with a recent adjusted close of $102.17, reflecting a daily return of approximately 0.11%. The stock is currently trading above its 10-day moving average of $101.25 and is more than 5% above its trailing 20-day low of $92.43, which supports a bullish technical outlook. However, the fundamental stance remains neutral, with a net margin of 2.49% and a current ratio of 0.92, indicating some financial strain. The news sentiment is predominantly bullish, driven by positive developments in Amazon Web Services (AWS) and strategic shifts in its Whole Foods operations. Despite this, the macroeconomic policy environment is restrictive, with a federal funds rate of 5.0% and a bearish stance on policy, which could impact consumer spending and overall market conditions.",
+                "technical": {
+                  "ticker": "AMZN",
+                  "trade_date": "2023-04-10",
+                  "adjusted_close": 102.17,
+                  "previous_close": 102.06,
+                  "daily_return_pct": 0.10777973740936364,
+                  "ma10": 101.251,
+                  "ma20": 99.4435,
+                  "from_low20_pct": 10.53770420859028,
+                  "rsi": 58.0743007915715,
+                  "stoch_k": 74.33628317644292,
+                  "macd_histogram": 0.3055716989365562,
+                  "buy_signal": true,
+                  "sell_signal": false,
+                  "allocation_posture": "rebound_trend_capture"
+                },
+                "fundamental": {
+                  "ticker": "AMZN",
+                  "trade_date": "2023-04-10",
+                  "revenue": 127358000000.0,
+                  "net_income": 3172000000.0,
+                  "operating_income": 4774000000.0,
+                  "net_margin_pct": 2.4906170008951145,
+                  "current_ratio": 0.9230941248221183,
+                  "debt_to_equity": 0.434127590178999,
+                  "stance": "neutral"
+                },
+                "news": {
+                  "ticker": "AMZN",
+                  "trade_date": "2023-04-10",
+                  "article_count": 82,
+                  "positive_hits": 60,
+                  "negative_hits": 16,
+                  "stance": "bullish",
+                  "top_titles": [
+                    "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS).",
+                    "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production."
+                  ]
+                },
+                "policy": {
+                  "trade_date": "2023-04-10",
+                  "federal_funds_rate": 5.0,
+                  "restrictive_policy": true,
+                  "stance": "bearish"
+                },
+                "data_quality_notes": []
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "warnings": [],
+              "revision_brief": "The output effectively grounds the market context in the provided inputs, acknowledges the mixed signals from technical, fundamental, news, and policy perspectives, and avoids simple concatenation of upstream report text. It presents a coherent analysis that aligns with the operator's intent.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "market_context": {
+                    "report": "As of April 10, 2023, Amazon (AMZN) is positioned in a rebound trend capture mode, with a recent adjusted close of $102.17, reflecting a daily return of approximately 0.11%. The stock is currently trading above its 10-day moving average of $101.25 and is more than 5% above its trailing 20-day low of $92.43, which supports a bullish technical outlook. However, the fundamental stance remains neutral, with a net margin of 2.49% and a current ratio of 0.92, indicating some financial strain. The news sentiment is predominantly bullish, driven by positive developments in Amazon Web Services (AWS) and strategic shifts in its Whole Foods operations. Despite this, the macroeconomic policy environment is restrictive, with a federal funds rate of 5.0% and a bearish stance on policy, which could impact consumer spending and overall market conditions.",
+                    "technical": {
+                      "ticker": "AMZN",
+                      "trade_date": "2023-04-10",
+                      "adjusted_close": 102.17,
+                      "previous_close": 102.06,
+                      "daily_return_pct": 0.10777973740936364,
+                      "ma10": 101.251,
+                      "ma20": 99.4435,
+                      "from_low20_pct": 10.53770420859028,
+                      "rsi": 58.0743007915715,
+                      "stoch_k": 74.33628317644292,
+                      "macd_histogram": 0.3055716989365562,
+                      "buy_signal": true,
+                      "sell_signal": false,
+                      "allocation_posture": "rebound_trend_capture"
+                    },
+                    "fundamental": {
+                      "ticker": "AMZN",
+                      "trade_date": "2023-04-10",
+                      "revenue": 127358000000.0,
+                      "net_income": 3172000000.0,
+                      "operating_income": 4774000000.0,
+                      "net_margin_pct": 2.4906170008951145,
+                      "current_ratio": 0.9230941248221183,
+                      "debt_to_equity": 0.434127590178999,
+                      "stance": "neutral"
+                    },
+                    "news": {
+                      "ticker": "AMZN",
+                      "trade_date": "2023-04-10",
+                      "article_count": 82,
+                      "positive_hits": 60,
+                      "negative_hits": 16,
+                      "stance": "bullish",
+                      "top_titles": [
+                        "Amazon's (AMZN) AWS Clientele Expands With Experian's Pick-Amazon AMZN continues to ride on its robust cloud computing arm — Amazon Web Services (AWS).",
+                        "Consumer Sector Update for 04/10/2023: IGT, GOEV, AMZN, XLP, XLY-Amazon's (AMZN) Whole Foods Market plans to shift from outsourcing most of its food production."
+                      ]
+                    },
+                    "policy": {
+                      "trade_date": "2023-04-10",
+                      "federal_funds_rate": 5.0,
+                      "restrictive_policy": true,
+                      "stance": "bearish"
+                    },
+                    "data_quality_notes": []
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [],
+                  "revision_brief": "The output effectively grounds the market context in the provided inputs, acknowledges the mixed signals from technical, fundamental, news, and policy perspectives, and avoids simple concatenation of upstream report text. It presents a coherent analysis that aligns with the operator's intent.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_2": {
+            "operator": "bullish_signal",
+            "output": {
+              "bullish_view": {
+                "report": "Amazon (AMZN) is currently in a rebound trend capture mode, supported by positive technical indicators and bullish news sentiment. The stock is trading above its 10-day moving average and has shown a daily return of approximately 0.11%. However, the fundamental stance is neutral, indicating some financial strain, which tempers the bullish outlook.",
+                "thesis": "AMZN shows potential for upward movement due to strong technical indicators and positive news sentiment, despite neutral fundamentals.",
+                "supporting_evidence": [
+                  "AMZN is trading above its 10-day moving average of $101.25 and is more than 5% above its trailing 20-day low of $92.43.",
+                  "The stock has a buy signal confirmed by technical indicators, including a positive MACD histogram and an RSI of 58.07.",
+                  "News sentiment is predominantly bullish, with significant positive developments in Amazon Web Services (AWS) and strategic shifts in Whole Foods operations."
+                ],
+                "cautions": [
+                  "The fundamental stance remains neutral with a net margin of 2.49% and a current ratio of 0.92, indicating potential financial strain.",
+                  "The macroeconomic policy environment is restrictive, with a federal funds rate of 5.0%, which could impact consumer spending."
+                ],
+                "confidence": 0.7,
+                "action_bias": "BUY"
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "warnings": [],
+              "revision_brief": "The output effectively grounds the bullish view in the provided market context, acknowledges contrary evidence, and presents a balanced thesis. To improve further, ensure that the confidence level reflects the mixed signals from fundamentals and macroeconomic conditions more accurately.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "bullish_view": {
+                    "report": "Amazon (AMZN) is currently in a rebound trend capture mode, supported by positive technical indicators and bullish news sentiment. The stock is trading above its 10-day moving average and has shown a daily return of approximately 0.11%. However, the fundamental stance is neutral, indicating some financial strain, which tempers the bullish outlook.",
+                    "thesis": "AMZN shows potential for upward movement due to strong technical indicators and positive news sentiment, despite neutral fundamentals.",
+                    "supporting_evidence": [
+                      "AMZN is trading above its 10-day moving average of $101.25 and is more than 5% above its trailing 20-day low of $92.43.",
+                      "The stock has a buy signal confirmed by technical indicators, including a positive MACD histogram and an RSI of 58.07.",
+                      "News sentiment is predominantly bullish, with significant positive developments in Amazon Web Services (AWS) and strategic shifts in Whole Foods operations."
+                    ],
+                    "cautions": [
+                      "The fundamental stance remains neutral with a net margin of 2.49% and a current ratio of 0.92, indicating potential financial strain.",
+                      "The macroeconomic policy environment is restrictive, with a federal funds rate of 5.0%, which could impact consumer spending."
+                    ],
+                    "confidence": 0.7,
+                    "action_bias": "BUY"
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [],
+                  "revision_brief": "The output effectively grounds the bullish view in the provided market context, acknowledges contrary evidence, and presents a balanced thesis. To improve further, ensure that the confidence level reflects the mixed signals from fundamentals and macroeconomic conditions more accurately.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_3": {
+            "operator": "bearish_signal",
+            "output": {
+              "bearish_view": {
+                "report": "The current market context for Amazon (AMZN) presents a mixed outlook. While the technical indicators suggest a bullish trend with the stock trading above its moving averages and a buy signal active, the fundamental stance is neutral, indicating financial strain with a low net margin of 2.49% and a current ratio below 1. Furthermore, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, which could negatively impact consumer spending. Despite positive news sentiment surrounding AWS and Whole Foods, the overall economic conditions suggest caution.",
+                "risk_thesis": "The bearish thesis is supported by the restrictive macroeconomic policy and neutral fundamental indicators, which may hinder growth despite technical bullish signals.",
+                "risk_evidence": [
+                  "Federal funds rate at 5.0% indicating a restrictive policy environment.",
+                  "Net margin of 2.49% and a current ratio of 0.92 suggest financial strain.",
+                  "Overall market conditions are bearish, potentially impacting consumer spending."
+                ],
+                "offsets": [
+                  "Technical indicators show a bullish trend with the stock above its 10-day moving average and a buy signal active.",
+                  "Positive news sentiment regarding AWS expansion and strategic shifts in Whole Foods operations."
+                ],
+                "confidence": 0.6,
+                "action_bias": "HOLD"
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "warnings": [],
+              "revision_brief": "The output effectively grounds the bearish view in the provided market context, acknowledges contrary evidence, and presents a balanced risk thesis. For future attempts, the agent could enhance clarity by explicitly stating the implications of the mixed signals and refining the confidence level based on the strength of the bearish evidence.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "bearish_view": {
+                    "report": "The current market context for Amazon (AMZN) presents a mixed outlook. While the technical indicators suggest a bullish trend with the stock trading above its moving averages and a buy signal active, the fundamental stance is neutral, indicating financial strain with a low net margin of 2.49% and a current ratio below 1. Furthermore, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, which could negatively impact consumer spending. Despite positive news sentiment surrounding AWS and Whole Foods, the overall economic conditions suggest caution.",
+                    "risk_thesis": "The bearish thesis is supported by the restrictive macroeconomic policy and neutral fundamental indicators, which may hinder growth despite technical bullish signals.",
+                    "risk_evidence": [
+                      "Federal funds rate at 5.0% indicating a restrictive policy environment.",
+                      "Net margin of 2.49% and a current ratio of 0.92 suggest financial strain.",
+                      "Overall market conditions are bearish, potentially impacting consumer spending."
+                    ],
+                    "offsets": [
+                      "Technical indicators show a bullish trend with the stock above its 10-day moving average and a buy signal active.",
+                      "Positive news sentiment regarding AWS expansion and strategic shifts in Whole Foods operations."
+                    ],
+                    "confidence": 0.6,
+                    "action_bias": "HOLD"
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [],
+                  "revision_brief": "The output effectively grounds the bearish view in the provided market context, acknowledges contrary evidence, and presents a balanced risk thesis. For future attempts, the agent could enhance clarity by explicitly stating the implications of the mixed signals and refining the confidence level based on the strength of the bearish evidence.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_4": {
+            "operator": "disagreement_detection",
+            "output": {
+              "disagreement_report": {
+                "report": "The analysis reveals a mixed outlook for Amazon (AMZN), with both bullish and bearish views presenting valid points. The bullish view highlights positive technical indicators, such as the stock trading above its 10-day moving average and a confirmed buy signal from technical indicators, alongside bullish news sentiment regarding AWS and Whole Foods. However, the bearish view emphasizes the neutral fundamental stance, indicating financial strain with a low net margin of 2.49% and a current ratio of 0.92, as well as a restrictive macroeconomic environment with a federal funds rate of 5.0%. This creates a conflict where technical indicators suggest potential upward movement, while fundamental and macroeconomic factors raise caution about sustainability.",
+                "has_material_disagreement": true,
+                "conflicts": [
+                  "Bullish indicators suggest a potential upward trend, while bearish fundamentals and macroeconomic conditions indicate caution."
+                ],
+                "resolution_guidance": "Given the mixed signals, a cautious approach is recommended. Traders may consider a 'HOLD' position until clearer trends emerge, balancing the bullish technical signals against the bearish fundamental concerns."
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.8,
+              "passed": true,
+              "issues": [],
+              "warnings": [],
+              "revision_brief": "The output effectively grounds the disagreement in the inputs, acknowledging both bullish and bearish perspectives while providing a balanced view. It could improve by explicitly stating the confidence levels of the views and how they influence the recommendation.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "disagreement_report": {
+                    "report": "The analysis reveals a mixed outlook for Amazon (AMZN), with both bullish and bearish views presenting valid points. The bullish view highlights positive technical indicators, such as the stock trading above its 10-day moving average and a confirmed buy signal from technical indicators, alongside bullish news sentiment regarding AWS and Whole Foods. However, the bearish view emphasizes the neutral fundamental stance, indicating financial strain with a low net margin of 2.49% and a current ratio of 0.92, as well as a restrictive macroeconomic environment with a federal funds rate of 5.0%. This creates a conflict where technical indicators suggest potential upward movement, while fundamental and macroeconomic factors raise caution about sustainability.",
+                    "has_material_disagreement": true,
+                    "conflicts": [
+                      "Bullish indicators suggest a potential upward trend, while bearish fundamentals and macroeconomic conditions indicate caution."
+                    ],
+                    "resolution_guidance": "Given the mixed signals, a cautious approach is recommended. Traders may consider a 'HOLD' position until clearer trends emerge, balancing the bullish technical signals against the bearish fundamental concerns."
+                  }
+                },
+                "evaluation": {
+                  "score": 0.8,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [],
+                  "revision_brief": "The output effectively grounds the disagreement in the inputs, acknowledging both bullish and bearish perspectives while providing a balanced view. It could improve by explicitly stating the confidence levels of the views and how they influence the recommendation.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_5": {
+            "operator": "risk_management",
+            "output": {
+              "risk_profile": {
+                "report": "The current risk assessment for Amazon (AMZN) indicates a mixed outlook characterized by both bullish technical indicators and bearish fundamental concerns. The stock is in a rebound trend capture mode, trading above its moving averages, which supports a bullish technical stance. However, the neutral fundamental stance, indicated by a low net margin of 2.49% and a current ratio of 0.92, suggests financial strain. Additionally, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, which could negatively impact consumer spending. This creates a scenario where caution is warranted despite positive technical signals.",
+                "risk_level": "medium",
+                "risk_items": [
+                  "Restrictive macroeconomic policy impacting consumer spending",
+                  "Neutral fundamental indicators suggesting financial strain"
+                ],
+                "sizing_guidance": "Consider maintaining a conservative position size, potentially limiting exposure to 50% of the maximum buy position percentage, to account for the mixed signals.",
+                "block_buy": false
+              }
+            },
+            "quality_evaluation": {
+              "score": 0.0,
+              "passed": false,
+              "issues": [
+                "The output does not sufficiently acknowledge the contrary evidence presented in the bearish view, particularly the financial strain indicated by the low net margin and current ratio.",
+                "The risk profile lacks detailed reasoning about the mixed signals and does not adequately address the risks associated with the bullish technical indicators in the context of bearish fundamentals.",
+                "The sizing guidance is vague and does not align with the action bias of HOLD suggested in the bearish view, which could mislead on risk management.",
+                "The report is overly reliant on the input text without demonstrating fresh reasoning or analysis."
+              ],
+              "warnings": [],
+              "revision_brief": "In the next attempt, the agent should provide a more balanced assessment that explicitly addresses the bearish concerns while integrating the bullish technical signals. It should clarify the rationale behind the risk level and sizing guidance, ensuring alignment with the overall market context and action bias.",
+              "evaluator": "llm",
+              "accepted_after_max_attempts": false
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "risk_profile": {
+                    "report": "The current risk assessment for Amazon (AMZN) indicates a mixed outlook characterized by both bullish technical indicators and bearish fundamental concerns. The stock is in a rebound trend capture mode, trading above its moving averages, which supports a bullish technical stance. However, the neutral fundamental stance, indicated by a low net margin of 2.49% and a current ratio of 0.92, suggests financial strain. Additionally, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, which could negatively impact consumer spending. This creates a scenario where caution is warranted despite positive technical signals.",
+                    "risk_level": "medium",
+                    "risk_items": [
+                      "Restrictive macroeconomic policy impacting consumer spending",
+                      "Neutral fundamental indicators suggesting financial strain"
+                    ],
+                    "sizing_guidance": "Consider maintaining a conservative position size, potentially limiting exposure to 50% of the maximum buy position percentage, to account for the mixed signals.",
+                    "block_buy": false
+                  }
+                },
+                "evaluation": {
+                  "score": 0.0,
+                  "passed": false,
+                  "issues": [
+                    "The output does not sufficiently acknowledge the contrary evidence presented in the bearish view, particularly the financial strain indicated by the low net margin and current ratio.",
+                    "The risk profile lacks detailed reasoning about the mixed signals and does not adequately address the risks associated with the bullish technical indicators in the context of bearish fundamentals.",
+                    "The sizing guidance is vague and does not align with the action bias of HOLD suggested in the bearish view, which could mislead on risk management.",
+                    "The report is overly reliant on the input text without demonstrating fresh reasoning or analysis."
+                  ],
+                  "warnings": [],
+                  "revision_brief": "In the next attempt, the agent should provide a more balanced assessment that explicitly addresses the bearish concerns while integrating the bullish technical signals. It should clarify the rationale behind the risk level and sizing guidance, ensuring alignment with the overall market context and action bias.",
+                  "evaluator": "llm"
+                }
+              },
+              {
+                "attempt": 2,
+                "output": {
+                  "risk_profile": {
+                    "report": "The risk assessment for Amazon (AMZN) reveals a complex scenario characterized by conflicting signals. On one hand, technical indicators suggest a bullish trend, with the stock trading above its moving averages and a confirmed buy signal. On the other hand, fundamental indicators raise concerns, particularly a low net margin of 2.49% and a current ratio of 0.92, indicating financial strain. Additionally, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, which could adversely affect consumer spending. This mixed outlook necessitates a cautious approach, as the bullish technical signals may not be sustainable given the underlying financial challenges and macroeconomic headwinds.",
+                    "risk_level": "medium",
+                    "risk_items": [
+                      "Restrictive macroeconomic policy impacting consumer spending",
+                      "Low net margin and current ratio indicating financial strain"
+                    ],
+                    "sizing_guidance": "Given the mixed signals, it is advisable to maintain a conservative position size, potentially limiting exposure to 50% of the maximum buy position percentage. This approach allows for participation in potential upside while mitigating risks associated with the bearish fundamentals.",
+                    "block_buy": false
+                  }
+                },
+                "evaluation": {
+                  "score": 0.0,
+                  "passed": false,
+                  "issues": [
+                    "The output does not adequately acknowledge the conflicting evidence from the bearish view and disagreement report, particularly the restrictive macroeconomic environment and financial strain.",
+                    "The risk profile lacks a clear allocation posture that matches the decision, as it suggests a conservative position size but does not specify how this aligns with the overall risk assessment.",
+                    "The reasoning does not sufficiently address the risks associated with the bullish technical signals and fails to provide a balanced view of the potential downsides."
+                  ],
+                  "warnings": [],
+                  "revision_brief": "In the next attempt, the agent should ensure to explicitly acknowledge the conflicting evidence from the bearish view and disagreement report. It should provide a more balanced assessment of risks, clearly articulate the rationale behind the recommended position sizing, and ensure that the output aligns with the overall risk management strategy.",
+                  "evaluator": "llm"
+                }
+              },
+              {
+                "attempt": 3,
+                "output": {
+                  "risk_profile": {
+                    "report": "The risk assessment for Amazon (AMZN) indicates a mixed outlook characterized by both bullish technical signals and bearish fundamental concerns. Technical indicators show a bullish trend, with the stock trading above its 10-day moving average and a confirmed buy signal. However, the fundamental analysis reveals financial strain, highlighted by a low net margin of 2.49% and a current ratio of 0.92, which raises caution about the sustainability of the bullish trend. Additionally, the macroeconomic environment is restrictive, with a federal funds rate of 5.0%, potentially impacting consumer spending. This conflicting evidence necessitates a cautious approach, suggesting a HOLD position until clearer trends emerge.",
+                    "risk_level": "medium",
+                    "risk_items": [
+                      "Restrictive macroeconomic policy affecting consumer spending",
+                      "Low net margin and current ratio indicating financial strain",
+                      "Conflicting signals between technical bullishness and fundamental bearishness"
+                    ],
+                    "sizing_guidance": "Given the mixed signals, it is advisable to maintain a conservative position size, potentially limiting exposure to 50% of the maximum buy position percentage. This approach allows for participation in potential upside while managing risks associated with the underlying financial and macroeconomic challenges.",
+                    "block_buy": false
+                  }
+                },
+                "evaluation": {
+                  "score": 0.0,
+                  "passed": false,
+                  "issues": [
+                    "The output does not adequately acknowledge the contrary evidence from the bearish view, particularly the financial strain indicated by the low net margin and current ratio.",
+                    "The action bias is not clearly supported by the evidence presented, as it suggests a HOLD position without sufficiently justifying this stance against the bearish concerns.",
+                    "The output lacks fresh reasoning and simply reiterates points from the inputs without providing new insights or a deeper analysis."
+                  ],
+                  "warnings": [],
+                  "revision_brief": "The agent should ensure to explicitly address and weigh the contrary evidence from the bearish view, provide a clearer rationale for the action bias, and incorporate fresh reasoning that goes beyond summarizing the inputs.",
+                  "evaluator": "llm"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_6": {
+            "operator": "position_sizing",
+            "output": {
+              "trade_instruction": {
+                "action": "HOLD",
+                "position_pct": 0.0,
+                "position_pct_display": "0.00%",
+                "position_size": 0.0,
+                "max_position_pct": 100.0,
+                "max_buy_position_pct": 100.0,
+                "allocation_posture": "cautious",
+                "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+                "supporting_evidence": [
+                  "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+                  "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+                ],
+                "opposing_evidence": [
+                  "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+                  "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+                ],
+                "key_risks": [
+                  "Restrictive macroeconomic policy impacting consumer spending.",
+                  "Neutral fundamental indicators suggesting financial strain."
+                ],
+                "decision_source": "dataevolver_abc_dag_position_sizing_agent",
+                "report": "The analysis indicates a mixed outlook for Amazon (AMZN), with bullish technical indicators suggesting potential upward movement, while bearish fundamental and macroeconomic factors raise caution. Given the current risk profile and mixed signals, a conservative approach is warranted."
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "warnings": [],
+              "revision_brief": "The agent effectively grounded its output in the mixed signals from both bullish and bearish views, provided a cautious trade instruction with appropriate reasoning, and acknowledged both supporting and opposing evidence. No improvements are necessary.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "trade_instruction": {
+                    "action": "HOLD",
+                    "position_pct": 0.0,
+                    "position_pct_display": "0.00%",
+                    "position_size": 0.0,
+                    "max_position_pct": 100.0,
+                    "max_buy_position_pct": 100.0,
+                    "allocation_posture": "cautious",
+                    "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+                    "supporting_evidence": [
+                      "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+                      "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+                    ],
+                    "opposing_evidence": [
+                      "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+                      "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+                    ],
+                    "key_risks": [
+                      "Restrictive macroeconomic policy impacting consumer spending.",
+                      "Neutral fundamental indicators suggesting financial strain."
+                    ],
+                    "decision_source": "dataevolver_abc_dag_position_sizing_agent",
+                    "report": "The analysis indicates a mixed outlook for Amazon (AMZN), with bullish technical indicators suggesting potential upward movement, while bearish fundamental and macroeconomic factors raise caution. Given the current risk profile and mixed signals, a conservative approach is warranted."
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [],
+                  "revision_brief": "The agent effectively grounded its output in the mixed signals from both bullish and bearish views, provided a cautious trade instruction with appropriate reasoning, and acknowledged both supporting and opposing evidence. No improvements are necessary.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          },
+          "step_7": {
+            "operator": "join",
+            "output": {
+              "final_decision": {
+                "action": "HOLD",
+                "position_pct": 0.0,
+                "position_pct_display": "0.00%",
+                "position_size": 0.0,
+                "max_position_pct": 100.0,
+                "max_buy_position_pct": 100.0,
+                "allocation_posture": "cautious",
+                "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+                "supporting_evidence": [
+                  "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+                  "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+                ],
+                "opposing_evidence": [
+                  "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+                  "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+                ],
+                "key_risks": [
+                  "Restrictive macroeconomic policy impacting consumer spending.",
+                  "Neutral fundamental indicators suggesting financial strain."
+                ],
+                "decision_source": "dataevolver_abc_dag_join_agent"
+              }
+            },
+            "quality_evaluation": {
+              "score": 1.0,
+              "passed": true,
+              "issues": [],
+              "warnings": [
+                "The output lacks fresh reasoning and simply reiterates the input trade instruction without additional analysis.",
+                "The allocation posture of 'cautious' is not explicitly justified in the reasoning provided.",
+                "The output does not sufficiently address the decision-making process or the rationale behind maintaining a HOLD position."
+              ],
+              "revision_brief": "The agent should provide more detailed reasoning that connects the evidence to the final decision. It should clarify why the cautious allocation posture is appropriate given the mixed signals and elaborate on how the supporting and opposing evidence influenced the decision to HOLD.",
+              "evaluator": "llm_with_rule_calibration"
+            },
+            "attempts": [
+              {
+                "attempt": 1,
+                "output": {
+                  "final_decision": {
+                    "action": "HOLD",
+                    "position_pct": 0.0,
+                    "position_pct_display": "0.00%",
+                    "position_size": 0.0,
+                    "max_position_pct": 100.0,
+                    "max_buy_position_pct": 100.0,
+                    "allocation_posture": "cautious",
+                    "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+                    "supporting_evidence": [
+                      "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+                      "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+                    ],
+                    "opposing_evidence": [
+                      "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+                      "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+                    ],
+                    "key_risks": [
+                      "Restrictive macroeconomic policy impacting consumer spending.",
+                      "Neutral fundamental indicators suggesting financial strain."
+                    ],
+                    "decision_source": "dataevolver_abc_dag_join_agent"
+                  }
+                },
+                "evaluation": {
+                  "score": 1.0,
+                  "passed": true,
+                  "issues": [],
+                  "warnings": [
+                    "The output lacks fresh reasoning and simply reiterates the input trade instruction without additional analysis.",
+                    "The allocation posture of 'cautious' is not explicitly justified in the reasoning provided.",
+                    "The output does not sufficiently address the decision-making process or the rationale behind maintaining a HOLD position."
+                  ],
+                  "revision_brief": "The agent should provide more detailed reasoning that connects the evidence to the final decision. It should clarify why the cautious allocation posture is appropriate given the mixed signals and elaborate on how the supporting and opposing evidence influenced the decision to HOLD.",
+                  "evaluator": "llm_with_rule_calibration"
+                }
+              }
+            ],
+            "ptc_skipped": false
+          }
+        },
+        "data_store_keys": [
+          "bearish_view",
+          "bullish_view",
+          "data_profile",
+          "disagreement_report",
+          "final_decision",
+          "market_context",
+          "raw_evidence",
+          "risk_profile",
+          "trade_instruction"
+        ],
+        "final_decision_structured": {
+          "action": "HOLD",
+          "position_pct": 0.0,
+          "position_pct_display": "0.00%",
+          "position_size": 0.0,
+          "max_position_pct": 100.0,
+          "max_buy_position_pct": 100.0,
+          "allocation_posture": "cautious",
+          "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+          "supporting_evidence": [
+            "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+            "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+          ],
+          "opposing_evidence": [
+            "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+            "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+          ],
+          "key_risks": [
+            "Restrictive macroeconomic policy impacting consumer spending.",
+            "Neutral fundamental indicators suggesting financial strain."
+          ],
+          "decision_source": "dataevolver_abc_dag_join_agent"
+        }
+      },
+      "final_decision_structured": {
+        "action": "HOLD",
+        "position_pct": 0.0,
+        "position_pct_display": "0.00%",
+        "position_size": 0.0,
+        "max_position_pct": 100.0,
+        "max_buy_position_pct": 100.0,
+        "allocation_posture": "cautious",
+        "reasoning": "Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.",
+        "supporting_evidence": [
+          "AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.",
+          "Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view."
+        ],
+        "opposing_evidence": [
+          "The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.",
+          "The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending."
+        ],
+        "key_risks": [
+          "Restrictive macroeconomic policy impacting consumer spending.",
+          "Neutral fundamental indicators suggesting financial strain."
+        ],
+        "decision_source": "dataevolver_dynamic_ptc_join_agent",
+        "llm_decision_mode": "dynamic_ptc_join_agent"
+      },
+      "decision_contract": {
+        "allowed_actions": [
+          "BUY",
+          "SELL",
+          "HOLD"
+        ],
+        "primary_output": "action_with_position_pct",
+        "position_pct_unit": "percent",
+        "max_buy_position_pct": 100.0
+      }
+    },
+    "local_evidence": {},
+    "final_decision": "Final Decision: HOLD\nPosition Percentage: 0.00%\nAllocation Posture: cautious\n\nReasoning: Despite positive technical indicators, the neutral fundamental stance and restrictive macroeconomic environment suggest that maintaining a position is prudent until clearer trends emerge.\nSupporting Evidence: AMZN is trading above its 10-day moving average and has a confirmed buy signal from technical indicators.; Positive news sentiment surrounding AWS and Whole Foods operations supports a bullish technical view.\nOpposing Evidence: The fundamental stance is neutral with a net margin of 2.49% and a current ratio of 0.92, indicating financial strain.; The federal funds rate at 5.0% reflects a restrictive macroeconomic policy that could impact consumer spending.\nKey Risks: Restrictive macroeconomic policy impacting consumer spending.; Neutral fundamental indicators suggesting financial strain."
+  },
+  "error": null,
+  "state_keys": [
+    "analyst_reports",
+    "error",
+    "errors",
+    "execution_mode",
+    "expert_agents",
+    "expert_outputs",
+    "final_decision",
+    "final_decision_structured",
+    "fundamental_messages",
+    "fundamental_report",
+    "generated_skills",
+    "local_evidence",
+    "max_position_pct",
+    "messages",
+    "module_outputs",
+    "news_messages",
+    "news_report",
+    "policy_messages",
+    "policy_report",
+    "team_discussion_summary",
+    "team_plan",
+    "team_summary",
+    "technical_messages",
+    "technical_report",
+    "ticker",
+    "trade_date",
+    "workflow_method",
+    "workflow_mode",
+    "workflow_outputs",
+    "workflow_plan",
+    "workflow_status"
+  ]
+}

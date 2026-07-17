@@ -3,16 +3,12 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.prebuilt import ToolNode
 
 from tradesys.agents.utils.agent_states import AgentState
-from tradesys.agents.utils.news_data_tools import (
-    get_news_data,
-    get_news_on_date,
-)
+from tradesys.agents.utils.ptc_data_tools import collect_news_evidence_ptc
 from tradesys.agents.utils.report_logger import get_report_logger
 
 
 NEWS_TOOLS = [
-    get_news_data,
-    get_news_on_date,
+    collect_news_evidence_ptc,
 ]
 
 
@@ -21,7 +17,9 @@ You are a news analyst tasked with analyzing company news over the recent
 period ending on the trade date. Treat the trade date as the analysis cutoff
 and do not use future information. Use the available tools to inspect company
 news, especially the past week when data is available; let the tools provide
-the articles and do not invent headlines or events.
+the articles and do not invent headlines or events. On the first turn, call
+collect_news_evidence_ptc exactly once. It collects, deduplicates, and compacts
+the recent articles; then write the final report without another tool call.
 
 Write a comprehensive, trader-facing report that identifies the most important
 news items, groups related catalysts, explains likely market impact, separates
@@ -59,7 +57,12 @@ def create_news_analyst(llm):
             MessagesPlaceholder(variable_name="messages"),
         ])
 
-        chain = prompt | llm.bind_tools(NEWS_TOOLS)
+        bound_llm = (
+            llm.bind_tools(NEWS_TOOLS, tool_choice=NEWS_TOOLS[0].name)
+            if not messages
+            else llm.bind_tools(NEWS_TOOLS)
+        )
+        chain = prompt | bound_llm
         result = chain.invoke({
             "system_message": NEWS_SYSTEM_MESSAGE,
             "tool_names": ", ".join(tool.name for tool in NEWS_TOOLS),

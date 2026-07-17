@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import os
 import traceback
 from typing import TYPE_CHECKING, Any
 
@@ -14,6 +13,7 @@ from tradesys.workflows.common import (
 )
 from tradesys.workflows.llm_trading_agents import LLMTradingAgentExecutor
 from tradesys.workflows.llm_client import invoke_json, require_llm
+from tradesys.workflows.ptc_runtime import PTCProgramCompiler, PTCProgramRuntime
 from tradesys.workflows.trading_operators import (
     REQUIRED_TRADING_OPERATORS,
     TRADING_TEMPLATES,
@@ -32,24 +32,24 @@ else:
 class DataEvolverWorkflow:
     """DataEvolver-style three-stage DAG construction for trading decisions."""
 
-    def __init__(self, max_position_pct: float, llm: Any | None = None):
+    def __init__(
+        self,
+        max_position_pct: float,
+        llm: Any | None = None,
+        execution_mode: str = "baseline",
+    ):
         self.max_position_pct = min(100.0, max(0.0, float(max_position_pct or 100.0)))
+        if execution_mode not in {"baseline", "static_ptc", "dynamic_ptc"}:
+            raise ValueError(f"Unsupported DataEvolver execution mode: {execution_mode}")
+        self.execution_mode = execution_mode
         self.operator_specs = operator_specs_by_name()
-        self.use_llm_dag = _env_truthy("TRADESYS_DATAEVOLVER_USE_LLM_DAG")
-        self.llm = require_llm(llm, "DataEvolver") if self.use_llm_dag else llm
-        self.executor = (
-            LLMTradingAgentExecutor(self.llm, self.max_position_pct, "dataevolver_abc_dag")
-            if self.use_llm_dag
-            else None
-        )
+        self.llm = require_llm(llm, "DataEvolver")
+        self.executor = LLMTradingAgentExecutor(self.llm, self.max_position_pct, "dataevolver_abc_dag")
 
     def run(self, state: AgentState) -> dict[str, Any]:
         state = ensure_local_evidence(state)
         try:
             data_profile = build_current_data_profile(state)
-            if not self.use_llm_dag:
-                return self._run_signal_only_dag(state, data_profile)
-
             understanding_result = self._data_understanding_stage(state, data_profile)
             blueprint = self._free_fitting_stage(understanding_result)
             template_plan = self._template_combination_stage(blueprint, understanding_result)
@@ -74,8 +74,11 @@ class DataEvolverWorkflow:
                     decision,
                 )
 
-            execution = self._execute_dag(state, data_profile, logical_plan, validation["execution_order"])
-            decision = execution["final_decision_structured"]
+            if self.execution_mode == "baseline":
+                execution = self._execute_dag(state, data_profile, logical_plan, validation["execution_order"])
+            else:
+                execution = self._execute_ptc(state, data_profile, logical_plan)
+            decision = self._decision_from_execution(execution)
             return self._result_update(
                 state,
                 data_profile,
@@ -332,9 +335,6 @@ class DataEvolverWorkflow:
         plan: dict[str, Any],
         execution_order: list[str],
     ) -> dict[str, Any]:
-        if self.executor is None:
-            raise RuntimeError("DataEvolver LLM DAG executor is disabled in signal-only mode.")
-
         node_by_id = {str(node.get("step_id") or node.get("id")): node for node in plan.get("nodes", [])}
         data_store: dict[str, Any] = {
             "raw_evidence": state.get("local_evidence", {}),
@@ -372,274 +372,41 @@ class DataEvolverWorkflow:
         decision["llm_decision_mode"] = "dag_join_agent"
         return decision
 
-    def _run_signal_only_dag(self, state: AgentState, data_profile: dict[str, Any]) -> dict[str, Any]:
-        technical = self._technical_signal(state)
-        decision = self._decision_from_technical_signal(state, technical)
-        understanding_result = {
-            "stage": "data_understanding",
-            "data_format": {
-                "raw_blocks": data_profile.get("raw_blocks", []),
-                "raw_fields": data_profile.get("raw_fields", {}),
-            },
-            "data_differences": [
-                "Technical fields provide directly testable buy_signal/sell_signal flags.",
-                "Fundamental, news, and policy fields are retained as context but do not size the trade.",
-            ],
-            "optimization_goals": [
-                "Emit a clean BUY/SELL/HOLD trading signal.",
-                "Prefer positive per-ticker replay over verbose position construction.",
-                "Avoid exposing portfolio position sizing in the final answer.",
-            ],
-            "field_info": field_info_from_profile(data_profile),
-            "reasoning": "Signal-only DataEvolver uses the local technical guard as the final trading contract.",
-        }
-        blueprint = {
-            "stage": "free_fitting_stage",
-            "global_optimization_direction": "profit_guarded_signal_only_trading",
-            "key_improvements": [
-                "Treat sell_signal as a mandatory exit.",
-                "Treat buy_signal as the only allowed entry.",
-                "Emit HOLD whenever neither guard is active.",
-            ],
-            "transformation_strategies": [
-                "Convert local evidence into explicit signal-agent outputs.",
-                "Keep position_pct only as a hidden compatibility field for existing evaluators.",
-            ],
-            "quality_focus": [
-                "Every final signal must match the technical guard.",
-                "The final text must not depend on position sizing.",
-            ],
-        }
-        template_plan = {
-            "stage": "template_combination_stage",
-            "selected_templates": ["signal_decomposition", "risk_first_signal_gate", "signal_only_join"],
-            "pipeline_sketch": {
-                "steps": [
-                    {"step_id": "step_1", "template_name": "signal_decomposition", "functional_description": "read current evidence"},
-                    {"step_id": "step_2", "template_name": "risk_first_signal_gate", "functional_description": "apply sell-before-buy guard"},
-                    {"step_id": "step_3", "template_name": "signal_only_join", "functional_description": "emit final trading signal"},
-                ]
-            },
-        }
-        logical_plan = self._signal_only_plan()
-        validation = {
-            "is_valid": True,
-            "issues": [],
-            "execution_order": [node["step_id"] for node in logical_plan["nodes"]],
-            "available_keys": ["raw_evidence", "data_profile", "technical_signal", "risk_gate", "final_decision"],
-        }
-        execution = self._signal_only_execution(state, data_profile, technical, decision, validation["execution_order"])
-        return self._result_update(
-            state,
-            data_profile,
-            understanding_result,
-            blueprint,
-            template_plan,
-            logical_plan,
-            validation,
-            execution,
-            "ok",
-            decision,
-        )
-
-    def _signal_only_plan(self) -> dict[str, Any]:
-        nodes = [
-            {
-                "step_id": "step_1",
-                "id": "step_1",
-                "operator": "read_market_data",
-                "input_keys": ["raw_evidence", "data_profile"],
-                "output_keys": ["market_context"],
-                "depends_on": [],
-                "rationale": "Expose the local market evidence to downstream signal agents.",
-            },
-            {
-                "step_id": "step_2",
-                "id": "step_2",
-                "operator": "risk_management",
-                "input_keys": ["market_context"],
-                "output_keys": ["risk_gate"],
-                "depends_on": ["step_1"],
-                "rationale": "Give sell_signal priority so weak trend states are exited before any entry.",
-            },
-            {
-                "step_id": "step_3",
-                "id": "step_3",
-                "operator": "join",
-                "input_keys": ["risk_gate"],
-                "output_keys": ["final_decision"],
-                "depends_on": ["step_2"],
-                "rationale": "Return a signal-only BUY/SELL/HOLD decision.",
-            },
-        ]
-        return {
-            "stage": "constrained_search_stage",
-            "method": "DataEvolver",
-            "mode": "signal_only_profit_guard",
-            "final_pipeline": nodes,
-            "nodes": nodes,
-            "edges": [
-                {"from": dep, "to": node["step_id"], "message": "structured signal output"}
-                for node in nodes
-                for dep in node.get("depends_on", [])
-            ],
-            "execution_order": [node["step_id"] for node in nodes],
-            "llm_constrained_search": {},
-        }
-
-    def _signal_only_execution(
+    def _execute_ptc(
         self,
         state: AgentState,
         data_profile: dict[str, Any],
-        technical: dict[str, Any],
-        decision: dict[str, Any],
-        execution_order: list[str],
+        plan: dict[str, Any],
     ) -> dict[str, Any]:
-        market_context = {
-            "ticker": state.get("ticker", ""),
-            "trade_date": state.get("trade_date", ""),
-            "technical": technical,
-            "fundamental_stance": ((state.get("local_evidence") or {}).get("fundamental") or {}).get("stance", "unknown"),
-            "news_stance": ((state.get("local_evidence") or {}).get("news") or {}).get("stance", "unknown"),
-            "policy_stance": ((state.get("local_evidence") or {}).get("policy") or {}).get("stance", "unknown"),
-        }
-        risk_gate = {
-            "sell_first": bool(technical.get("sell_signal")),
-            "entry_allowed": bool(technical.get("buy_signal")) and not bool(technical.get("sell_signal")),
-            "hold_required": not bool(technical.get("buy_signal")) and not bool(technical.get("sell_signal")),
-            "selected_signal": decision.get("action", "HOLD"),
-            "rule": "SELL if sell_signal; BUY if buy_signal; otherwise HOLD.",
-        }
-        node_outputs = {
-            "step_1": {
-                "operator": "read_market_data",
-                "output": {"market_context": market_context},
-                "quality_evaluation": {
-                    "passed": True,
-                    "score": 1.0,
-                    "feedback": "Current evidence was converted into structured signal context.",
-                },
-                "attempts": 1,
-            },
-            "step_2": {
-                "operator": "risk_management",
-                "output": {"risk_gate": risk_gate},
-                "quality_evaluation": {
-                    "passed": True,
-                    "score": 1.0,
-                    "feedback": "Risk gate gives exit signals priority and blocks entries without buy_signal.",
-                },
-                "attempts": 1,
-            },
-            "step_3": {
-                "operator": "join",
-                "output": {"final_decision": decision},
-                "quality_evaluation": self._evaluate_signal_decision(technical, decision),
-                "attempts": 1,
-            },
-        }
-        return {
-            "stage": "dag_execution",
-            "mode": "signal_only_agents_with_quality_checks",
-            "execution_order": execution_order,
-            "node_outputs": node_outputs,
-            "data_store_keys": [
-                "raw_evidence",
-                "data_profile",
-                "market_context",
-                "risk_gate",
-                "final_decision",
-                "final_decision_structured",
-            ],
-            "final_decision_structured": decision,
-        }
-
-    def _decision_from_technical_signal(self, state: AgentState, technical: dict[str, Any]) -> dict[str, Any]:
-        sell_signal = bool(technical.get("sell_signal"))
-        buy_signal = bool(technical.get("buy_signal"))
-        if sell_signal:
-            action = "SELL"
-            position_pct = -100.0
-            posture = "signal_only_exit"
-            primary_reason = str(technical.get("exit_reason") or "Technical sell_signal is active.")
-        elif buy_signal:
-            action = "BUY"
-            position_pct = 100.0
-            posture = "signal_only_entry"
-            primary_reason = str(technical.get("entry_reason") or "Technical buy_signal is active.")
+        compiler = PTCProgramCompiler()
+        if self.execution_mode == "dynamic_ptc":
+            program = compiler.compile_dynamic(plan, data_profile)
         else:
-            action = "HOLD"
-            position_pct = 0.0
-            posture = "signal_only_wait"
-            primary_reason = "No validated technical entry or exit signal is active."
+            program = compiler.compile_static(plan)
+        runtime = PTCProgramRuntime(self.executor, max_parallel_tools=4)
+        return runtime.execute(
+            program,
+            {
+                "raw_evidence": state.get("local_evidence", {}),
+                "data_profile": data_profile,
+            },
+        )
 
-        instruction = {
-            "action": action,
-            "position_pct": position_pct,
-            "allocation_posture": posture,
-            "reasoning": (
-                f"{primary_reason} DataEvolver emits only the trading signal; position sizing is reserved "
-                "for compatibility with replay scripts."
-            ),
-            "supporting_evidence": [
-                f"mode={technical.get('mode', 'unknown')}",
-                f"buy_signal={buy_signal}",
-                f"sell_signal={sell_signal}",
-                f"close={_fmt_float(technical.get('adjusted_close'))}",
-                f"ma10={_fmt_float(technical.get('ma10'))}",
-                f"ma20={_fmt_float(technical.get('ma20'))}",
-                f"from_20d_low={_fmt_float(technical.get('from_low20_pct'))}%",
-                f"drawdown60={_fmt_float(technical.get('drawdown60_pct'))}%",
-            ],
-            "opposing_evidence": self._opposing_signal_evidence(technical),
-            "key_risks": [
-                "Signal-only replay can be sensitive to same-day execution assumptions.",
-                "Local technical evidence does not forecast overnight gaps or new unseen news.",
-            ],
-        }
-        decision = decision_from_instruction(instruction, self.max_position_pct, "dataevolver_signal_agent")
-        decision["signal"] = action
-        decision["trading_signal"] = action
-        decision["signal_only"] = True
-        decision["suppress_position_output"] = True
-        decision["llm_decision_mode"] = "signal_only_profit_guard"
-        decision["technical_signal"] = {
-            "buy_signal": buy_signal,
-            "sell_signal": sell_signal,
-            "mode": technical.get("mode", "unknown"),
-        }
+    def _decision_from_execution(self, execution: dict[str, Any]) -> dict[str, Any]:
+        final_decision = execution.get("final_decision_structured")
+        if not isinstance(final_decision, dict):
+            return fallback_decision(
+                self.max_position_pct,
+                "DataEvolver execution did not produce final_decision.",
+                "dataevolver",
+            )
+        decision = decision_from_instruction(
+            final_decision,
+            self.max_position_pct,
+            f"dataevolver_{self.execution_mode}_join_agent",
+        )
+        decision["llm_decision_mode"] = f"{self.execution_mode}_join_agent"
         return decision
-
-    def _technical_signal(self, state: AgentState) -> dict[str, Any]:
-        evidence = state.get("local_evidence") or {}
-        technical = evidence.get("technical") or {}
-        return technical if isinstance(technical, dict) else {}
-
-    def _opposing_signal_evidence(self, technical: dict[str, Any]) -> list[str]:
-        opposing = []
-        if technical.get("buy_signal") and technical.get("sell_signal"):
-            opposing.append("Both buy_signal and sell_signal are active; sell_signal takes precedence.")
-        if not technical.get("buy_signal") and not technical.get("sell_signal"):
-            opposing.append("No entry or exit trigger is active, so the signal remains HOLD.")
-        if technical.get("drawdown60_pct", 0.0) <= -15.0:
-            opposing.append("Deep 60-day drawdown increases whipsaw risk.")
-        return opposing
-
-    def _evaluate_signal_decision(self, technical: dict[str, Any], decision: dict[str, Any]) -> dict[str, Any]:
-        expected = "SELL" if technical.get("sell_signal") else "BUY" if technical.get("buy_signal") else "HOLD"
-        action = str(decision.get("action") or "HOLD").upper()
-        passed = action == expected
-        return {
-            "passed": passed,
-            "score": 1.0 if passed else 0.0,
-            "feedback": (
-                "Final signal matches the technical guard."
-                if passed
-                else f"Expected {expected} from technical guard but received {action}."
-            ),
-            "expected_signal": expected,
-            "actual_signal": action,
-        }
 
     def _result_update(
         self,
@@ -657,6 +424,7 @@ class DataEvolverWorkflow:
         workflow_plan = {
             "method": "DataEvolver",
             "mode": "understanding_freefit_template_constrained_search",
+            "execution_mode": self.execution_mode,
             "ticker": state.get("ticker", ""),
             "trade_date": state.get("trade_date", ""),
             "operator_manual": operator_manual(),
@@ -667,22 +435,25 @@ class DataEvolverWorkflow:
             "template_combination_stage": template_plan,
             "constrained_search_stage": logical_plan,
             "logical_checker": validation,
+            "ptc_program": execution.get("program", {}) if execution else {},
         }
-        signal_only = bool(decision.get("signal_only"))
         workflow_outputs = {
             "dag_execution": execution,
             "final_decision_structured": decision,
             "decision_contract": {
                 "allowed_actions": ["BUY", "SELL", "HOLD"],
-                "primary_output": "trading_signal" if signal_only else "action_with_position_pct",
-                "position_pct_unit": "compatibility_only_percent" if signal_only else "percent",
+                "primary_output": "action_with_position_pct",
+                "position_pct_unit": "percent",
                 "max_buy_position_pct": self.max_position_pct,
-                "suppress_position_output": signal_only,
             },
         }
         return {
             "workflow_mode": "dataevolver",
-            "workflow_method": "DataEvolver",
+            "workflow_method": {
+                "baseline": "DataEvolverBaseline",
+                "static_ptc": "DataEvolverStaticPTC",
+                "dynamic_ptc": "DataEvolverDynamicPTC",
+            }[self.execution_mode],
             "workflow_status": status,
             "workflow_plan": workflow_plan,
             "workflow_outputs": workflow_outputs,
@@ -695,27 +466,28 @@ class DataEvolverWorkflow:
             ] if logical_plan else [],
             "expert_outputs": execution.get("node_outputs", {}) if execution else {},
             "team_discussion_summary": (
-                "DataEvolver built a signal-only DAG, evaluated each node output, "
-                "and emitted the final BUY/SELL/HOLD trading signal."
-                if signal_only
-                else (
-                    "DataEvolver built a DAG, executed every operator as an evaluated LLM agent, "
-                    "and used the join agent for the final decision."
-                )
+                f"DataEvolver executed the {self.execution_mode} workflow, retained evaluated LLM agents, "
+                "and used the join agent for the final decision."
             ),
             "team_summary": {
                 "workflow": "dataevolver",
+                "execution_mode": self.execution_mode,
                 "status": status,
                 "signal": decision.get("action", "HOLD"),
             },
             "final_decision_structured": decision,
-            "final_decision": _format_signal_only_decision(decision) if signal_only else format_final_decision(decision),
+            "final_decision": format_final_decision(decision),
         }
 
 
 def run_dataevolver_workflow(state: AgentState, llm: Any | None = None) -> dict[str, Any]:
     max_position_pct = state.get("max_position_pct", 100.0)
-    return DataEvolverWorkflow(max_position_pct=max_position_pct, llm=llm).run(state)
+    execution_mode = str(state.get("execution_mode") or "baseline")
+    return DataEvolverWorkflow(
+        max_position_pct=max_position_pct,
+        llm=llm,
+        execution_mode=execution_mode,
+    ).run(state)
 
 
 def create_dataevolver_node(llm: Any | None = None):
@@ -776,29 +548,3 @@ def _as_list(value: Any) -> list[str]:
 def _json(value: Any, limit: int) -> str:
     text = json.dumps(value, ensure_ascii=False, indent=2, default=str)
     return clip_text(text, limit)
-
-
-def _env_truthy(name: str) -> bool:
-    return str(os.environ.get(name, "")).strip().lower() in {"1", "true", "yes", "on"}
-
-
-def _format_signal_only_decision(decision: dict[str, Any]) -> str:
-    lines = [
-        f"Trading Signal: {decision.get('trading_signal', decision.get('action', 'HOLD'))}",
-        "",
-        f"Reasoning: {decision.get('reasoning', '')}",
-    ]
-    if decision.get("supporting_evidence"):
-        lines.append("Supporting Evidence: " + "; ".join(_as_list(decision.get("supporting_evidence"))))
-    if decision.get("opposing_evidence"):
-        lines.append("Opposing Evidence: " + "; ".join(_as_list(decision.get("opposing_evidence"))))
-    if decision.get("key_risks"):
-        lines.append("Key Risks: " + "; ".join(_as_list(decision.get("key_risks"))))
-    return "\n".join(lines)
-
-
-def _fmt_float(value: Any) -> str:
-    try:
-        return f"{float(value):.2f}"
-    except (TypeError, ValueError):
-        return "n/a"

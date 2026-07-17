@@ -1,0 +1,2 @@
+ticker,trade_date,status,workflow_method,workflow_status,action,position_pct,allocation_posture,max_buy_position_pct,debug_file
+AMZN,2023-04-10,ok,DataEvolverStaticPTC,ok,BUY,50.0,cautious,100.0,D:\Sem8\stockbench-main\tradesys_dynamic_team\exercise\analysis_results\ptc_ablation_smoke_20260716_182138\static_ptc\debug_runs\AMZN_2023-04-10_debug.json

@@ -3,26 +3,12 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.prebuilt import ToolNode
 
 from tradesys.agents.utils.agent_states import AgentState
-from tradesys.agents.utils.fundamental_data_tools import (
-    get_balance_sheet_data,
-    get_cashflow_data,
-    get_earnings_data,
-    get_filings_data,
-    get_income_statement_data,
-    get_latest_fundamental_summary,
-    get_statement_data,
-)
+from tradesys.agents.utils.ptc_data_tools import collect_fundamental_evidence_ptc
 from tradesys.agents.utils.report_logger import get_report_logger
 
 
 FUNDAMENTAL_TOOLS = [
-    get_statement_data,
-    get_balance_sheet_data,
-    get_cashflow_data,
-    get_income_statement_data,
-    get_latest_fundamental_summary,
-    get_earnings_data,
-    get_filings_data,
+    collect_fundamental_evidence_ptc,
 ]
 
 
@@ -31,7 +17,9 @@ You are a researcher tasked with analyzing fundamental information about the
 company for the given ticker as of the trade date. Treat the trade date as the
 analysis cutoff and do not use future information. Use the available tools to
 inspect financial statements, earnings, and SEC filings; let the tools provide
-the data and do not invent numbers.
+the data and do not invent numbers. On the first turn, call
+collect_fundamental_evidence_ptc exactly once. It joins all required sources;
+after receiving its result, write the final report without another tool call.
 
 Write a comprehensive, trader-facing report on the company's fundamental
 condition. Include the latest available financial documents, earnings context,
@@ -71,7 +59,12 @@ def create_fundamental_analyst(llm):
             MessagesPlaceholder(variable_name="messages"),
         ])
 
-        chain = prompt | llm.bind_tools(FUNDAMENTAL_TOOLS)
+        bound_llm = (
+            llm.bind_tools(FUNDAMENTAL_TOOLS, tool_choice=FUNDAMENTAL_TOOLS[0].name)
+            if not messages
+            else llm.bind_tools(FUNDAMENTAL_TOOLS)
+        )
+        chain = prompt | bound_llm
         result = chain.invoke({
             "system_message": FUNDAMENTAL_SYSTEM_MESSAGE,
             "tool_names": ", ".join(tool.name for tool in FUNDAMENTAL_TOOLS),

@@ -75,31 +75,6 @@ def create_llm():
     )
 
 
-def create_optional_llm():
-    if not os.environ.get("OPENAI_API_KEY"):
-        return None
-    config = load_config()
-    profile = config.get("llm_profiles", {}).get("openai", {})
-    try:
-        from tradesys.workflows.llm_client import OpenAICompatibleLLM
-
-        return OpenAICompatibleLLM(
-            base_url=os.environ.get("OPENAI_BASE_URL") or profile.get("base_url", "https://api.openai.com/v1"),
-            model=os.environ.get("OPENAI_MODEL") or profile.get("model", "gpt-4o-mini"),
-            timeout=int(os.environ.get("OPENAI_TIMEOUT") or profile.get("timeout_sec", 360)),
-            max_retries=int(os.environ.get("OPENAI_MAX_RETRIES") or profile.get("max_retries", 0)),
-            api_key=os.environ["OPENAI_API_KEY"],
-            temperature=0.2,
-            max_tokens=4000,
-        )
-    except Exception:
-        pass
-    try:
-        return create_llm()
-    except Exception:
-        return None
-
-
 def json_safe(value: Any):
     if hasattr(value, "model_dump"):
         return json_safe(value.model_dump())
@@ -270,10 +245,9 @@ def run_single_analysis(
     trade_date: str,
     results_dir: Path,
     recursion_limit: int,
-    portfolio_cash: float = 0.0,
     max_position_pct: float = 100.0,
     write_all_results: bool = True,
-    workflow_mode: str = "auto",
+    execution_mode: str = "baseline",
 ) -> dict:
     reports_dir = results_dir / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
@@ -283,38 +257,13 @@ def run_single_analysis(
     error = ""
 
     try:
-        if workflow_mode in {"llmcompiler", "dataevolver"}:
-            final_state = _run_local_research_workflow(
-                ticker,
-                trade_date,
-                max_position_pct,
-                workflow_mode=workflow_mode,
-                llm=create_optional_llm(),
-            )
-        elif workflow_mode == "llm":
-            final_state = _run_langgraph_workflow(ticker, trade_date, recursion_limit, max_position_pct, "llmcompiler")
-        else:
-            if os.environ.get("OPENAI_API_KEY"):
-                try:
-                    final_state = _run_langgraph_workflow(ticker, trade_date, recursion_limit, max_position_pct, "llmcompiler")
-                except Exception:
-                    langgraph_error = traceback.format_exc()
-                    final_state = _run_local_research_workflow(
-                        ticker,
-                        trade_date,
-                        max_position_pct,
-                        workflow_mode="llmcompiler",
-                        llm=create_optional_llm(),
-                    )
-                    final_state["local_fallback_reason"] = langgraph_error
-            else:
-                final_state = _run_local_research_workflow(
-                    ticker,
-                    trade_date,
-                    max_position_pct,
-                    workflow_mode="llmcompiler",
-                    llm=None,
-                )
+        final_state = _run_langgraph_workflow(
+            ticker,
+            trade_date,
+            recursion_limit,
+            max_position_pct,
+            execution_mode,
+        )
     except Exception:
         error = traceback.format_exc()
         final_state = {
@@ -381,76 +330,22 @@ def _run_langgraph_workflow(
     trade_date: str,
     recursion_limit: int,
     max_position_pct: float,
-    decision_workflow: str = "llmcompiler",
+    execution_mode: str,
 ) -> dict:
     from tradesys.graph import Propagator, create_workflow
 
     llm = create_llm()
-    graph = create_workflow(llm, decision_workflow=decision_workflow)
+    graph = create_workflow(llm)
     propagator = Propagator(
         recursion_limit=recursion_limit,
         max_position_pct=max_position_pct,
+        execution_mode=execution_mode,
     )
     initial_state = propagator.create_initial_state(ticker, trade_date)
     return graph.invoke(
         initial_state,
         config=propagator.get_graph_config(),
     )
-
-
-def _run_local_research_workflow(
-    ticker: str,
-    trade_date: str,
-    max_position_pct: float,
-    workflow_mode: str,
-    llm: Any | None = None,
-) -> dict:
-    from tradesys.workflows import run_dataevolver_workflow, run_llmcompiler_workflow
-    from tradesys.workflows.common import create_local_research_state
-
-    state = create_local_research_state(ticker, trade_date, max_position_pct)
-    if workflow_mode == "dataevolver":
-        update = run_dataevolver_workflow(state, llm=llm)
-    else:
-        update = run_llmcompiler_workflow(state, llm=llm)
-    state.update(update)
-    return state
-
-
-def _create_initial_state(ticker: str, trade_date: str, max_position_pct: float) -> dict:
-    return {
-        "messages": [],
-        "technical_messages": [],
-        "fundamental_messages": [],
-        "news_messages": [],
-        "policy_messages": [],
-        "ticker": ticker,
-        "trade_date": trade_date,
-        "max_position_pct": max_position_pct,
-        "technical_report": "",
-        "fundamental_report": "",
-        "news_report": "",
-        "policy_report": "",
-        "analyst_reports": [],
-        "errors": [],
-        "error": None,
-        "workflow_mode": "",
-        "team_plan": {},
-        "generated_skills": [],
-        "expert_agents": [],
-        "expert_outputs": [],
-        "module_outputs": {},
-        "team_discussion_summary": "",
-        "team_summary": {},
-        "final_decision_structured": {},
-        "final_decision": "",
-        "local_evidence": {},
-        "workflow_method": "",
-        "workflow_plan": {},
-        "workflow_outputs": {},
-        "workflow_status": "not_started",
-    }
-
 
 def save_batch_outputs(results_dir: Path, ticker: str, results: list[dict]) -> None:
     sorted_results = sorted(results, key=lambda item: (item.get("ticker", ""), item.get("trade_date", "")))
@@ -505,11 +400,10 @@ def run_batch_analysis(
     dates: list[str],
     results_dir: Path,
     recursion_limit: int,
-    portfolio_cash: float,
     max_position_pct: float,
     workers: int,
     batch_size: int,
-    workflow_mode: str,
+    execution_mode: str,
 ) -> list[dict]:
     all_results = []
     pending_since_checkpoint = 0
@@ -524,10 +418,9 @@ def run_batch_analysis(
                 trade_date,
                 results_dir,
                 recursion_limit,
-                portfolio_cash,
                 max_position_pct,
                 write_all_results=False,
-                workflow_mode=workflow_mode,
+                execution_mode=execution_mode,
             )
             all_results.append(result)
             pending_since_checkpoint += 1
@@ -537,7 +430,7 @@ def run_batch_analysis(
                 pending_since_checkpoint = 0
                 print(f"  [checkpoint: {index}/{total} tasks saved]")
     else:
-        print(f"[Parallel mode: {workers} threads]")
+        print(f"[Parallel mode: {workers} concurrent workers]")
         with ThreadPoolExecutor(max_workers=workers) as executor:
             future_map = {
                 executor.submit(
@@ -546,10 +439,9 @@ def run_batch_analysis(
                     trade_date,
                     results_dir,
                     recursion_limit,
-                    portfolio_cash,
                     max_position_pct,
                     False,
-                    workflow_mode,
+                    execution_mode,
                 ): trade_date
                 for trade_date in dates
             }
@@ -587,33 +479,50 @@ def run_multi_ticker_analysis(
     date_ranges: dict[str, list[str]],
     results_dir: Path,
     recursion_limit: int,
-    portfolio_cash: float,
     max_position_pct: float,
+    workers: int,
     batch_size: int,
-    workflow_mode: str,
+    execution_mode: str,
 ) -> list[dict]:
     all_results = []
-    completed = 0
     total = sum(len(dates) for dates in date_ranges.values())
     pending_since_checkpoint = 0
 
-    print(f"[Multi-ticker mode: {len(tickers)} tickers, {total} analyses]")
-    for ticker in tickers:
-        for trade_date in date_ranges[ticker]:
-            completed += 1
-            print(f"[{completed}/{total}] {ticker} {trade_date} ...", end=" ", flush=True)
-            result = run_single_analysis(
+    print(f"[Multi-ticker parallel mode: {workers} concurrent workers, {total} analyses]")
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_map = {
+            executor.submit(
+                run_single_analysis,
                 ticker,
                 trade_date,
                 results_dir,
                 recursion_limit,
-                portfolio_cash,
                 max_position_pct,
-                write_all_results=False,
-                workflow_mode=workflow_mode,
-            )
+                False,
+                execution_mode,
+            ): (ticker, trade_date)
+            for ticker in tickers
+            for trade_date in date_ranges[ticker]
+        }
+        for completed, future in enumerate(as_completed(future_map), start=1):
+            ticker, trade_date = future_map[future]
+            try:
+                result = future.result()
+            except Exception:
+                result = {
+                    "ticker": ticker,
+                    "trade_date": trade_date,
+                    "status": "error",
+                    "action": "HOLD",
+                    "position_pct": 0.0,
+                    "position_pct_display": "0.00%",
+                    "allocation_posture": "error",
+                    "debug_file": "",
+                    "error": traceback.format_exc(),
+                }
             all_results.append(result)
             pending_since_checkpoint += 1
+            print(f"[{completed}/{total}] {ticker} {trade_date} ...", end=" ", flush=True)
             _print_result_status(result)
             if pending_since_checkpoint >= batch_size:
                 save_batch_outputs(results_dir, "multi_ticker", all_results)
@@ -634,23 +543,17 @@ def _print_result_status(result: dict) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the exercise four-analyst workflow.")
+    parser = argparse.ArgumentParser(description="Run four LangGraph analysts followed by the DataEvolver LLM DAG.")
     parser.add_argument("--ticker", default="AMZN", help="Ticker symbol, default AMZN")
     parser.add_argument("--tickers", nargs="+", default=None, help="Run multiple tickers into one combined decisions.csv.")
     parser.add_argument("--date", default=None, help="Single analysis date in YYYY-MM-DD format")
     parser.add_argument("--start-date", default=None, help="Batch start date in YYYY-MM-DD format")
     parser.add_argument("--end-date", default=None, help="Batch end date in YYYY-MM-DD format")
     parser.add_argument("--limit-dates", type=int, default=0, help="Limit batch to the first N trading dates")
-    parser.add_argument("--workers", "-w", type=int, default=1, help="Number of parallel workers")
+    parser.add_argument("--workers", "-w", type=int, default=1, help="Number of concurrent analysis workers")
     parser.add_argument("--batch-size", type=int, default=8, help="Checkpoint results every N completed tasks")
     parser.add_argument("--recursion-limit", type=int, default=80, help="LangGraph recursion limit")
     parser.add_argument("--results-dir", type=Path, default=None, help="Directory for this run's outputs.")
-    parser.add_argument(
-        "--portfolio-cash",
-        type=float,
-        default=0.0,
-        help=argparse.SUPPRESS,
-    )
     parser.add_argument(
         "--max-position-pct",
         type=float,
@@ -659,14 +562,10 @@ def main() -> None:
     )
     parser.add_argument("--dry-run", action="store_true", help="Print configuration without calling the LLM")
     parser.add_argument(
-        "--workflow-mode",
-        choices=["auto", "llm", "llmcompiler", "dataevolver"],
-        default=os.environ.get("TRADESYS_WORKFLOW_MODE", "llmcompiler"),
-        help=(
-            "llmcompiler runs a few-shot regex-parsed function-call DAG planner; "
-            "dataevolver runs DataEvolver A/B/C DAG construction; "
-            "llm uses LangGraph analysts; auto uses LangGraph when an API key is available."
-        ),
+        "--execution-mode",
+        choices=["baseline", "static_ptc", "dynamic_ptc"],
+        default="baseline",
+        help="DataEvolver execution mode used for ablation experiments.",
     )
     args = parser.parse_args()
 
@@ -704,7 +603,8 @@ def main() -> None:
     print(f"Model: {model}")
     print(f"Base URL: {base_url}")
     print(f"Max BUY position pct: {args.max_position_pct:.2f}%")
-    print(f"Workflow mode: {args.workflow_mode}")
+    print("Workflow: LangGraph four analysts + DataEvolver LLM DAG")
+    print(f"Execution mode: {args.execution_mode}")
     print(f"Results dir: {results_dir}")
 
     if args.dry_run:
@@ -717,10 +617,10 @@ def main() -> None:
             date_ranges,
             results_dir,
             args.recursion_limit,
-            max(0.0, args.portfolio_cash),
             min(100.0, max(0.0, args.max_position_pct)),
+            max(1, args.workers),
             max(1, args.batch_size),
-            args.workflow_mode,
+            args.execution_mode,
         )
         print(f"\nDone. Total analyses: {len(results)}")
         print(f"Results saved to: {results_dir}")
@@ -733,11 +633,10 @@ def main() -> None:
             dates,
             results_dir,
             args.recursion_limit,
-            max(0.0, args.portfolio_cash),
             min(100.0, max(0.0, args.max_position_pct)),
             max(1, args.workers),
             max(1, args.batch_size),
-            args.workflow_mode,
+            args.execution_mode,
         )
         print(f"\nDone. Total analyses: {len(results)}")
         print(f"Results saved to: {results_dir}")
@@ -749,9 +648,8 @@ def main() -> None:
         single_date,
         results_dir,
         args.recursion_limit,
-        max(0.0, args.portfolio_cash),
         min(100.0, max(0.0, args.max_position_pct)),
-        workflow_mode=args.workflow_mode,
+        execution_mode=args.execution_mode,
     )
 
     print(f"Status: {result['status']}")
